@@ -1,26 +1,200 @@
-/*Start writing sass here*/
-@import "../bourbon/bourbon";
-@import "../bower_components/bootstrap/dist/css/bootstrap.min.css";
-@import "../bower_components/flexslider/flexslider.css";
-@import "../bower_components/fontawesome/css/font-awesome.min.css";
+ /*Start writing sass here*/
+ 
+ @import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+ @include font-face("PF", "../fonts/PlayfairDisplay-BlackItalic");
+ @import "../bower_components/bootstrap/dist/css/bootstrap.min.css";
+ @import "../bower_components/flexslider/flexslider.css";
+ @import "../bower_components/fontawesome/css/font-awesome.min.css";
+ $font-italic: "Playfair Display";
+ $main-color: #ED3237;
+ $footer-color: #B1B0B0;
+ body {
+     padding-top: 70px;
+ }
+ img.loading {
+     text-align: center;
+     opacity: 1;
+     width: 32px !important;
+     height: auto;
+ }
+ img.doneLoading {
+     opacity: 1;
+ }
+ nav li:hover .dropdown-menu {
+     display: block;
+ }
+ .font-italic {
+     font-family: "Playfair Display";
+ }
+ h1 {
+     color: pink;
+ }
+ a {
+     color: #000;
+     &:hover {
+         opacity: .7;
+     }
+ }
+ p {
+     margin: 0;
+ }
+ ul,
+ ol {
+     padding: 0;
+ }
+ ul li {
+     list-style-type: none;
+ }
+ .nofocus:focus {
+     outline: none;
+     box-shadow: none;
+     border-color: none;
+ }
+ .main-color {
+     color: $main-color;
+ }
+ .search:focus {
+     border-color: #ebebeb;
+ }
+ a:hover,
+ a:focus {
+     text-decoration: none;
+ }
+ .navbar-brand:hover {
+     opacity: 1;
+ }
+ .nav>li>a:focus,
+ .nav>li>a:hover {
+     background-color: transparent;
+ }
+ .navbar-nav>li>a {
+     padding: 7px 15px;
+     &:hover {
+         color: $main-color;
+     }
+ }
+ .flex-direction-nav .flex-prev {
+     left: 0;
+ }
+ .flex-direction-nav .flex-next {
+     right: 0;
+ }
+ .carousel li {
+     margin: 0;
+ }
+ .flex-control-nav li {
+     margin-right: 5px;
+ }
+ //style
+ header {
+     width: 100%;
+     position: fixed;
+     top: 0;
+     background-color: #fff;
+     z-index: 99;
+     box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.25);
+ }
 
-img.loading {
-  text-align: center;
-  opacity: 1;
-  width: 32px !important;
-  height: auto;
-} 
-img {
-  opacity: 0;
-  //    .transition(all 1s ease);
+ .mgtb {
+     margin-top: 35px;
+     margin-bottom: 30px;
+ }
+ .mgtb {
+     a {
+         border-bottom: 1px solid transparent;
+         &:hover {
+             border-bottom: 1px solid $main-color;
+         }
+     }
+ }
+ .italic {
+     margin: 7px 0;
+     color: $main-color;
+     font-style: italic;
+     font-size: 24px;
+ }
+ .noborder {
+     border-radius: 0;
+ }
+ .nomgpd {
+     margin: 0;
+     padding: 0;
+ }
+ .subscribe {
+     @extend.noborder;
+     border: none;
+     background-color: #ebebeb;
+     text-transform: uppercase;
+     font-size: 15px;
+     font-weight: 600;
+     line-height: 22px;
+     padding: 12px 10px;
+ }
+ .mail {
+     border: 1px solid transparent;
+     min-height: 35px;
+     background-color: #ebebeb;
+     padding: 22px 12px;
+     &:focus {
+         background-color: #fff;
+         border-top: 1px solid #ebebeb;
+         border-right: 1px solid transparent;
+         border-bottom: 1px solid #ebebeb;
+         border-left: 1px solid #ebebeb;
+         @include transition(all 300ms linear);
+     }
+ }
 
+.demand {
+    margin: 40px 0;
 }
-img.doneLoading {
-  opacity: 1;
+
+.products-name {
+    margin: 25px 0;
+    font-size: 17px;
 }
-nav li:hover .dropdown-menu {
-  display: block;
-}
-h1 {
-    color:pink;
-}
+
+ //footer-menu
+ footer {
+     padding: 20px 0;
+     background-color: #1b1b1b;
+     color: $footer-color;
+     .social-icon {
+         margin: 0;
+         li {
+             margin-left: 5px;
+             display: inline-block;
+             a {
+                 color: #fff;
+             }
+         }
+     }
+ }
+ .footer-menu {
+     padding: 25px 0;
+     background-color: #222;
+     color: $footer-color;
+     .comp-info {
+         span {
+             margin: 15px 0;
+             display: block;
+             a {
+                 margin-left: 5px;
+                 color: $main-color;
+                 &:hover {
+                     opacity: 1;
+                     text-decoration: underline;
+                 }
+             }
+         }
+     }
+     .foot-links {
+         a {
+             color: $footer-color;
+         }
+     }
+     .abt {
+         margin: 20px 0;
+         font-size: 20px;
+     }
+ }

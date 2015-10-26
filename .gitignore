@@ -5,7 +5,7 @@ w/
 *.tar
 production/
 *.zip
-css/
+css/ 
 img2/
 # Windows shortcuts
 *.lnk

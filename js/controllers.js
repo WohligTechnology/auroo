@@ -1,25 +1,24 @@
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngSanitize', 'angular-flexslider'])
 
-.controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout) {
-  //Used to name the .html file
-  $scope.template = TemplateService.changecontent("home");
-  $scope.menutitle = NavigationService.makeactive("Home");
-  TemplateService.title = $scope.menutitle;
-  $scope.navigation = NavigationService.getnav();
+.controller('HomeCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("home");
+    $scope.menutitle = NavigationService.makeactive("Home");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
 
-  $scope.mySlides = [
-    'http://flexslider.woothemes.com/images/kitchen_adventurer_cheesecake_brownie.jpg',
-    'http://flexslider.woothemes.com/images/kitchen_adventurer_lemon.jpg',
-    'http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg',
-    'http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg'
-  ];
+    $scope.slides = [
+        'img/slider/1.jpg',
+        'img/slider/2.jpg',
+        'img/slider/3.jpg'
+    ];
 })
 
-.controller('FeatureCtrl', function($scope, TemplateService) {
-  $scope.template = TemplateService;
-})
-.controller('headerctrl', function($scope, TemplateService) {
-  $scope.template = TemplateService;
-})
+.controller('FeatureCtrl', function ($scope, TemplateService) {
+        $scope.template = TemplateService;
+    })
+    .controller('headerctrl', function ($scope, TemplateService) {
+        $scope.template = TemplateService;
+    })
 
 ;
