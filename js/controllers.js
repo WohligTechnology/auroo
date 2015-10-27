@@ -82,7 +82,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                        ];
 })
 
-.controller('ContactUsCtrl', function ($scope, TemplateService) {
+.controller('ContactUsCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
         $scope.template = TemplateService.changecontent("contactus");
         $scope.menutitle = NavigationService.makeactive("Contact-Us");
         TemplateService.title = $scope.menutitle;
