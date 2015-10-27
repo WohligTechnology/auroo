@@ -181,10 +181,17 @@
              p {
                  color: $footer-color;
                  margin: 12px 0;
+                 cursor: pointer;
+                 &:hover {
+                     color: $main-color;
+                 }
              }
              .star {
                  a {
                      color: $footer-color;
+                     &:hover {
+                         color: $main-color;
+                     }
                  }
              }
          }
