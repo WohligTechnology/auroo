@@ -394,6 +394,11 @@
              margin: 10px 0;
              display: block;
          }
+         span:last-child {
+             a {
+                 text-transform: none;
+             }
+         }
      }
      .get-in-touch {
          margin: 50px 0;
