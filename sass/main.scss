@@ -108,7 +108,7 @@
  
  //style
  .nav li a:hover {
-     @include transition(all 800ms ease-in-out);
+     @include transition(all 500ms ease-in-out);
  }
  
  header {
@@ -333,13 +333,89 @@
                  background-color: $footer-color;
                  line-height: 35px;
                  text-align: center;
+                 &:hover {
+                     opacity: 1;
+                     @include transition(all 500ms ease-in-out);
+                 }
+             }
+             a.fb {
+                 &:hover {
+                     background-color: #3b5998;
+                     color: $footer-color;
+                 }
+             }
+             a.twi {
+                 &:hover {
+                     background-color: #00aced;
+                     color: $footer-color;
+                 }
+             }
+             a.google {
+                 &:hover {
+                     background-color: #d34836;
+                     color: $footer-color;
+                 }
+             }
+             a.youtube {
+                 &:hover {
+                     background-color: #cc181e;
+                     color: $footer-color;
+                 }
+             }
+             a.insta {
+                 &:hover {
+                     background-color: #125688;
+                     color: $footer-color;
+                 }
              }
          }
      }
  }
  
- .back-contact {
-     padding: 20% 0;
-     position: relative;
-     background: url('../img/contactus.jpg');
+ .contact {
+     .back-contact {
+         min-height: 500px;
+         position: relative;
+         background: url('../img/contactus.jpg') no-repeat top center;
+         background-attachment: fixed;
+         background-size: 100% 100%;
+         .cont-head {
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             @include transform(translate(-50%, -50%));
+         }
+     }
+     .map {
+         margin: 5% 0;
+     }
+     address {
+         span {
+             margin: 10px 0;
+             display: block;
+         }
+     }
+     .get-in-touch {
+         margin: 50px 0;
+         text-transform: uppercase;
+         .form-control {
+             @extend.noborder;
+         }
+         .separte {
+             margin: 25px 0;
+             span {
+                 margin: 5px 0;
+                 display: block;
+                 font-size: 15px;
+                 letter-spacing: 2px;
+             }
+             input {
+                 min-height: 50px
+             }
+             textarea {
+                 min-height: 257px;
+                 resize: none;
+             }
+         }
+     }
  }
