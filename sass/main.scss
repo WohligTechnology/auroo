@@ -94,7 +94,6 @@
      z-index: 99;
      box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.25);
  }
-
  .mgtb {
      margin-top: 35px;
      margin-bottom: 30px;
@@ -111,7 +110,8 @@
      margin: 7px 0;
      color: $main-color;
      font-style: italic;
-     font-size: 24px;
+     font-size: 21px;
+     font-weight: 700;
  }
  .noborder {
      border-radius: 0;
@@ -144,16 +144,52 @@
          @include transition(all 300ms linear);
      }
  }
-
-.demand {
-    margin: 40px 0;
-}
-
-.products-name {
-    margin: 25px 0;
-    font-size: 17px;
-}
-
+ .demand {
+     margin: 40px 0;
+ }
+ .products-name {
+     margin: 25px 0;
+     font-size: 17px;
+ }
+ .products {
+     height: 350px;
+     border: 1px solid #000;
+     margin: 35px 0;
+     position: relative;
+     overflow: hidden;
+     &:hover .pro-hov {
+         opacity: 1;
+     }
+     .pro-img {
+         img {
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             @include transform(translate(-50%, -50%));
+         }
+     }
+     .pro-hov {
+         opacity: 0;
+         background-color: rgba(0, 0, 0, .7);
+         position: relative;
+         height: 350px;
+         .pro-detail {
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             @include transform(translate(-50%, -50%));
+             p {
+                 color: $footer-color;
+                 margin: 12px 0;
+             }
+             .star {
+                 a {
+                     color: $footer-color;
+                 }
+             }
+         }
+     }
+ }
  //footer-menu
  footer {
      padding: 20px 0;

@@ -37,12 +37,12 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="arrival">
-                  <img src="img/newarrival.png" alt="Products" class="img-responsive">  
+                    <img src="img/newarrival.png" alt="Products" class="img-responsive">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="product">
-                  <img src="img/product.png" alt="Products" class="img-responsive">  
+                    <img src="img/product.png" alt="Products" class="img-responsive">
                 </div>
             </div>
             <div class="col-md-4">
@@ -58,16 +58,37 @@
 </div>
 <div class="exculsive">
     <div class="pra-excul products-name">
-        <p class="text-center text-uppercase">euro pratik <span>exculsive products</span></p>
+        <p class="text-center text-uppercase">euro pratik <span class="main-color">exculsive products</span></p>
     </div>
     <div class="container">
         <div class="excul-slide">
             <div class="row">
-                <flex-slider animation="slide">
-                    <div class="col-md-3">
-
+<!--                <flex-slider animation="slide" flex-slide="pros in slide">-->
+                    <div class="col-md-3" ng-repeat="pro in products">
+                        <a href="">
+                            <div class="products">
+                                <div class="pro-img">
+                                    <img ng-src="{{pro.img}}" alt="Products" class="img-responsive">
+                                </div>
+                                <div class="pro-hov text-center text-uppercase">
+                                    <div class="pro-detail">
+                                        <p>{{pro.name}}</p>
+                                        <p>Rs: {{pro.price}}</p>
+                                        <div class="star">
+                                            <a href=""><i class="fa fa-star-o"></i></a>
+                                            <a href=""><i class="fa fa-star-o"></i></a>
+                                            <a href=""><i class="fa fa-star-o"></i></a>
+                                            <a href=""><i class="fa fa-star-o"></i></a>
+                                            <a href=""><i class="fa fa-star-o"></i></a>
+                                        </div>
+                                        <p>add to cart</p>
+                                        <!--                                <p>Out of stock</p>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </flex-slider>
+<!--                </flex-slider>-->
             </div>
         </div>
     </div>
