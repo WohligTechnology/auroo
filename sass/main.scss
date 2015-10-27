@@ -283,4 +283,19 @@
          margin: 20px 0;
          font-size: 20px;
      }
+     .social-icons {
+         li {
+             display: inline-block;
+             a {
+                 width: 35px;
+                 height: 35px;
+                 border-radius: 100%;
+                 margin-right: 5px;
+                 display: inline-block;
+                 background-color: $footer-color;
+                 line-height: 35px;
+                 text-align: center;
+             }
+         }
+     }
  }
