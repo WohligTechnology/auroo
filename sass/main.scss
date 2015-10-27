@@ -11,81 +11,106 @@
  body {
      padding-top: 70px;
  }
+ 
  img.loading {
      text-align: center;
      opacity: 1;
      width: 32px !important;
      height: auto;
  }
+ 
  img.doneLoading {
      opacity: 1;
  }
+ 
  nav li:hover .dropdown-menu {
      display: block;
  }
+ 
  .font-italic {
      font-family: "Playfair Display";
  }
+ 
  h1 {
      color: pink;
  }
+ 
  a {
      color: #000;
      &:hover {
          opacity: .7;
      }
  }
+ 
  p {
      margin: 0;
  }
+ 
  ul,
  ol {
      padding: 0;
  }
+ 
  ul li {
      list-style-type: none;
  }
+ 
  .nofocus:focus {
      outline: none;
      box-shadow: none;
      border-color: none;
  }
+ 
  .main-color {
      color: $main-color;
  }
+ 
  .search:focus {
      border-color: #ebebeb;
  }
+ 
  a:hover,
  a:focus {
      text-decoration: none;
  }
+ 
  .navbar-brand:hover {
      opacity: 1;
  }
+ 
  .nav>li>a:focus,
  .nav>li>a:hover {
      background-color: transparent;
  }
+ 
  .navbar-nav>li>a {
      padding: 7px 15px;
      &:hover {
          color: $main-color;
      }
  }
+ 
  .flex-direction-nav .flex-prev {
      left: 0;
  }
+ 
  .flex-direction-nav .flex-next {
      right: 0;
  }
+ 
  .carousel li {
      margin: 0;
  }
+ 
  .flex-control-nav li {
      margin-right: 5px;
  }
+ 
  //style
+ .nav li a:hover {
+     @include transition(all 800ms ease-in-out);
+ }
+ 
  header {
      width: 100%;
      position: fixed;
@@ -94,10 +119,12 @@
      z-index: 99;
      box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.25);
  }
+ 
  .mgtb {
      margin-top: 35px;
      margin-bottom: 30px;
  }
+ 
  .mgtb {
      a {
          border-bottom: 1px solid transparent;
@@ -106,6 +133,7 @@
          }
      }
  }
+ 
  .italic {
      margin: 7px 0;
      color: $main-color;
@@ -113,13 +141,16 @@
      font-size: 21px;
      font-weight: 700;
  }
+ 
  .noborder {
      border-radius: 0;
  }
+ 
  .nomgpd {
      margin: 0;
      padding: 0;
  }
+ 
  .subscribe {
      @extend.noborder;
      border: none;
@@ -130,6 +161,7 @@
      line-height: 22px;
      padding: 12px 10px;
  }
+ 
  .mail {
      border: 1px solid transparent;
      min-height: 35px;
@@ -144,13 +176,16 @@
          @include transition(all 300ms linear);
      }
  }
+ 
  .demand {
      margin: 40px 0;
  }
+ 
  .products-name {
      margin: 25px 0;
      font-size: 17px;
  }
+ 
  .products {
      height: 350px;
      border: 1px solid #000;
@@ -205,6 +240,7 @@
          }
      }
  }
+ 
  .brand-list {
      position: relative;
      height: 200px;
@@ -240,6 +276,7 @@
          }
      }
  }
+ 
  //footer-menu
  footer {
      padding: 20px 0;
@@ -256,6 +293,7 @@
          }
      }
  }
+ 
  .footer-menu {
      padding: 25px 0;
      background-color: #222;
@@ -298,4 +336,10 @@
              }
          }
      }
+ }
+ 
+ .back-contact {
+     padding: 20% 0;
+     position: relative;
+     background: url('../img/contactus.jpg');
  }
