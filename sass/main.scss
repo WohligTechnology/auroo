@@ -206,16 +206,35 @@
      }
  }
  .brand-list {
-     height: 180px;
+     position: relative;
+     height: 200px;
      overflow: hidden;
      &:hover .back-img {
          @include transform(translate(0, -80px));
          @include transition(all 2s ease-in-out);
      }
+     &:hover .list-brand {
+         background-color: transparent;
+         @include transition(all 800ms ease-in-out);
+     }
      .back-img {
+         position: absolute;
+         top: 0;
+         left: 0;
+         z-index: -1;
          img {
              @include transform(translate(0, 0));
              @include transition(all 2s ease-in-out);
+         }
+     }
+     .list-brand {
+         min-height: 100%;
+         background-color: #fff;
+         .brand-img {
+             margin: 40px 0;
+             img {
+                 width: 14%;
+             }
          }
      }
  }

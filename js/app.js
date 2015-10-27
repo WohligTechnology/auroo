@@ -19,10 +19,10 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
         controller: 'HomeCtrl'
     })
 
-    .state('feature', {
-        url: "/feature",
+    .state('contactus', {
+        url: "/contactus",
         templateUrl: "views/template.html",
-        controller: 'FeatureCtrl'
+        controller: 'ContactUsCtrl'
     })
 
     $urlRouterProvider.otherwise("/home");

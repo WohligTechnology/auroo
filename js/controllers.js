@@ -82,8 +82,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                        ];
 })
 
-.controller('FeatureCtrl', function ($scope, TemplateService) {
-        $scope.template = TemplateService;
+.controller('ContactUsCtrl', function ($scope, TemplateService) {
+        $scope.template = TemplateService.changecontent("contactus");
+        $scope.menutitle = NavigationService.makeactive("Contact-Us");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
     })
     .controller('headerctrl', function ($scope, TemplateService) {
         $scope.template = TemplateService;
