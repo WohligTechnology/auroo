@@ -12,7 +12,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         'img/slider/2.jpg',
         'img/slider/3.jpg'
     ];
-    $scope.products = [{
+    $scope.products = [
+        {
+            img: "img/Products/8.jpg",
+            name: "Zara",
+            price: "25000"
+    },
+        {
             img: "img/Products/7.jpg",
             name: "Zara",
             price: "25000"
@@ -48,6 +54,32 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             price: "25000"
     }
                       ];
+    $scope.brandlist = [
+        {
+            back_img: "img/slider/1.jpg",
+            img: "img/brands/1.png"
+        },
+        {
+            back_img: "img/slider/2.jpg",
+            img: "img/brands/2.png"
+        },
+        {
+            back_img: "img/slider/3.jpg",
+            img: "img/brands/3.png"
+        },
+        {
+            back_img: "img/slider/1.jpg",
+            img: "img/brands/4.png"
+        },
+        {
+            back_img: "img/slider/2.jpg",
+            img: "img/brands/5.png"
+        },
+        {
+            back_img: "img/slider/3.jpg",
+            img: "img/brands/6.png"
+        },
+                       ];
 })
 
 .controller('FeatureCtrl', function ($scope, TemplateService) {

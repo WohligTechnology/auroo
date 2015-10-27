@@ -63,32 +63,32 @@
     <div class="container">
         <div class="excul-slide">
             <div class="row">
-<!--                <flex-slider animation="slide" flex-slide="pros in slide">-->
-                    <div class="col-md-3" ng-repeat="pro in products">
-                        <a href="">
-                            <div class="products">
-                                <div class="pro-img">
-                                    <img ng-src="{{pro.img}}" alt="Products" class="img-responsive">
-                                </div>
-                                <div class="pro-hov text-center text-uppercase">
-                                    <div class="pro-detail">
-                                        <p>{{pro.name}}</p>
-                                        <p>Rs: {{pro.price}}</p>
-                                        <div class="star">
-                                            <a href=""><i class="fa fa-star-o"></i></a>
-                                            <a href=""><i class="fa fa-star-o"></i></a>
-                                            <a href=""><i class="fa fa-star-o"></i></a>
-                                            <a href=""><i class="fa fa-star-o"></i></a>
-                                            <a href=""><i class="fa fa-star-o"></i></a>
-                                        </div>
-                                        <p>add to cart</p>
-                                        <!--                                <p>Out of stock</p>-->
+                <!--                <flex-slider animation="slide" flex-slide="pros in slide">-->
+                <div class="col-md-3" ng-repeat="pro in products">
+                    <a href="">
+                        <div class="products">
+                            <div class="pro-img">
+                                <img ng-src="{{pro.img}}" alt="Products" class="img-responsive">
+                            </div>
+                            <div class="pro-hov text-center text-uppercase">
+                                <div class="pro-detail">
+                                    <p>{{pro.name}}</p>
+                                    <p>Rs: {{pro.price}}</p>
+                                    <div class="star">
+                                        <a href=""><i class="fa fa-star-o"></i></a>
+                                        <a href=""><i class="fa fa-star-o"></i></a>
+                                        <a href=""><i class="fa fa-star-o"></i></a>
+                                        <a href=""><i class="fa fa-star-o"></i></a>
+                                        <a href=""><i class="fa fa-star-o"></i></a>
                                     </div>
+                                    <p>add to cart</p>
+                                    <!--                                <p>Out of stock</p>-->
                                 </div>
                             </div>
-                        </a>
-                    </div>
-<!--                </flex-slider>-->
+                        </div>
+                    </a>
+                </div>
+                <!--                </flex-slider>-->
             </div>
         </div>
     </div>
@@ -97,15 +97,16 @@
     <div class="pop-pro products-name">
         <p class="text-center text-uppercase">popular products</p>
     </div>
-    <div class="brand-list">
+    <div class="brand-list" ng-repeat="brand in brandlist">
+        <div class="back-img">
+            <img ng-src="{{brand.back_img}}" alt="Brand" class="img-responsive">
+        </div>
         <div class="container">
-            <ul class="list">
-                <li>
-                    <div class="list-content">
-                        <div class="container"></div>
-                    </div>
-                </li>
-            </ul>
+            <div class="brand-list">
+                <div class="brand-img">
+                    <img ng-src="{{brand.img}}" alt="Brand" class="img-responsive">
+                </div>
+            </div>
         </div>
     </div>
 </div>
