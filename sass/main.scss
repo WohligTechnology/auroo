@@ -86,6 +86,15 @@
      margin-right: 5px;
  }
  //style
+ .nav {
+     li {
+         a {
+             &:hover {
+                 @include transition(all 500ms linear);
+             }
+         }
+     }
+ }
  header {
      width: 100%;
      position: fixed;
@@ -206,16 +215,37 @@
      }
  }
  .brand-list {
-     height: 180px;
+     height: 200px;
+     position: relative;
      overflow: hidden;
+     border-bottom: 1px solid $footer-color;
+     border-top: 1px solid $footer-color;
      &:hover .back-img {
          @include transform(translate(0, -80px));
          @include transition(all 2s ease-in-out);
+         opacity: 1;
+     }
+     &:hover .list-brand {
+         background-color: transparent;
      }
      .back-img {
+         position: absolute;
+         top: 0;
+         left: 0;
+         opacity: 0;
+         z-index: -1;
          img {
              @include transform(translate(0, 0));
              @include transition(all 2s ease-in-out);
+         }
+     }
+     .list-brand {
+         background-color: #fff;
+         .brand-img {
+             margin: 50px 0;
+             img {
+                 width: 14%
+             }
          }
      }
  }
