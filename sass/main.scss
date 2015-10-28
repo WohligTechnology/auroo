@@ -2,14 +2,24 @@
  
  @import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
  @include font-face("PF", "../fonts/PlayfairDisplay-BlackItalic");
+ @include font-face("RB", "../fonts/Roboto");
  @import "../bower_components/bootstrap/dist/css/bootstrap.min.css";
  @import "../bower_components/flexslider/flexslider.css";
  @import "../bower_components/fontawesome/css/font-awesome.min.css";
  $font-italic: "Playfair Display";
+ $font-whole: "Roboto";
  $main-color: #ED3237;
  $footer-color: #B1B0B0;
+ $category-color: #F37351;
+ $menu-color: #222;
  body {
      padding-top: 70px;
+     font-family: $font-whole;
+ }
+ 
+ a {
+     font-family: $font-whole;
+     font-weight: 400;
  }
  
  img.loading {
@@ -83,19 +93,61 @@
      background-color: transparent;
  }
  
- .navbar-nav>li>a {
-     padding: 7px 15px;
+ .navbar-nav>li {
+     padding: 10px 25px;
+ }
+ 
+ .navbar-nav>li > a {
+     color: $menu-color;
+     padding: 0;
+     border-bottom: 1px dotted transparent;
      &:hover {
-         color: $main-color;
+         opacity: 1;
+         color: $menu-color;
+         border-bottom: 1px dotted $menu-color;
+         @include transition(all 500ms ease-in-out);
      }
  }
  
- .flex-direction-nav .flex-prev {
-     left: 0;
+ .slider {
+     .flex-control-nav {
+         bottom: 50px;
+     }
+     .flex-control-paging li a.flex-active {
+         background: #fff;
+     }
+     .flex-direction-nav a {
+         text-align: center;
+         opacity: 1;
+         height: auto;
+         padding: 50px 0;
+         background-color: rgba(0, 0, 0, .7);
+         @include transform(translateY(-50%));
+     }
+     .flex-direction-nav a:before,
+     a:after {
+         font-size: 18px;
+         color: #fff;
+     }
+     .flex-direction-nav .flex-prev {
+         left: 0;
+     }
+     .flex-direction-nav .flex-next {
+         right: 0;
+     }
+     .flexslider:hover .flex-direction-nav .flex-next {
+         right: 0;
+         opacity: 1;
+     }
+     .flexslider:hover .flex-direction-nav .flex-prev {
+         left: 0;
+         opacity: 1;
+     }
  }
  
- .flex-direction-nav .flex-next {
-     right: 0;
+ .flexslider {
+     margin: 0;
+     border: none;
  }
  
  .carousel li {
@@ -107,10 +159,6 @@
  }
  
  //style
- .nav li a:hover {
-     @include transition(all 500ms ease-in-out);
- }
- 
  header {
      width: 100%;
      position: fixed;
@@ -121,17 +169,7 @@
  }
  
  .mgtb {
-     margin-top: 35px;
-     margin-bottom: 30px;
- }
- 
- .mgtb {
-     a {
-         border-bottom: 1px solid transparent;
-         &:hover {
-             border-bottom: 1px solid $main-color;
-         }
-     }
+     margin: 19px 0;
  }
  
  .italic {
@@ -140,6 +178,11 @@
      font-style: italic;
      font-size: 21px;
      font-weight: 700;
+ }
+ 
+ .search-icon {
+     margin-top: 8px;
+     display: inline-block;
  }
  
  .noborder {
@@ -151,15 +194,19 @@
      padding: 0;
  }
  
+ .message {
+     margin: 6px 0;
+ }
+ 
  .subscribe {
      @extend.noborder;
      border: none;
      background-color: #ebebeb;
      text-transform: uppercase;
-     font-size: 15px;
-     font-weight: 600;
+     font-size: 13px;
+     letter-spacing: 1px;
      line-height: 22px;
-     padding: 12px 10px;
+     padding: 12px 14px;
  }
  
  .mail {
@@ -184,16 +231,24 @@
  .products-name {
      margin: 25px 0;
      font-size: 17px;
+     p {
+         display: inline-block;
+         border-bottom: 1px dotted #222;
+     }
  }
  
  .products {
      height: 350px;
-     border: 1px solid #000;
-     margin: 35px 0;
+     margin: 35px 25px;
      position: relative;
      overflow: hidden;
      font-weight: 700;
      letter-spacing: 2px;
+     cursor: pointer;
+     border: 5px hidden transparent;
+     &:hover {
+         border: 5px solid lighten($footer-color, 27%);
+     }
      &:hover .pro-hov {
          opacity: 1;
      }
@@ -213,7 +268,7 @@
      }
      .pro-hov {
          opacity: 0;
-         background-color: rgba(0, 0, 0, .7);
+         background-color: rgba(255, 255, 255, .9);
          position: relative;
          height: 350px;
          .pro-detail {
@@ -222,23 +277,27 @@
              left: 50%;
              @include transform(translate(-50%, -50%));
              p {
-                 color: $footer-color;
+                 color: #000;
                  margin: 12px 0;
                  cursor: pointer;
                  &:hover {
                      color: $main-color;
                  }
              }
-             .star {
-                 a {
-                     color: $footer-color;
-                     &:hover {
-                         color: $main-color;
-                     }
+             a {
+                 margin: 4px 0;
+                 display: inline-block;
+                 color: #000;
+                 &:hover {
+                     color: $main-color;
                  }
              }
          }
      }
+ }
+ 
+ .exculsive {
+     margin-bottom: 7%;
  }
  
  .brand-list {
@@ -247,6 +306,7 @@
      overflow: hidden;
      border-top: 1px solid $footer-color;
      border-bottom: 1px solid $footer-color;
+     cursor: pointer;
      &:hover .back-img {
          @include transform(translate(0, -80px));
          @include transition(all 2.5s ease-in-out);
@@ -372,20 +432,26 @@
      }
  }
  
- .contact {
-     .back-contact {
-         min-height: 500px;
-         position: relative;
-         background: url('../img/contactus.jpg') no-repeat top center;
-         background-attachment: fixed;
-         background-size: 100% 100%;
-         .cont-head {
-             position: absolute;
-             top: 50%;
-             left: 50%;
-             @include transform(translate(-50%, -50%));
+ .back-contact {
+     min-height: 500px;
+     position: relative;
+     background: url('../img/contactus.jpg') no-repeat top center;
+     background-attachment: fixed;
+     background-size: 100% 100%;
+     .cont-head {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         @include transform(translate(-50%, -50%));
+         h2 {
+             color: #fff;
+             letter-spacing: 15px;
+             font-size: 35px;
          }
      }
+ }
+ 
+ .contact {
      .map {
          margin: 5% 0;
      }
@@ -422,5 +488,61 @@
                  resize: none;
              }
          }
+     }
+ }
+ 
+ .cat {
+     min-height: 350px;
+     background: url('../img/category.jpg') no-repeat;
+     background-attachment: fixed;
+ }
+ 
+ .pro-list {
+     .products {
+         height: 300px;
+         margin: 35px 0;
+         border: 3px solid transparent;
+         &:hover {
+             border: 3px solid lighten($footer-color, 27%);
+         }
+     }
+ }
+ 
+ .cat-list {
+     padding: 4%;
+     margin: 38px 0 0;
+     background-color: $category-color;
+     .panel-default>.panel-heading {
+         background-color: transparent;
+         border-radius: 0;
+         color: #fff;
+     }
+     .panel-group .panel {
+         background-color: transparent;
+         border-top: 1px solid transparent;
+         border-left: 1px solid transparent;
+         border-right: 1px solid transparent;
+         border-bottom: 1px dotted #fff;
+     }
+     i {
+         color: #fff;
+     }
+     a {
+         color: #fff;
+     }
+ }
+ 
+ .button {
+     border: 1px solid #222;
+     color: #222;
+     padding: 15px 30px;
+     letter-spacing: 2px;
+     font-size: 16px;
+     font-weight: 500;
+     text-transform: uppercase;
+     &:hover {
+         background-color: #222;
+         color: #fff;
+         @include transition(all 300ms linear);
      }
  }

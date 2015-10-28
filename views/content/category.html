@@ -1,0 +1,125 @@
+<div class="category">
+    <div class="back-contact cat">
+        <div class="cont-head text-uppercase">
+            <h2>Categories</h2>
+        </div>
+    </div>
+    <div class="categ-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="cat-list">
+                        <!--
+                        <uib-accordion>
+                            <uib-accordion-group>
+                                <uib-accordion-heading>Shoes<i class="pull-right glyphicon" ng-class="{'glyphicon glyphicon-minus':status.open,'glyphicon glyphicon-plus': !status.open}"></i></uib-accordion-heading>
+                                <p>hello</p>
+                                <p>hello</p>
+                                <p>hello</p>
+                            </uib-accordion-group>
+                            <uib-accordion>
+-->
+                        <accordion close-others="oneAtATime">
+                            <accordion-group>
+                                <accordion-heading>Bags <i class="pull-right glyphicon" ng-class="{' glyphicon glyphicon-minus':status.open, ' glyphicon glyphicon-plus': !status.open}"></i> </accordion-heading>
+
+                                <ul>
+                                    <li>
+                                        <a href="">1</a>
+                                        <a href="">2</a>
+                                        <a href="">3</a>
+                                        <a href="">4</a>
+                                        <a href="">5</a>
+                                    </li>
+                                </ul>
+                            </accordion-group>
+                            <accordion-group>
+                                <accordion-heading>Watches <i class="pull-right glyphicon" ng-class="{'glyphicon glyphicon-minus':status.open,'glyphicon glyphicon-plus':!status.open}"></i></accordion-heading>
+
+                                <ul>
+                                    <li>
+                                        <a href="">1</a>
+                                        <a href="">2</a>
+                                        <a href="">3</a>
+                                        <a href="">4</a>
+                                        <a href="">5</a>
+                                    </li>
+                                </ul>
+                            </accordion-group>
+                            <accordion-group>
+                                <accordion-heading>T-Shirts<i class="pull-right glyphicon" ng-class="{'glyphicon glyphicon-minus':status.open,'glyphicon glyphicon-plus':!status.open}"></i></accordion-heading>
+
+                                <ul>
+                                    <li>
+                                        <a href="">1</a>
+                                        <a href="">2</a>
+                                        <a href="">3</a>
+                                        <a href="">4</a>
+                                        <a href="">5</a>
+                                    </li>
+                                </ul>
+                            </accordion-group>
+                            <accordion-group>
+                                <accordion-heading>Shoes <i class="pull-right glyphicon" ng-class="{'glyphicon glyphicon-minus':status.open,'glyphicon glyphicon-plus':!status.open}"></i></accordion-heading>
+
+
+                                <ul>
+                                    <li>
+                                        <a href="">1</a>
+                                        <a href="">2</a>
+                                        <a href="">3</a>
+                                        <a href="">4</a>
+                                        <a href="">5</a>
+                                    </li>
+                                </ul>
+                            </accordion-group>
+                            <accordion-group>
+                                <accordion-heading>Jackets <i class="pull-right glyphicon" ng-class="{'glyphicon glyphicon-minus':status.open,'glyphicon glyphicon-plus':!status.open}"></i></accordion-heading>
+
+                                <ul>
+                                    <li>
+                                        <a href="">1</a>
+                                        <a href="">2</a>
+                                        <a href="">3</a>
+                                        <a href="">4</a>
+                                        <a href="">5</a>
+                                    </li>
+                                </ul>
+                            </accordion-group>
+                        </accordion>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-4" ng-repeat="pros in products">
+                            <div class="pro-list">
+                                <a href="">
+                                    <div class="products">
+                                        <div class="pro-img">
+                                            <img ng-src="{{pros.img}}" alt="Products" class="img-responsive">
+                                        </div>
+                                        <div class="pro-hov text-center text-uppercase">
+                                            <div class="pro-detail">
+                                                <p>{{pros.name}}</p>
+                                                <p>Rs: {{pros.price}}</p>
+                                                <div class="star">
+                                                    <a href=""><i class="fa fa-star-o"></i></a>
+                                                    <a href=""><i class="fa fa-star-o"></i></a>
+                                                    <a href=""><i class="fa fa-star-o"></i></a>
+                                                    <a href=""><i class="fa fa-star-o"></i></a>
+                                                    <a href=""><i class="fa fa-star-o"></i></a>
+                                                </div>
+                                                <a href="">enquire now</a>
+                                                <!--                                <p>Out of stock</p>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

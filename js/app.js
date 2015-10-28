@@ -24,6 +24,17 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
         templateUrl: "views/template.html",
         controller: 'ContactUsCtrl'
     })
+    .state('category', {
+        url: "/category",
+        templateUrl: "views/template.html",
+        controller: 'CategoryCtrl'
+    })
+
+    .state('brands', {
+        url: "/brands",
+        templateUrl: "views/template.html",
+        controller: 'BrandsCtrl'
+    })
 
     $urlRouterProvider.otherwise("/home");
 
