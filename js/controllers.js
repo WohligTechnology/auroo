@@ -7,10 +7,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
 
-    $scope.slides = [
-        'img/home-slide/slider1.jpg',
-        'img/home-slide/slider2.jpg',
-        'img/home-slide/slider3.jpg'
+    $scope.slides = [{
+            img: 'img/home-slide/slider1.jpg',
+            tag_head: "new products released",
+            tagline1: "redwing leather shoes"
+    },
+        {
+            img: 'img/home-slide/slider2.jpg',
+            tag_head: "Ona Leathershop Presents",
+            tagline1: "The berlin ii bourban"
+
+       }, {
+            img: 'img/home-slide/slider3.jpg',
+            tag_head: "new products released",
+            tagline1: "Redwing leather shoes"
+       }
+
     ];
     $scope.products = [
         {

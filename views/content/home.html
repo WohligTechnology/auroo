@@ -1,8 +1,18 @@
 <div class="slider">
     <flex-slider class="carousel" flex-slide="s in slides track by $index" animation="slide" animation-loop="true">
         <li>
-            <img ng-src="{{s}}">
+            <div class="slider-home">
+                <img ng-src="{{s.img}}">
+                <div class="slide-tagline text-uppercase text-center">
+                    <span class="text-capitalize">{{s.tag_head}}</span>
+                    <p>{{s.tagline1}}</p>
+                    <div class="text-center mgtb">
+                        <a href="" class="button shop">shop now</a>
+                    </div>
+                </div>
+            </div>
         </li>
+
     </flex-slider>
 </div>
 <div class="message">
@@ -52,15 +62,15 @@
             </div>
         </div>
         <div class="on-demand products-name text-center">
-            <p class=" text-uppercase">On demand</p>
+            <p class="head text-uppercase">On demand</p>
         </div>
     </div>
 </div>
 <div class="exculsive">
     <div class="pra-excul products-name text-center">
-        <p class=" text-uppercase">euro pratik <span class="main-color">exculsive products</span></p>
+        <p class="head text-uppercase">euro pratik <span class="main-color">exculsive products</span></p>
     </div>
-    <div class="container"> 
+    <div class="container">
         <div class="excul-slide">
             <div class="row">
                 <flex-slider flex-slide="pros in products track by $index" animation="slide" animation-loop="false" item-width="390" item-margin="0" as-nav-for="#slider" slideshow="false" direction-nav="false">
@@ -98,7 +108,7 @@
 </div>
 
 <div class="pop-pro products-name text-center">
-    <p class="text-uppercase">popular products</p>
+    <p class="text-uppercase head">popular products</p>
 </div>
 <div class="brand-list" ng-repeat="brand in brandlist">
     <div class="list-brand">

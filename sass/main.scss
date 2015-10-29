@@ -110,6 +110,34 @@
  }
  
  .slider {
+     .slider-home {
+         position: relative;
+         .slide-tagline {
+             color: #fff;
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             @include transform(translate(-50%, -50%));
+             span {
+                 font-style: italic;
+                 font-size: 22px;
+             }
+             p {
+                 letter-spacing: 4px;
+                 font-size: 45px;
+             }
+         }
+     }
+     .shop {
+         font-size: 11px;
+         border: 2px solid #fff;
+         color: #fff;
+         &:hover {
+             opacity: 1;
+             background-color: #fff;
+             color: #000;
+         }
+     }
      .flex-control-nav {
          bottom: 50px;
      }
@@ -119,7 +147,7 @@
      .flex-direction-nav a {
          text-align: center;
          opacity: 1;
-         height: auto;
+         height: 125px;
          padding: 50px 0;
          background-color: rgba(0, 0, 0, .7);
          @include transform(translateY(-50%));
@@ -142,6 +170,14 @@
      .flexslider:hover .flex-direction-nav .flex-prev {
          left: 0;
          opacity: 1;
+     }
+     .flex-prev {
+         color: rgba(0, 0, 0, 0);
+         text-shadow: none;
+     }
+     .flex-next {
+         color: rgba(0, 0, 0, 0);
+         text-shadow: none;
      }
  }
  
@@ -166,6 +202,11 @@
      background-color: #fff;
      z-index: 99;
      box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.25);
+     .search-box {
+         position: absolute;
+         top: -40px;
+         background-color: #fff;
+     }
  }
  
  .mgtb {
@@ -231,10 +272,12 @@
  .products-name {
      margin: 25px 0;
      font-size: 17px;
-     p {
-         display: inline-block;
-         border-bottom: 1px dotted #222;
-     }
+ }
+ 
+ .head {
+     border-bottom: 2px dotted #222;
+     display: inline-block;
+     letter-spacing: 4px;
  }
  
  .products {
@@ -251,6 +294,7 @@
      }
      &:hover .pro-hov {
          opacity: 1;
+         @include transition(all 1s ease-in-out);
      }
      &:hover .pro-img {
          img {
@@ -277,14 +321,18 @@
              left: 50%;
              @include transform(translate(-50%, -50%));
              p {
-                 color: #000;
+                 color: $menu-color;
                  margin: 12px 0;
+                 font-size: 14px;
+                 font-weight: 500;
+                 line-height: 20px;
                  cursor: pointer;
                  &:hover {
                      color: $main-color;
                  }
              }
              a {
+                 font-size: 14px;
                  margin: 4px 0;
                  display: inline-block;
                  color: #000;
@@ -298,6 +346,9 @@
  
  .exculsive {
      margin-bottom: 7%;
+     .flex-control-paging li a.flex-active {
+         background-color: $category-color;
+     }
  }
  
  .brand-list {
@@ -342,7 +393,7 @@
      padding: 20px 0;
      background-color: #1b1b1b;
      color: $footer-color;
-     .social-icon {
+     .payment {
          margin: 0;
          li {
              margin-left: 5px;
@@ -350,6 +401,14 @@
              a {
                  color: #fff;
              }
+         }
+     }
+     a {
+         &:hover {
+             color: $main-color;
+             opacity: 1;
+             text-decoration: underline;
+             @include transition(all 300ms ease-in-out);
          }
      }
  }
@@ -372,9 +431,36 @@
              }
          }
      }
+     address {
+         margin: 20px 0;
+         padding: 20px 0;
+         position: relative;
+         &:before {
+             content: " ";
+             width: 64px;
+             height: 2px;
+             border-top: 2px dotted $footer-color;
+             position: absolute;
+             top: 0;
+             left: 0;
+         }
+         &:after {
+             content: " ";
+             width: 64px;
+             height: 2px;
+             border-bottom: 2px dotted $footer-color;
+             position: absolute;
+             bottom: 10px;
+         }
+     }
      .foot-links {
-         a {
-             color: $footer-color;
+         .aboutus {
+             li {
+                 line-height: 30px;
+                 a {
+                     color: $footer-color;
+                 }
+             }
          }
      }
      .abt {
@@ -430,6 +516,30 @@
              }
          }
      }
+     .scroll-top {
+         position: fixed;
+         right: 20px;
+         bottom: 50px;
+         .scrollToTop {
+             width: 50px;
+             height: 50px;
+             padding: 7px;
+             border-radius: 100%;
+             display: inline-block;
+             background-color: $category-color;
+             color: #fff;
+             text-align: center;
+             text-transform: uppercase;
+             i {
+                 display: block;
+             }
+             &:hover {
+                 background-color: #000;
+                 color: $category-color;
+                 opacity: 1;
+             }
+         }
+     }
  }
  
  .back-contact {
@@ -446,14 +556,29 @@
          h2 {
              color: #fff;
              letter-spacing: 15px;
-             font-size: 35px;
+             font-size: 60px;
          }
      }
  }
  
+ .submit-btn {
+     margin: 50px 0;
+ }
+ 
  .contact {
-     .map {
-         margin: 5% 0;
+     .info {
+         margin-bottom: 50px;
+         font-size: 20px;
+         letter-spacing: 6px;
+         font-weight: 500;
+         line-height: 36px;
+     }
+     .comp-add {
+         margin-top: 10%;
+     }
+     .office {
+         font-size: 13px;
+         letter-spacing: 1px;
      }
      address {
          span {
@@ -465,26 +590,33 @@
                  text-transform: none;
              }
          }
+         i {
+             margin-right: 5px;
+             color: $category-color;
+         }
      }
      .get-in-touch {
-         margin: 50px 0;
+         margin-top: -6px;
+         padding: 80px 0;
+         background-color: #f1f1f1;
          text-transform: uppercase;
          .form-control {
              @extend.noborder;
          }
          .separte {
-             margin: 25px 0;
+             margin: 20px 0;
              span {
                  margin: 5px 0;
                  display: block;
-                 font-size: 15px;
+                 font-size: 11px;
+                 line-height: 45px;
                  letter-spacing: 2px;
              }
              input {
-                 min-height: 50px
+                 min-height: 60px
              }
              textarea {
-                 min-height: 257px;
+                 min-height: 330px;
                  resize: none;
              }
          }
@@ -504,6 +636,13 @@
          border: 3px solid transparent;
          &:hover {
              border: 3px solid lighten($footer-color, 27%);
+         }
+         .pro-hov {
+             .pro-detail {
+                 a {
+                     font-size: 13px;
+                 }
+             }
          }
      }
  }
@@ -535,10 +674,10 @@
  .button {
      border: 1px solid #222;
      color: #222;
-     padding: 15px 30px;
+     padding: 10px 20px;
+     display: inline-block;
      letter-spacing: 2px;
      font-size: 16px;
-     font-weight: 500;
      text-transform: uppercase;
      &:hover {
          background-color: #222;
