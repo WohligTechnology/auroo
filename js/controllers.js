@@ -6,6 +6,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Home");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.products = false ;
+        $scope.pro = function(open) {
+            $scope.products = open;
+        }
 
     $scope.slides = [{
             img: 'img/home-slide/slider1.jpg',
