@@ -95,8 +95,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 })
 
 .controller('ContactUsCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
-        $scope.template = TemplateService.changecontent("contactus");
-        $scope.menutitle = NavigationService.makeactive("Contact-Us");
+    $scope.template = TemplateService.changecontent("contactus");
+    $scope.menutitle = NavigationService.makeactive("Contact-Us");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+})
+
+.controller('QuickviewCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+        $scope.template = TemplateService.changecontent("quickview");
+        $scope.menutitle = NavigationService.makeactive("QuickView");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
     })
@@ -105,6 +112,62 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Brands");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        $scope.brandlist = [
+            {
+                img: 'img/brands/18.png'
+
+            }, {
+                img: 'img/brands/1.png'
+                },
+            {
+                img: 'img/brands/2.png'
+                },
+            {
+                img: 'img/brands/3.png'
+                },
+            {
+                img: 'img/brands/4.png'
+                },
+            {
+                img: 'img/brands/5.png'
+                },
+            {
+                img: 'img/brands/6.png'
+                },
+            {
+                img: 'img/brands/7.png'
+                },
+            {
+                img: 'img/brands/8.png'
+                },
+            {
+                img: 'img/brands/9.png'
+                },
+            {
+                img: 'img/brands/10.png'
+                },
+            {
+                img: 'img/brands/11.png'
+                },
+            {
+                img: 'img/brands/12.png'
+                },
+            {
+                img: 'img/brands/13.png'
+                },
+            {
+                img: 'img/brands/14.png'
+                },
+            {
+                img: 'img/brands/15.png'
+                },
+            {
+                img: 'img/brands/16.png'
+                },
+            {
+                img: 'img/brands/17.png'
+                }
+            ];
     })
     .controller('CategoryCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
         $scope.template = TemplateService.changecontent("category");
@@ -157,6 +220,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     })
     .controller('headerctrl', function ($scope, TemplateService) {
         $scope.template = TemplateService;
+        $scope.search = false;
+        $scope.open = function (box) {
+            $scope.search = box;
+        }
     })
 
 ;
+//$scope.toggle = function (flag) {
+//    //            if (flag = true) {
+//    //                $scope.showsearch = !$scope.showsearch;
+//    //            } else {
+//    $scope.showsearch = flag;
+//    //            }
+//}

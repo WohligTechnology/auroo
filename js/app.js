@@ -35,6 +35,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
         templateUrl: "views/template.html",
         controller: 'BrandsCtrl'
     })
+    .state('quickview', {
+        url: "/quickview",
+        templateUrl: "views/template.html",
+        controller: 'QuickviewCtrl'
+    })
 
     $urlRouterProvider.otherwise("/home");
 
