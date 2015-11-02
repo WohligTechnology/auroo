@@ -1,15 +1,20 @@
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngSanitize', 'angular-flexslider'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngSanitize', 'ngDialog', 'angular-flexslider'])
 
-.controller('HomeCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+.controller('HomeCtrl', function ($scope, TemplateService, NavigationService, ngDialog, $timeout) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("home");
     $scope.menutitle = NavigationService.makeactive("Home");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.products = false ;
-        $scope.pro = function(open) {
-            $scope.products = open;
-        }
+    $scope.products = false;
+    $scope.pro = function (open) {
+        $scope.products = open;
+    }
+    $scope.open = function () {
+        ngDialog.open({
+            template: './views/content/quickview.html'
+        });
+    }
 
     $scope.slides = [{
             img: 'img/home-slide/slider1.jpg',
@@ -30,22 +35,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     ];
     $scope.products = [
         {
-            img: "img/Products/8.jpg",
+            img: "img/products/8.jpg",
             name: "Zara",
             price: "25000"
     },
         {
-            img: "img/Products/7.jpg",
+            img: "img/products/7.jpg",
             name: "Zara",
             price: "25000"
     },
         {
-            img: "img/Products/6.jpg",
+            img: "img/products/6.jpg",
             name: "Zara",
             price: "25000"
     },
         {
-            img: "img/Products/5.jpg",
+            img: "img/products/5.jpg",
             name: "Zara",
             price: "25000"
     },
@@ -55,17 +60,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             price: "25000"
     },
         {
-            img: "img/Products/3.jpg",
+            img: "img/products/3.jpg",
             name: "Zara",
             price: "25000"
     },
         {
-            img: "img/Products/2.jpg",
+            img: "img/products/2.jpg",
             name: "Zara",
             price: "25000"
     },
         {
-            img: "img/Products/1.jpg",
+            img: "img/products/1.jpg",
             name: "Zara",
             price: "25000"
     }
@@ -73,11 +78,50 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.brandlist = [
         {
             back_img: "img/slider/1.jpg",
-            img: "img/brands/1.png"
+            img: "img/brands/1.png",
+            products: [{
+                img: "img/products/8.jpg",
+                name: "Zara",
+                price: "25000"
+        }, {
+                img: "img/products/7.jpg",
+                name: "Zara",
+                price: "25000"
+        }, {
+                img: "img/products/6.jpg",
+                name: "Zara",
+                price: "25000"
+        }, {
+                img: "img/products/5.jpg",
+                name: "Zara",
+                price: "25000"
+        }]
         },
         {
             back_img: "img/slider/2.jpg",
-            img: "img/brands/2.png"
+            img: "img/brands/2.png",
+            products: [
+                {
+                    img: "img/products/5.jpg",
+                    name: "Zara",
+                    price: "25000"
+    },
+                {
+                    img: "img/Products/4.jpg",
+                    name: "Zara",
+                    price: "25000"
+    },
+                {
+                    img: "img/products/3.jpg",
+                    name: "Zara",
+                    price: "25000"
+    },
+                {
+                    img: "img/products/2.jpg",
+                    name: "Zara",
+                    price: "25000"
+    },
+            ]
         },
         {
             back_img: "img/slider/3.jpg",
@@ -96,6 +140,35 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             img: "img/brands/6.png"
         },
                        ];
+
+    $scope.producthov = [
+        {
+            img: "img/products/8.jpg",
+            name: "Zara",
+            price: "25000"
+        }, {
+            img: "img/products/7.jpg",
+            name: "Zara",
+            price: "25000"
+        }, {
+            img: "img/products/6.jpg",
+            name: "Zara",
+            price: "25000"
+        }, {
+            img: "img/products/5.jpg",
+            name: "Zara",
+            price: "25000"
+        }
+  ];
+
+    $scope.prosee = false;
+    $scope.proclick = function (view) {
+        if (view = true) {
+            $scope.prosee = !$scope.prosee;
+        } else {
+            $scope.prosee = view;
+        }
+    }
 })
 
 .controller('ContactUsCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
@@ -173,54 +246,60 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }
             ];
     })
-    .controller('CategoryCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+    .controller('CategoryCtrl', function ($scope, TemplateService, NavigationService, ngDialog, $timeout) {
         $scope.template = TemplateService.changecontent("category");
         $scope.menutitle = NavigationService.makeactive("Category");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.products = [
             {
-                img: "img/Products/8.jpg",
+                img: "img/products/8.jpg",
                 name: "Zara",
                 price: "25000"
     },
             {
-                img: "img/Products/7.jpg",
+                img: "img/products/7.jpg",
                 name: "Zara",
                 price: "25000"
     },
             {
-                img: "img/Products/6.jpg",
+                img: "img/products/6.jpg",
                 name: "Zara",
                 price: "25000"
     },
             {
-                img: "img/Products/5.jpg",
+                img: "img/products/5.jpg",
                 name: "Zara",
                 price: "25000"
     },
             {
-                img: "img/Products/4.jpg",
+                img: "img/products/4.jpg",
                 name: "Zara",
                 price: "25000"
     },
             {
-                img: "img/Products/3.jpg",
+                img: "img/products/3.jpg",
                 name: "Zara",
                 price: "25000"
     },
             {
-                img: "img/Products/2.jpg",
+                img: "img/products/2.jpg",
                 name: "Zara",
                 price: "25000"
     },
             {
-                img: "img/Products/1.jpg",
+                img: "img/products/1.jpg",
                 name: "Zara",
                 price: "25000"
     }
                       ];
         $scope.oneAtATime = true;
+        $scope.open = function () {
+            ngDialog.open({
+                template: './views/content/quickview.html'
+            });
+        };
+
     })
     .controller('headerctrl', function ($scope, TemplateService) {
         $scope.template = TemplateService;

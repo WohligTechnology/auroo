@@ -93,10 +93,9 @@
                                                 <a href=""><i class="fa fa-star-o"></i></a>
                                             </div>
                                             <a href="">Enquire Now</a>
-                                            <!--                                <p>Out of stock</p>-->
                                         </div>
                                         <div class="quick-view">
-                                            <a href="" class="eye"><i class="fa fa-eye"></i></a>
+                                            <a href="" ng-click="open();" class="eye"><i class="fa fa-eye"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -112,7 +111,8 @@
 <div class="pop-pro products-name text-center">
     <p class="text-uppercase head">popular products</p>
 </div>
-<div class="brand-list" ng-repeat="brand in brandlist">
+<!--
+<div class="brand-list" ng-repeat="brand in brandlist" ng-click="proclick(true)">
     <div class="list-brand">
         <div class="container">
             <div class="brand-img">
@@ -124,20 +124,19 @@
         <img ng-src="{{brand.back_img}}" alt="Brand" class="img-responsive">
     </div>
 </div>
-<!--
-<div class="hi">
+<div class="click-pro" ng-show="prosee">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4" ng-repeat="pros in products">
+            <div class="col-md-3" ng-repeat="proho in producthov">
                 <a href="">
                     <div class="products">
                         <div class="pro-img">
-                            <img ng-src="{{pros.img}}" alt="Products" class="img-responsive">
+                            <img ng-src="{{proho.img}}" alt="Products" class="img-responsive">
                         </div>
                         <div class="pro-hov text-center text-uppercase">
                             <div class="pro-detail">
-                                <p>{{pros.name}}</p>
-                                <p>Rs: {{pros.price}}</p>
+                                <p>{{proho.name}}</p>
+                                <p>Rs: {{proho.price}}</p>
                                 <div class="star">
                                     <a href=""><i class="fa fa-star-o"></i></a>
                                     <a href=""><i class="fa fa-star-o"></i></a>
@@ -146,10 +145,9 @@
                                     <a href=""><i class="fa fa-star-o"></i></a>
                                 </div>
                                 <a href="">Enquire Now</a>
-                                                                <p>Out of stock</p>
                             </div>
                             <div class="quick-view">
-                                <a href="" class="eye"><i class="fa fa-eye"></i></a>
+                                <a href="" ng-click="open();" class="eye"><i class="fa fa-eye"></i></a>
                             </div>
                         </div>
                     </div>
@@ -159,4 +157,52 @@
     </div>
 </div>
 -->
+
+<div ng-repeat="brand in brandlist">
+    <div class="brand-list"  ng-click="proclick(true)">
+        <div class="list-brand">
+            <div class="container">
+                <div class="brand-img">
+                    <img ng-src="{{brand.img}}" alt="Brand" class="img-responsive">
+                </div>
+            </div>
+        </div>
+        <div class="back-img">
+            <img ng-src="{{brand.back_img}}" alt="Brand" class="img-responsive">
+        </div>
+    </div>
+    <div class="click-pro" ng-show="prosee">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3" ng-repeat="proho in brand.products">
+                    <a href="">
+                        <div class="products">
+                            <div class="pro-img">
+                                <img ng-src="{{proho.img}}" alt="Products" class="img-responsive">
+                            </div>
+                            <div class="pro-hov text-center text-uppercase">
+                                <div class="pro-detail">
+                                    <p>{{proho.name}}</p>
+                                    <p>Rs: {{proho.price}}</p>
+                                    <div class="star">
+                                        <a href=""><i class="fa fa-star-o"></i></a>
+                                        <a href=""><i class="fa fa-star-o"></i></a>
+                                        <a href=""><i class="fa fa-star-o"></i></a>
+                                        <a href=""><i class="fa fa-star-o"></i></a>
+                                        <a href=""><i class="fa fa-star-o"></i></a>
+                                    </div>
+                                    <a href="">Enquire Now</a>
+                                </div>
+                                <div class="quick-view">
+                                    <a href="" ng-click="open();" class="eye"><i class="fa fa-eye"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 </div>

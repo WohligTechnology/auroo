@@ -9,16 +9,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="cat-list">
-                        <!--
-                        <uib-accordion>
-                            <uib-accordion-group>
-                                <uib-accordion-heading>Shoes<i class="pull-right glyphicon" ng-class="{'glyphicon glyphicon-minus':status.open,'glyphicon glyphicon-plus': !status.open}"></i></uib-accordion-heading>
-                                <p>hello</p>
-                                <p>hello</p>
-                                <p>hello</p>
-                            </uib-accordion-group>
-                            <uib-accordion>
--->
+
                         <accordion close-others="oneAtATime">
                             <accordion-group is-open="status.open">
                                 <accordion-heading>Bags <i class="pull-right glyphicon" ng-class="{' glyphicon glyphicon-minus':status.open, ' glyphicon glyphicon-plus': !status.open}"></i> </accordion-heading>
@@ -31,7 +22,7 @@
                                     <li><a href="">5</a></li>
                                 </ul>
                             </accordion-group>
-                            <accordion-group >
+                            <accordion-group>
                                 <accordion-heading>Watches <i class="pull-right glyphicon" ng-class="{'glyphicon glyphicon-minus':status.open,'glyphicon glyphicon-plus':!status.open}"></i></accordion-heading>
                                 <ul>
                                     <li><a href="">1</a></li>
@@ -96,6 +87,9 @@
                                                 </div>
                                                 <a href="">enquire now</a>
                                                 <!--                                <p>Out of stock</p>-->
+                                            </div>
+                                            <div class="quick-view">
+                                                <a href="" ng-click="open();" class="eye"><i class="fa fa-eye"></i></a>
                                             </div>
                                         </div>
                                     </div>
