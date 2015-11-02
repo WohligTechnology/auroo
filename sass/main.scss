@@ -55,6 +55,9 @@
  ul li {
      list-style-type: none;
  }
+ .block {
+     display: block;
+ }
  .nofocus:focus {
      outline: none;
      box-shadow: none;
@@ -62,6 +65,9 @@
  }
  .main-color {
      color: $main-color;
+ }
+ .category-color {
+     color: $category-color;
  }
  .search:focus {
      border-color: #ebebeb;
@@ -315,7 +321,7 @@
              }
          }
      }
-     .quick-view {
+     .view {
          position: absolute;
          bottom: 12px;
          right: 0;
@@ -559,7 +565,7 @@
      .info {
          margin-bottom: 50px;
          font-size: 20px;
-         letter-spacing: 6px;
+         letter-spacing: 4px;
          font-weight: 500;
          line-height: 36px;
      }
@@ -706,17 +712,29 @@
          position: relative;
          background-color: #fff;
          .close {
-             width: 30px;
-             height: 30px;
+             width: 40px;
+             height: 40px;
+             line-height: 35px;
              position: absolute;
              top: 0;
              right: 0;
+             opacity: 1;
+             text-shadow: none;
              text-align: center;
-             color: #000;
+             background-color: #000;
+             color: #fff;
              &:hover {
                  color: $category-color;
              }
+             .cross {
+                 font-size: 12px;
+             }
          }
+     }
+     .pro-spec {
+         padding-top: 20px;
+         border-top: 2px dotted #222;
+         margin-top: 20px;
      }
  }
  .ngdialog-close {
