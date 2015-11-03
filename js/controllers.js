@@ -12,7 +12,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }
     $scope.open = function () {
         ngDialog.open({
-            template: './views/content/quickview.html'
+            template: 'views/content/quickview.html'
         });
     }
 
@@ -55,7 +55,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             price: "25000"
     },
         {
-            img: "img/Products/4.jpg",
+            img: "img/products/4.jpg",
             name: "Zara",
             price: "25000"
     },
@@ -107,7 +107,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     price: "25000"
     },
                 {
-                    img: "img/Products/4.jpg",
+                    img: "img/products/4.jpg",
                     name: "Zara",
                     price: "25000"
     },
@@ -296,7 +296,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.oneAtATime = true;
         $scope.open = function () {
             ngDialog.open({
-                template: './views/content/quickview.html'
+                template: 'views/content/quickview.html'
             });
         };
 

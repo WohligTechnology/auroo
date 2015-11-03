@@ -4,6 +4,7 @@ var jsArray = [
     './bower_components/angular-flexslider/angular-flexslider.js',
     './bower_components/flexslider/jquery.flexslider-min.js',
     './bower_components/bootstrap/dist/js/bootstrap.min.js',
+    './bower_components/ngDialog/js/ngDialog.min.js',
     './bower_components/lodash/lodash.min.js',
     './bower_components/angular-sanitize/angular-sanitize.min.js',
     './bower_components/jquery/dist/jquery.js',
