@@ -1,8 +1,9 @@
 <div class="slider">
-    <flex-slider class="carousel" flex-slide="s in slides track by $index" animation="slide" animation-loop="true">
+    <flex-slider class="carousel" flex-slide="s in slides" animation="slide" animation-loop="true">
         <li>
+            <img ng-src="{{s}}">
+            <!--
             <div class="slider-home">
-                <img ng-src="{{s.img}}">
                 <div class="slide-tagline text-uppercase text-center">
                     <span class="text-capitalize">{{s.tag_head}}</span>
                     <p>{{s.tagline1}}</p>
@@ -11,6 +12,7 @@
                     </div>
                 </div>
             </div>
+-->
         </li>
 
     </flex-slider>
@@ -18,19 +20,19 @@
 <div class="message">
     <div class="container">
         <div class="row">
-            <div class="col-md-offset-4 col-md-8">
+            <div class="col-md-offset-2 col-md-8">
                 <div class="msg-me">
                     <div class="row">
-                        <div class="col-md-4 nomgpd">
+                        <div class="col-md-4 ">
                             <p class="italic font-italic">Join for our latest update</p>
                         </div>
                         <div class="col-md-8">
                             <div class="row">
                                 <form action="">
-                                    <div class="col-md-8 nomgpd">
+                                    <div class="col-md-8 ">
                                         <input type="text" class="form-control nofocus noborder mail" placeholder="Your email here..">
                                     </div>
-                                    <div class="col-md-4 nomgpd">
+                                    <div class="col-md-4 ">
                                         <button type="submit" class="subscribe nofocus">subscribe</button>
                                     </div>
                                 </form>
@@ -45,24 +47,16 @@
 <div class="demand">
     <div class="container-fluid ">
         <div class="row">
-            <div class="col-md-4">
-                <div class="arrival">
-                    <img src="img/newarrival.png" alt="Products" class="img-responsive">
+            <div class="col-md-6 col-sm-6">
+                <div class="pro">
+                    <img src="img/verenocm.png" alt="Products" class="img-responsive">
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="product">
-                    <img src="img/product.png" alt="Products" class="img-responsive">
+            <div class="col-md-6 col-sm-6">
+                <div class="pro">
+                    <img src="img/adhesive.png" alt="Products" class="img-responsive">
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="upcoming">
-                    <img src="img/upcoming.png" alt="Products" class="img-responsive">
-                </div>
-            </div>
-        </div>
-        <div class="on-demand products-name text-center">
-            <p class="head text-uppercase">On demand</p>
         </div>
     </div>
 </div>
@@ -73,43 +67,39 @@
     <div class="container">
         <div class="excul-slide">
             <div class="row">
-                <flex-slider flex-slide="pros in products track by $index" animation="slide" animation-loop="false" item-width="390" item-margin="0" as-nav-for="#slider" slideshow="false" direction-nav="false">
-                    <li>
-                        <div>
-                            <a href="">
-                                <div class="products">
-                                    <div class="pro-img">
-                                        <img ng-src="{{pros.img}}" alt="Products" class="img-responsive">
+                <div class="col-md-3 col-sm-4 col-xs-6" ng-repeat="pros in products">
+                    <a href="">
+                        <div class="products">
+                            <div class="pro-img">
+                                <img ng-src="{{pros.img}}" alt="Products" class="img-responsive">
+                            </div>
+                            <div class="pro-hov text-center text-uppercase">
+                                <div class="pro-detail">
+                                    <p>{{pros.name}}</p>
+                                    <p>Rs: {{pros.price}}</p>
+                                    <div class="star">
+                                        <a href=""><i class="fa fa-star-o"></i></a>
+                                        <a href=""><i class="fa fa-star-o"></i></a>
+                                        <a href=""><i class="fa fa-star-o"></i></a>
+                                        <a href=""><i class="fa fa-star-o"></i></a>
+                                        <a href=""><i class="fa fa-star-o"></i></a>
                                     </div>
-                                    <div class="pro-hov text-center text-uppercase">
-                                        <div class="pro-detail">
-                                            <p>{{pros.name}}</p>
-                                            <p>Rs: {{pros.price}}</p>
-                                            <div class="star">
-                                                <a href=""><i class="fa fa-star-o"></i></a>
-                                                <a href=""><i class="fa fa-star-o"></i></a>
-                                                <a href=""><i class="fa fa-star-o"></i></a>
-                                                <a href=""><i class="fa fa-star-o"></i></a>
-                                                <a href=""><i class="fa fa-star-o"></i></a>
-                                            </div>
-                                            <a href="">Enquire Now</a>
-                                        </div>
-                                        <div class="view">
-                                            <a href="" ng-click="open();" class="eye"><i class="fa fa-eye"></i></a>
-                                        </div>
-                                    </div>
+                                    <a href="">Enquire Now</a>
                                 </div>
-                            </a>
+                                <div class="view">
+                                    <a href="" ng-click="open();" class="eye"><i class="fa fa-eye"></i></a>
+                                </div>
+                            </div>
                         </div>
-                    </li>
-                </flex-slider>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 <div class="pop-pro products-name text-center">
-    <p class="text-uppercase head">popular products</p>
+    <p class="head text-uppercase">euro pratik <span class="main-color">popular products</span></p>
 </div>
 <!--
 <div class="brand-list" ng-repeat="brand in brandlist" ng-click="proclick(true)">
@@ -159,12 +149,10 @@
 -->
 
 <div ng-repeat="brand in brandlist">
-    <div class="brand-list"  ng-click="proclick(true)">
+    <div class="brand-list" ng-click="proclick(true)">
         <div class="list-brand">
-            <div class="container">
-                <div class="brand-img">
-                    <img ng-src="{{brand.img}}" alt="Brand" class="img-responsive">
-                </div>
+            <div class="brand-img">
+                <img ng-src="{{brand.img}}" alt="Brand" class="img-responsive">
             </div>
         </div>
         <div class="back-img">
@@ -201,6 +189,7 @@
                     </a>
                 </div>
             </div>
+            <p class="range">full range</p>
         </div>
     </div>
 </div>

@@ -40,6 +40,21 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
         templateUrl: "views/template.html",
         controller: 'QuickviewCtrl'
     })
+    .state('categorymain', {
+        url: "/categorymain",
+        templateUrl: "views/template.html",
+        controller: 'CategorymainCtrl'
+    })
+    .state('gallery', {
+        url: "/gallery",
+        templateUrl: "views/template.html",
+        controller: 'GalleryCtrl'
+    })
+    .state('galleryimage', {
+        url: "/galleryimage",
+        templateUrl: "views/template.html",
+        controller: 'GalleryimageCtrl'
+    })
 
     $urlRouterProvider.otherwise("/home");
 

@@ -1,11 +1,14 @@
  /*Start writing sass here*/
  
  @import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
- @include font-face("PF", "../fonts/PlayfairDisplay-BlackItalic");
- @include font-face("RB", "../fonts/Roboto");
+ // @include font-face("PF", "../fonts/PlayfairDisplay-BlackItalic");
+ // @include font-face("RB", "../fonts/Roboto");
+ @import url(https://fonts.googleapis.com/css?family=Roboto);
+ @import url(https://fonts.googleapis.com/css?family=Playfair+Display);
  @import "../bower_components/bootstrap/dist/css/bootstrap.min.css";
  @import "../bower_components/flexslider/flexslider.css";
  @import "../bower_components/fontawesome/css/font-awesome.min.css";
+ @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
  @import "../bower_components/ngDialog/css/ngDialog.css";
  $font-italic: "Playfair Display";
  $font-whole: "Roboto";
@@ -40,6 +43,7 @@
      color: pink;
  }
  a {
+     cursor: pointer;
      color: #000;
      &:hover {
          opacity: .7;
@@ -96,6 +100,9 @@
          border-bottom: 1px dotted $menu-color;
          @include transition(all 500ms ease-in-out);
      }
+ }
+ .navbar-brand {
+     padding: 11px;
  }
  .slider {
      .slider-home {
@@ -205,6 +212,55 @@
              }
          }
      }
+     .lh40 {
+         line-height: 40px;
+     }
+     .pd2 {
+         padding: 2px;
+         &:hover {
+             color: $category-color;
+             @include transition(all 500ms ease-in-out);
+         }
+     }
+     .head-icon {
+         li {
+             margin-left: 15px;
+             display: inline-block;
+             a.fb {
+                 &:hover {
+                     color: #3b5998;
+                 }
+             }
+             a.twi {
+                 &:hover {
+                     color: #00aced;
+                 }
+             }
+             a.google {
+                 &:hover {
+                     color: #d34836;
+                 }
+             }
+             a.youtube {
+                 &:hover {
+                     color: #cc181e;
+                 }
+             }
+             a.insta {
+                 &:hover {
+                     color: #125688;
+                 }
+             }
+         }
+     }
+     a {
+         &:hover {
+             @include transition(all 500ms ease-in-out);
+         }
+         .fa {
+             font-size: 16px;
+         }
+     }
  }
  .mgtb {
      margin: 19px 0;
@@ -217,7 +273,6 @@
      font-weight: 700;
  }
  .search-icon {
-     margin-top: 8px;
      display: inline-block;
  }
  .noborder {
@@ -250,8 +305,9 @@
      margin: 40px 0;
  }
  .products-name {
-     margin: 25px 0;
-     font-size: 17px;
+     margin: 30px 0;
+     font-size: 20px;
+     font-weight: 500;
  }
  .head {
      border-bottom: 2px dotted #222;
@@ -260,19 +316,20 @@
  }
  .products {
      height: 350px;
-     margin: 35px 25px;
+     margin: 35px 0;
      position: relative;
      overflow: hidden;
      font-weight: 700;
      letter-spacing: 2px;
      cursor: pointer;
-     border: 6px solid transparent;
+     border: 5px solid transparent;
      &:hover {
          border: 5px solid lighten($footer-color, 27%);
          @include transition(all 1s ease-in-out);
      }
      &:hover .pro-hov {
          opacity: 1;
+         @include transform(scale(1));
          @include transition(all 1s ease-in-out);
      }
      &:hover .pro-img {
@@ -287,6 +344,7 @@
              top: 50%;
              left: 50%;
              @include transform(translate(-50%, -50%) scale(1));
+             @include transition(all 1s ease-in-out);
          }
      }
      .pro-hov {
@@ -294,6 +352,7 @@
          background-color: rgba(255, 255, 255, .9);
          position: relative;
          height: 350px;
+         @include transition(all 1s ease-in-out);
          .pro-detail {
              position: absolute;
              top: 50%;
@@ -342,6 +401,13 @@
          }
      }
  }
+ .range {
+     margin: 20px;
+     color: $footer-color;
+     font-size: 15px;
+     text-transform: uppercase;
+     text-align: right;
+ }
  .exculsive {
      margin-bottom: 7%;
      .flex-control-paging li a.flex-active {
@@ -350,38 +416,22 @@
  }
  .brand-list {
      position: relative;
-     height: 200px;
-     overflow: hidden;
+     //     height: 200px;
+     //     overflow: hidden;
      border-top: 1px solid $footer-color;
      border-bottom: 1px solid $footer-color;
      cursor: pointer;
      &:hover .back-img {
-         @include transform(translate(0, -80px));
-         @include transition(all 2.5s ease-in-out);
-     }
-     &:hover .list-brand {
-         background-color: transparent;
-         @include transition(all 1.5s ease-in-out);
+         opacity: 1;
+         //         @include transform(translate(0, -80px));
+         @include transition(all 1s ease-in-out);
      }
      .back-img {
          position: absolute;
          top: 0;
          left: 0;
-         z-index: -1;
-         img {
-             @include transform(translate(0, 0));
-             @include transition(all 2.5s ease-in-out);
-         }
-     }
-     .list-brand {
-         min-height: 100%;
-         background-color: #fff;
-         .brand-img {
-             margin: 40px 0;
-             img {
-                 width: 14%;
-             }
-         }
+         opacity: 0;
+         @include transition(all 800ms ease-in-out);
      }
  }
  //footer-menu
@@ -402,7 +452,6 @@
      a {
          &:hover {
              color: $main-color;
-             opacity: 1;
              text-decoration: underline;
              @include transition(all 300ms ease-in-out);
          }
@@ -536,12 +585,13 @@
                  background-color: #000;
                  color: $category-color;
                  opacity: 1;
+                 @include transition(all 600ms ease-in-out);
              }
          }
      }
  }
  .back-contact {
-     min-height: 500px;
+     min-height: 400px;
      position: relative;
      background: url('../img/contactus.jpg') no-repeat top center;
      background-attachment: fixed;
@@ -563,14 +613,14 @@
  }
  .contact {
      .info {
-         margin-bottom: 50px;
+         margin-top: 3%;
          font-size: 20px;
-         letter-spacing: 4px;
          font-weight: 500;
+         letter-spacing: 4px;
          line-height: 36px;
      }
      .comp-add {
-         margin-top: 10%;
+         margin: 35px 0;
      }
      .office {
          font-size: 13px;
@@ -591,42 +641,41 @@
              color: $category-color;
          }
      }
-     .get-in-touch {
-         margin-top: -6px;
-         padding: 80px 0;
-         background-color: #f1f1f1;
-         text-transform: uppercase;
-         .form-control {
-             @extend.noborder;
+ }
+ .get-in-touch {
+     padding: 50px 0;
+     background-color: #f1f1f1;
+     text-transform: uppercase;
+     .form-control {
+         @extend.noborder;
+     }
+     .separte {
+         margin: 20px 0;
+         span {
+             margin: 5px 0;
+             display: block;
+             font-size: 11px;
+             line-height: 45px;
+             letter-spacing: 2px;
          }
-         .separte {
-             margin: 20px 0;
-             span {
-                 margin: 5px 0;
-                 display: block;
-                 font-size: 11px;
-                 line-height: 45px;
-                 letter-spacing: 2px;
-             }
-             input {
-                 min-height: 60px
-             }
-             textarea {
-                 min-height: 330px;
-                 resize: none;
-             }
+         input {
+             min-height: 60px
+         }
+         textarea {
+             min-height: 330px;
+             resize: none;
          }
      }
  }
  .cat {
-     min-height: 350px;
+     min-height: 400px;
      background: url('../img/category.jpg') no-repeat;
      background-attachment: fixed;
  }
  .pro-list {
      .products {
          height: 300px;
-         border: 4px solid transparent;
+         border: 3px solid transparent;
          margin: 35px 0;
          &:hover {
              border: 3px solid lighten($footer-color, 27%);
@@ -681,19 +730,19 @@
  }
  .brands {
      margin: 30px 0;
-     .img-holder {
-         width: 200px;
-         height: 200px;
-         margin: 25px auto;
-         position: relative;
-         img {
-             max-height: 100%;
-             position: absolute;
-             top: 50%;
-             left: 50%;
-             @include transform(translate(-50%,
-             -50%));
-         }
+ }
+ .img-holder {
+     width: 200px;
+     height: 200px;
+     margin: 25px auto;
+     position: relative;
+     img {
+         max-height: 100%;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         @include transform(translate(-50%,
+         -50%));
      }
  }
  .stars {
@@ -711,6 +760,9 @@
          padding: 25px;
          position: relative;
          background-color: #fff;
+         img {
+             margin: 0 auto;
+         }
          .close {
              width: 40px;
              height: 40px;
@@ -739,4 +791,132 @@
  }
  .ngdialog-close {
      display: none;
+ }
+ .title {
+     margin: 30px 0;
+ }
+ .cathold {
+     width: 250px;
+     height: 250px;
+     border: 2px solid lighten($footer-color, 20%);
+     a {
+         display: block;
+         opacity: 1;
+         img {
+             padding: 10px;
+         }
+     }
+ }
+ .fancy {
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-color: rgba(0, 0, 0, .1);
+     z-index: 1000;
+     .slide {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         @include transform(translate(-50%,
+         -50%));
+     }
+ }
+ .galimg {
+     .pop {
+         background-color: transparent;
+         .rel {
+             .flexslider .slides > li {
+                 min-height: 350px;
+                 position: relative;
+                 img {
+                     position: absolute;
+                     top: 50%;
+                     left: 50%;
+                     @include transform(translate(-50%,
+                     -50%));
+                 }
+             }
+             .flex-direction-nav a {
+                 width: 45px;
+                 height: 45px;
+             }
+             .flex-direction-nav .flex-prev {
+                 left: 0;
+             }
+             .flex-direction-nav .flex-next {
+                 right: 0;
+             }
+             .flexslider:hover .flex-direction-nav .flex-next {
+                 right: 0;
+                 opacity: 1;
+             }
+             .flexslider:hover .flex-direction-nav .flex-prev {
+                 left: 0;
+                 opacity: 1;
+             }
+         }
+     }
+ }
+ // @import 'mobile';
+ @media (max-width: 1200px) {
+     .navbar-nav li {
+         padding: 10px 15px;
+     }
+     .header .head-icon li {
+         margin-left: 10px;
+     }
+ }
+ @media (max-width: 992px) {
+     .navbar-nav li {
+         padding: 10px;
+         font-size: 12px;
+     }
+     .header .head-icon li {
+         margin-left: 7px;
+     }
+     .navbar-brand {
+         padding: 0;
+         margin-top: 20px;
+     }
+     .navbar-collapse {
+         padding: 0;
+     }
+     .slider .flex-direction-nav a {
+         height: 100px;
+         padding: 40px 0;
+     }
+     .products {
+         height: 300px;
+         margin: 20px 0;
+     }
+ }
+ @media (max-width: 768px) {
+     header .lh40 {
+         line-height: 0;
+         .mgtb {
+             margin-bottom: 10px;
+         }
+     }
+     .icon-bar {
+         background-color: #000;
+     }
+     .navbar-brand {
+         margin-top: 10px;
+         img {
+             width: 130px
+         }
+     }
+     .navbar-nav li {
+         text-align: center;
+     }
+     .slider .flex-direction-nav a {
+         width: 25px;
+         height: 80px;
+         padding: 30px 0;
+         &:before {
+             font-size: 14px;
+         }
+     }
  }

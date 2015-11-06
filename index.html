@@ -14,7 +14,6 @@
     <link rel="shortcut icon" href="img/euroicon.png" />
 
     <link rel="stylesheet" type="text" href="css/main.css" />
-
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-flexslider/angular-flexslider.js"></script>
@@ -23,15 +22,12 @@
     <script src="bower_components/ngDialog/js/ngDialog.min.js"></script>
     <script src="bower_components/lodash/lodash.min.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
-
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-
     <script src="bower_components/ui-router/release/angular-ui-router.min.js"></script>
-
+    <script src="bower_components/fancyBox/lib/jquery-1.10.2.min.js"></script>
 
     <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-
+    <script src="lib/js/ui-bootstrap-tpls.js"></script>
 
 
     <script src="js/app.js"></script>
@@ -41,6 +37,7 @@
 
     <script>
         var isproduction = false;
+
     </script>
     <!--[if IE]>
         <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -54,10 +51,10 @@
 
 </body>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
 
         //Check to see if the window is top if not then display button
-        $(window).scroll(function () {
+        $(window).scroll(function() {
             if ($(this).scrollTop() > 250) {
                 $('.scrollToTop').fadeIn();
             } else {
@@ -66,14 +63,15 @@
         });
 
         //Click event to scroll to top
-        $('.scrollToTop').click(function () {
+        $('.scrollToTop').click(function() {
             $('html, body').animate({
                 scrollTop: 0
-            },800);
+            }, 800);
             return false;
         });
 
     });
+
 </script>
 
 </html>
