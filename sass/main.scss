@@ -269,7 +269,7 @@
      margin: 7px 0;
      color: $main-color;
      font-style: italic;
-     font-size: 21px;
+     font-size: 20px;
      font-weight: 700;
  }
  .search-icon {
@@ -868,7 +868,14 @@
          margin-left: 10px;
      }
      .italic {
-         font-size: 18px;
+         font-size: 16px;
+     }
+     .products {
+         height: 300px;
+         margin: 25px 0;
+         .pro-hov {
+             height: 300px;
+         }
      }
  }
  @media (max-width: 992px) {
@@ -923,12 +930,72 @@
          }
      }
      .italic {
-         font-size: 17px;
+         margin-bottom: 10px;
+         font-size: 12px;
+         text-align: center;
+     }
+     .wd80 {
+         width: 80%;
+         margin: 0 auto;
+     }
+     .mail {
+         min-height: auto;
+         font-size: 12px;
+     }
+     .subscribe {
+         padding: 6px 10px;
+         font-size: 11px;
      }
      .products-name {
          font-size: 17px;
          p {
              letter-spacing: 2px;
          }
+     }
+ }
+ @media (max-width: 420px) {
+     //     .italic {
+     //         font-size: 13px;
+     //     }
+     //     .mail {
+     //         min-height: 30px;
+     //         font-size: 12px;
+     //     }
+     //     .subscribe {
+     //         padding: 6px 9px;
+     //         font-size: 10px;
+     //     }
+     .products {
+         height: 150px;
+         margin: 18px 0;
+         .pro-hov {
+             height: 150px;
+             .pro-detail {
+                 p {
+                     font-size: 11px;
+                     line-height: 10px;
+                 }
+                 .star {
+                     display: none;
+                 }
+                 a {
+                     font-size: 9px;
+                 }
+             }
+             .view {
+                 .eye {
+                     width: 25px;
+                     height: 25px;
+                     line-height: 25px;
+                     i {
+                         font-size: 11px;
+                     }
+                 }
+             }
+         }
+     }
+     .products-name {
+         margin: 10px 0;
+         font-size: 12px;
      }
  }
