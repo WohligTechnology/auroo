@@ -20,28 +20,35 @@
      padding-top: 70px;
      font-family: $font-whole;
  }
+ 
  a {
      font-family: $font-whole;
      font-weight: 400;
  }
+ 
  img.loading {
      text-align: center;
      opacity: 1;
      width: 32px !important;
      height: auto;
  }
+ 
  img.doneLoading {
      opacity: 1;
  }
+ 
  nav li:hover .dropdown-menu {
      display: block;
  }
+ 
  .font-italic {
      font-family: "Playfair Display";
  }
+ 
  h1 {
      color: pink;
  }
+ 
  a {
      cursor: pointer;
      color: #000;
@@ -49,47 +56,60 @@
          opacity: .7;
      }
  }
+ 
  p {
      margin: 0;
  }
+ 
  ul,
  ol {
      padding: 0;
  }
+ 
  ul li {
      list-style-type: none;
  }
+ 
  .block {
      display: block;
  }
+ 
  .nofocus:focus {
      outline: none;
      box-shadow: none;
      border-color: none;
  }
+ 
  .main-color {
      color: $main-color;
  }
+ 
  .category-color {
      color: $category-color;
  }
+ 
  .search:focus {
      border-color: #ebebeb;
  }
+ 
  a:hover,
  a:focus {
      text-decoration: none;
  }
+ 
  .navbar-brand:hover {
      opacity: 1;
  }
+ 
  .nav>li>a:focus,
  .nav>li>a:hover {
      background-color: transparent;
  }
+ 
  .navbar-nav>li {
      padding: 10px 25px;
  }
+ 
  .navbar-nav>li > a {
      color: $menu-color;
      padding: 0;
@@ -101,9 +121,11 @@
          @include transition(all 500ms ease-in-out);
      }
  }
+ 
  .navbar-brand {
      padding: 11px;
  }
+ 
  .slider {
      .slider-home {
          position: relative;
@@ -175,16 +197,20 @@
          text-shadow: none;
      }
  }
+ 
  .flexslider {
      margin: 0;
      border: none;
  }
+ 
  .carousel li {
      margin: 0;
  }
+ 
  .flex-control-nav li {
      margin-right: 5px;
  }
+ 
  //style
  header {
      width: 100%;
@@ -262,9 +288,11 @@
          }
      }
  }
+ 
  .mgtb {
      margin: 19px 0;
  }
+ 
  .italic {
      margin: 7px 0;
      color: $main-color;
@@ -272,19 +300,24 @@
      font-size: 20px;
      font-weight: 700;
  }
+ 
  .search-icon {
      display: inline-block;
  }
+ 
  .noborder {
      border-radius: 0;
  }
+ 
  .nomgpd {
      margin: 0;
      padding: 0;
  }
+ 
  .message {
      margin: 10px 0 0;
  }
+ 
  .subscribe {
      @extend.noborder;
      border: none;
@@ -295,25 +328,30 @@
      line-height: 22px;
      padding: 12px 14px;
  }
+ 
  .mail {
      min-height: 46px;
      background-color: #ebebeb;
      border: none;
      box-shadow: none;
  }
+ 
  .demand {
      margin: 40px 0;
  }
+ 
  .products-name {
      margin: 30px 0;
      font-size: 20px;
      font-weight: 500;
  }
+ 
  .head {
      border-bottom: 2px dotted #222;
      display: inline-block;
      letter-spacing: 4px;
  }
+ 
  .products {
      height: 350px;
      margin: 35px 0;
@@ -401,6 +439,7 @@
          }
      }
  }
+ 
  .range {
      margin: 20px;
      color: $footer-color;
@@ -408,12 +447,14 @@
      text-transform: uppercase;
      text-align: right;
  }
+ 
  .exculsive {
      margin-bottom: 7%;
      .flex-control-paging li a.flex-active {
          background-color: $category-color;
      }
  }
+ 
  .brand-list {
      position: relative;
      //     height: 200px;
@@ -434,6 +475,7 @@
          @include transition(all 800ms ease-in-out);
      }
  }
+ 
  //footer-menu
  footer {
      padding: 20px 0;
@@ -457,6 +499,7 @@
          }
      }
  }
+ 
  .footer-menu {
      padding: 25px 0;
      background-color: #222;
@@ -590,6 +633,7 @@
          }
      }
  }
+ 
  .back-contact {
      min-height: 400px;
      position: relative;
@@ -608,9 +652,11 @@
          }
      }
  }
+ 
  .submit-btn {
      margin: 50px 0;
  }
+ 
  .contact {
      .info {
          margin-top: 3%;
@@ -642,6 +688,7 @@
          }
      }
  }
+ 
  .get-in-touch {
      padding: 50px 0;
      background-color: #f1f1f1;
@@ -667,11 +714,13 @@
          }
      }
  }
+ 
  .cat {
      min-height: 400px;
      background: url('../img/category.jpg') no-repeat;
      background-attachment: fixed;
  }
+ 
  .pro-list {
      .products {
          height: 300px;
@@ -691,6 +740,7 @@
          }
      }
  }
+ 
  .cat-list {
      padding: 4%;
      margin: 38px 0 0;
@@ -714,6 +764,7 @@
          color: #fff;
      }
  }
+ 
  .button {
      border: 1px solid #222;
      color: #222;
@@ -728,9 +779,11 @@
          @include transition(all 300ms linear);
      }
  }
+ 
  .brands {
      margin: 30px 0;
  }
+ 
  .img-holder {
      width: 200px;
      height: 200px;
@@ -745,11 +798,13 @@
          -50%));
      }
  }
+ 
  .stars {
      li {
          display: inline-block;
      }
  }
+ 
  .quickview {
      position: absolute;
      top: 50%;
@@ -757,6 +812,8 @@
      @include transform(translate(-50%,
      -50%));
      .pop {
+         width: 50%;
+         margin: 0 auto;
          padding: 25px;
          position: relative;
          background-color: #fff;
@@ -789,12 +846,15 @@
          margin-top: 20px;
      }
  }
+ 
  .ngdialog-close {
      display: none;
  }
+ 
  .title {
      margin: 30px 0;
  }
+ 
  .cathold {
      width: 250px;
      height: 250px;
@@ -807,6 +867,7 @@
          }
      }
  }
+ 
  .fancy {
      position: fixed;
      top: 0;
@@ -823,6 +884,7 @@
          -50%));
      }
  }
+ 
  .galimg {
      .pop {
          background-color: transparent;
@@ -859,6 +921,7 @@
          }
      }
  }
+ 
  // @import 'mobile';
  @media (max-width: 1200px) {
      .navbar-nav li {
@@ -877,7 +940,12 @@
              height: 300px;
          }
      }
+     .cathold {
+         width: 200px;
+         height: 200px;
+     }
  }
+ 
  @media (max-width: 992px) {
      .navbar-nav li {
          padding: 10px;
@@ -897,16 +965,31 @@
          height: 100px;
          padding: 40px 0;
      }
+     .back-contact .cont-head h2 {
+         font-size: 40px;
+     }
      .products {
-         height: 300px;
          margin: 20px 0;
      }
+     .quickview .pop {
+         width: 100%;
+         margin: 0 auto;
+         .pro-descp {
+             h3 {
+                 font-size: 14px;
+             }
+             h4 {
+                 font-size: 16px;
+             }
+         }
+     }
  }
+ 
  @media (max-width: 768px) {
      header .lh40 {
          line-height: 0;
          .mgtb {
-             margin-bottom: 10px;
+             margin: 0 0 10px 0;
          }
      }
      .icon-bar {
@@ -931,18 +1014,18 @@
      }
      .italic {
          margin-bottom: 10px;
-         font-size: 12px;
+         font-size: 16px;
          text-align: center;
      }
-     .wd80 {
-         width: 80%;
-         margin: 0 auto;
+     .mgl {
+         margin-left: 14%;
      }
      .mail {
          min-height: auto;
          font-size: 12px;
      }
      .subscribe {
+         min-height: 34px;
          padding: 6px 10px;
          font-size: 11px;
      }
@@ -952,7 +1035,47 @@
              letter-spacing: 2px;
          }
      }
+     .cathold {
+         width: 170px;
+         height: 170px;
+         margin: 20px auto;
+     }
+     .pdt10 {
+         padding-top: 10%;
+     }
+     .pro-list {
+         .products {
+             height: 250px;
+             margin: 20px 0;
+             .pro-hov {
+                 height: 250px;
+             }
+         }
+     }
+     .back-contact .cont-head h2 {
+         font-size: 30px;
+         letter-spacing: 12px;
+     }
+     footer {
+         p {
+             text-align: center;
+         }
+         .payment {
+             margin-top: 8px;
+             float: none !important;
+             text-align: center;
+         }
+     }
+     .galimg .pop .rel .flexslider .slides > li {
+         width: 300px !important;
+         height: 250px;
+         min-height: 250px;
+     }
+     .title {
+         margin: 20px 0;
+     }
  }
+ 
  @media (max-width: 420px) {
      //     .italic {
      //         font-size: 13px;
@@ -997,5 +1120,101 @@
      .products-name {
          margin: 10px 0;
          font-size: 12px;
+     }
+     .cathold {
+         width: 120px;
+         height: 120px;
+         margin: 10px auto;
+     }
+     .pro-list {
+         .products {
+             height: 180px;
+             margin: 10px 0;
+             .pro-hov {
+                 height: 180px;
+                 .pro-detail {
+                     a {
+                         font-size: 9px;
+                     }
+                 }
+             }
+         }
+     }
+     .back-contact .cont-head h2 {
+         font-size: 20px;
+         letter-spacing: 7px;
+     }
+     .footer-menu .scroll-top .scrollToTop {
+         width: 35px;
+         height: 35px;
+         padding: 3px;
+         font-size: 12px;
+     }
+     .cat {
+         min-height: 250px;
+     }
+     .footer-menu {
+         h2 {
+             font-size: 23px;
+         }
+         address {
+             margin: 18px 0;
+             font-size: 13px;
+         }
+         .social-icons {
+             li {
+                 a {
+                     width: 30px;
+                     height: 30px;
+                     line-height: 30px;
+                 }
+             }
+         }
+         .foot-links .aboutus li a {
+             font-size: 13px;
+         }
+         .abt {
+             margin: 20px 0 10px;
+         }
+     }
+     footer {
+         p {
+             font-size: 13px;
+         }
+         .payment {
+             margin-top: 8px;
+             float: none !important;
+             text-align: center;
+             li a i {
+                 font-size: 22px;
+             }
+         }
+     }
+     .galimg .pop .rel .flexslider .slides > li {
+         width: 250px !important;
+         height: 200px;
+         min-height: 200px;
+     }
+     .title {
+         margin: 10px 0;
+     }
+     .quickview .pop {
+         padding: 10px; 
+         .pro-descp {
+             h3 {
+                 font-size: 9px;
+             }
+             h4 {
+                 font-size: 11px;
+             }
+         }
+     }
+     .quickview .pop .close {
+         width: 25px;
+         height: 25px;
+         line-height: 20px;
+     }
+     .mgl {
+         margin-left: 5%;
      }
  }
