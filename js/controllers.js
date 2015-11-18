@@ -201,59 +201,59 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
         $scope.catmain = [
             {
-                img: 'img/brands/18.png'
-
-            }, {
-                img: 'img/brands/1.png'
+                img: 'img/brands/01.png'
                 },
             {
-                img: 'img/brands/2.png'
+                img: 'img/brands/02.png'
                 },
             {
-                img: 'img/brands/3.png'
+                img: 'img/brands/03.png'
                 },
             {
-                img: 'img/brands/4.png'
+                img: 'img/brands/04.png'
+                },
+//            {
+//                img: 'img/brands/05.png'
+//                },
+            {
+                img: 'img/brands/06.png'
                 },
             {
-                img: 'img/brands/5.png'
+                img: 'img/brands/07.png'
                 },
             {
-                img: 'img/brands/6.png'
+                img: 'img/brands/08.png'
                 },
             {
-                img: 'img/brands/7.png'
-                },
-            {
-                img: 'img/brands/8.png'
-                },
-            {
-                img: 'img/brands/9.png'
+                img: 'img/brands/09.png'
                 },
             {
                 img: 'img/brands/10.png'
                 },
             {
-                img: 'img/brands/11.png'
+                img: 'img/brands/011.png'
                 },
             {
-                img: 'img/brands/12.png'
+                img: 'img/brands/012.png'
                 },
             {
-                img: 'img/brands/13.png'
+                img: 'img/brands/013.png'
                 },
             {
-                img: 'img/brands/14.png'
+                img: 'img/brands/014.png'
                 },
             {
-                img: 'img/brands/15.png'
+                img: 'img/brands/015.png'
                 },
             {
-                img: 'img/brands/16.png'
+                img: 'img/brands/016.png'
                 },
             {
-                img: 'img/brands/17.png'
-                }
+                img: 'img/brands/017.png'
+                },
+//            {
+//                img: 'img/brands/018.png'
+//                }
             ];
     })
     .controller('GalleryCtrl', function ($scope, TemplateService, NavigationService, ngDialog, $timeout) {
@@ -388,50 +388,105 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Category");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-        $scope.products = [
+    
+        $scope.molding = [
             {
-                img: "img/products/8.jpg",
-                name: "Zara",
+                img: "img/decolite/sample/molding/103-41.jpg",
+                name: "Decolite",
                 price: "25000"
     },
             {
-                img: "img/products/7.jpg",
-                name: "Zara",
+                img: "img/decolite/sample/molding/103-43.jpg",
+                name: "Decolite",
                 price: "25000"
     },
             {
-                img: "img/products/6.jpg",
-                name: "Zara",
+                img: "img/decolite/sample/molding/103C-60.jpg",
+                name: "Decolite",
                 price: "25000"
     },
             {
-                img: "img/products/5.jpg",
-                name: "Zara",
+                img: "img/decolite/sample/molding/103C-966.jpg",
+                name: "Decolite",
                 price: "25000"
     },
             {
-                img: "img/products/4.jpg",
-                name: "Zara",
-                price: "25000"
-    },
-            {
-                img: "img/products/3.jpg",
-                name: "Zara",
-                price: "25000"
-    },
-            {
-                img: "img/products/2.jpg",
-                name: "Zara",
-                price: "25000"
-    },
-            {
-                img: "img/products/1.jpg",
-                name: "Zara",
+                img: "img/decolite/sample/molding/103C-1223.jpg",
+                name: "Decolite",
                 price: "25000"
     }
+
                       ];
+    
+        $scope.panel = [
+            {
+                img: "img/decolite/sample/panel/7101.jpg",
+                name: "Decolite"
+    },
+            {
+                img: "img/decolite/sample/panel/7102.jpg",
+                name: "Decolite"
+    },
+            {
+                img: "img/decolite/sample/panel/7103.jpg",
+                name: "Decolite"
+    },
+            {
+                img: "img/decolite/sample/panel/7105.jpg",
+                name: "Decolite"
+    },
+            {
+                img: "img/decolite/sample/panel/7108.jpg",
+                name: "Decolite"
+    },
+            {
+                img: "img/decolite/sample/panel/7109.jpg",
+                name: "Decolite"
+    },
+            {
+                img: "img/decolite/sample/panel/7110.jpg",
+                name: "Decolite"
+    },
+            {
+                img: "img/decolite/sample/panel/7111.jpg",
+                name: "Decolite"
+    },
+            {
+                img: "img/decolite/sample/panel/7112.jpg",
+                name: "Decolite"
+    },
+            {
+                img: "img/decolite/sample/panel/7113.jpg",
+                name: "Decolite"
+    },
+            {
+                img: "img/decolite/sample/panel/7114.jpg",
+                name: "Decolite"
+    },
+            {
+                img: "img/decolite/sample/panel/7115.jpg",
+                name: "Decolite"
+    },
+            {
+                img: "img/decolite/sample/panel/7116.jpg",
+                name: "Decolite"
+    },
+            {
+                img: "img/decolite/sample/panel/7118.jpg",
+                name: "Decolite"
+    },
+            {
+                img: "img/decolite/sample/panel/7121.jpg",
+                name: "Decolite"
+    },
+            {
+                img: "img/decolite/sample/panel/7122.jpg",
+                name: "Decolite"
+    },
+        ];
         $scope.oneAtATime = true;
-        $scope.open = function () {
+        $scope.open = function (image) {
+            $scope.imgsrc = image;
             ngDialog.open({
                 template: 'views/content/quickview.html'
             });
