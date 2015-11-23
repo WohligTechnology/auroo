@@ -194,66 +194,72 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         'img/products/4.jpg'
     ];
     })
-    .controller('CategorymainCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
-        $scope.template = TemplateService.changecontent("categorymain");
-        $scope.menutitle = NavigationService.makeactive("Categorymain");
+    .controller('CategoriesCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+        $scope.template = TemplateService.changecontent("categories");
+        $scope.menutitle = NavigationService.makeactive("Categories");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.catmain = [
             {
-                img: 'img/brands/01.png'
-                },
+                img: "img/gallery/decolite.png"
+            },
             {
-                img: 'img/brands/02.png'
-                },
+                img: "img/gallery/lucento.png"
+            },
             {
-                img: 'img/brands/03.png'
-                },
+                img: "img/gallery/mikano.png"
+            },
             {
-                img: 'img/brands/04.png'
-                },
-//            {
-//                img: 'img/brands/05.png'
-//                },
+                img: "img/gallery/vereno.png"
+            },
             {
-                img: 'img/brands/06.png'
-                },
+                img: "img/gallery/acrylam.png"
+            },
             {
-                img: 'img/brands/07.png'
-                },
+                img: "img/gallery/egger.png"
+            },
             {
-                img: 'img/brands/08.png'
-                },
+                img: "img/gallery/flos.png"
+            },
             {
-                img: 'img/brands/09.png'
-                },
+                img: "img/gallery/decoart.png"
+            },
             {
-                img: 'img/brands/10.png'
-                },
+                img: "img/gallery/acrylyte.png"
+            },
             {
-                img: 'img/brands/011.png'
-                },
+                img: "img/gallery/corriano.png"
+            },
             {
-                img: 'img/brands/012.png'
-                },
+                img: "img/gallery/stylite.png"
+            },
             {
-                img: 'img/brands/013.png'
-                },
+                img: "img/gallery/decopanel.png"
+            },
             {
-                img: 'img/brands/014.png'
-                },
+                img: "img/gallery/decoris.png"
+            },
             {
-                img: 'img/brands/015.png'
-                },
+                img: "img/gallery/forescolor.png"
+            },
             {
-                img: 'img/brands/016.png'
-                },
+                img: "img/gallery/fashionwall.png"
+            },
             {
-                img: 'img/brands/017.png'
-                },
-//            {
-//                img: 'img/brands/018.png'
-//                }
+                img: "img/gallery/emporio.png"
+            },
+            {
+                img: "img/gallery/matrixwall.png"
+            },
+            {
+                img: "img/gallery/solido.png"
+            },
+            {
+                img: "img/gallery/d3wall.png"
+            },
+            {
+                img: "img/gallery/europratik.png"
+            }
             ];
     })
     .controller('GalleryCtrl', function ($scope, TemplateService, NavigationService, ngDialog, $timeout) {
@@ -263,52 +269,65 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
         $scope.gallery = [
             {
-                img: "img/newarrival.png",
-                //                galleries: [
-                //                'img/products/1.jpg',
-                //                'img/products/2.jpg',
-                //                'img/products/3.jpg',
-                //                'img/products/4.jpg'
-                //                ]
-           },
+                img: "img/gallery/decolite.png"
+            },
             {
-                img: "img/newarrival.png",
-                //                galleries: [
-                //                'img/products/5.jpg',
-                //                'img/products/6.jpg',
-                //                'img/products/7.jpg',
-                //                'img/products/8.jpg'
-                //                ]
-                          },
+                img: "img/gallery/lucento.png"
+            },
             {
-                img: "img/newarrival.png"
-                          },
+                img: "img/gallery/mikano.png"
+            },
             {
-                img: "img/newarrival.png"
-                          },
+                img: "img/gallery/vereno.png"
+            },
             {
-                img: "img/newarrival.png"
-                          },
+                img: "img/gallery/acrylam.png"
+            },
             {
-                img: "img/newarrival.png"
-                          }, {
-                img: "img/newarrival.png"
-},
+                img: "img/gallery/egger.png"
+            },
             {
-                img: "img/newarrival.png"
- }
-                         ];
-        //        $scope.show = false;
-        //    $scope.galleryToShow =[];
-        //        $scope.open = function (gal) {
-        //            
-        //            $scope.galleryToShow = gal.galleries;
-        //            gal.showgal=true;
-        //        }
-        //        $scope.close = function () {            
-        //            $scope.galleryToShow =[];
-        //            gal.showgal=false;
-        //        }
+                img: "img/gallery/flos.png"
+            },
+            {
+                img: "img/gallery/decoart.png"
+            },
+            {
+                img: "img/gallery/acrylyte.png"
+            },
+            {
+                img: "img/gallery/corriano.png"
+            },
+            {
+                img: "img/gallery/stylite.png"
+            },
+            {
+                img: "img/gallery/decopanel.png"
+            },
+            {
+                img: "img/gallery/decoris.png"
+            },
+            {
+                img: "img/gallery/forescolor.png"
+            },
+            {
+                img: "img/gallery/fashionwall.png"
+            },
+            {
+                img: "img/gallery/emporio.png"
+            },
+            {
+                img: "img/gallery/matrixwall.png"
+            },
+            {
+                img: "img/gallery/solido.png"
+            },
+            {
+                img: "img/gallery/d3wall.png"
+            },
+            {
+                img: "img/gallery/europratik.png"
+            }];
         $scope.slide = [
         'img/mikano/1.jpg',
         'img/mikano/2.jpg',
@@ -388,7 +407,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Category");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-    
+
         $scope.molding = [
             {
                 img: "img/decolite/sample/molding/103-41.jpg",
@@ -417,7 +436,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }
 
                       ];
-    
+
         $scope.panel = [
             {
                 img: "img/decolite/sample/panel/7101.jpg",
@@ -495,10 +514,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     })
     .controller('headerctrl', function ($scope, TemplateService) {
         $scope.template = TemplateService;
-        $scope.search = false;
-        $scope.open = function (box) {
-            $scope.search = box;
-        }
+        $scope.getclass = "down-yes";
+        $scope.open = function (get) {
+            $scope.getclass = get;
+        };
     })
 
 ;

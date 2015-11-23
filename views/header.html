@@ -21,7 +21,7 @@
                 <div class="lh40">
                     <ul class="head-icon mgtb text-center">
                         <li>
-                            <a href="" class="search-icon" ng-click="open(true);"><i class="fa fa-search pd2"></i></a>
+                            <a href="" class="search-icon" ng-click="open('down-no');"><i class="fa fa-search pd2"></i></a>
                         </li>
                         <li>
                             <a href="" class="fb"><i class="fa fa-facebook"></i></a>
@@ -48,7 +48,7 @@
             </nav>
         </div>
     </div>
-    <div class="search-box" ng-show="search">
+    <div class="search-box {{getclass}}">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-xs-10">
@@ -57,7 +57,7 @@
                     </form>
                 </div>
                 <div class="col-md-2 col-xs-2">
-                    <a href="" ng-click="open(false);" class="close"><i class="fa fa-times"></i></a>
+                    <a href="" ng-click="open('down-yes');" class="close"><i class="fa fa-times"></i></a>
                 </div>
             </div>
         </div>

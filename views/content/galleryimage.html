@@ -1,20 +1,16 @@
 <div class="quickview galimg" ng-controller="GalleryCtrl">
     <div class="container">
-        <div class="row">
-            <div class="col-md-offset-3 col-md-6">
-                <div class="pop">
-<!--                
+        <div class="pop">
+            <!--                
                                           <img src="img/home-slide/slider1.png" alt="" class="img-responsive">-->
-                   <div class="rel">
-                         <flex-slider class="carousel" flex-slide="s in slide" animation="slide" animation-loop="true">
-                            <li>
-                                <img ng-src="{{s}}" alt="Gallery Images" class="img-responsive">
-                            </li>
-                        </flex-slider>
-                    </div>
-                    <div class="close" ng-click="closeThisDialog('value');"><i class="fa fa-times cross"></i></div>
-                </div>
+            <div class="rel">
+                <flex-slider class="carousel" flex-slide="s in slide" animation="slide" animation-loop="true">
+                    <li>
+                        <img ng-src="{{s}}" alt="Gallery Images" class="img-responsive">
+                    </li>
+                </flex-slider>
             </div>
+            <div class="close" ng-click="closeThisDialog('value');"><i class="fa fa-times cross"></i></div>
         </div>
     </div>
 </div>

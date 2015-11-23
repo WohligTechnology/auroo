@@ -40,10 +40,10 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
         templateUrl: "views/template.html",
         controller: 'QuickviewCtrl'
     })
-    .state('categorymain', {
-        url: "/categorymain",
+    .state('categories', {
+        url: "/categories",
         templateUrl: "views/template.html",
-        controller: 'CategorymainCtrl'
+        controller: 'CategoriesCtrl'
     })
     .state('gallery', {
         url: "/gallery",
