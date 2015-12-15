@@ -91,7 +91,7 @@
  background-color: transparent;
  }
  .navbar-nav > li {
- padding: 10px 43px;
+ padding: 10px 33px;
  }
  .navbar-nav>li > a {
  color: $menu-color;
@@ -106,6 +106,9 @@
  }
  .navbar-brand {
  padding: 4px;
+ img {
+ width: 240px;
+ }
  }
  .slider {
  .slider-home {
@@ -266,7 +269,7 @@
  }
  }
  .mgtb {
- margin: 19px 0;
+ margin: 30px 0;
  }
  .italic {
  margin: 7px 0;
@@ -760,13 +763,17 @@
  @include transform(translate(-50%,
  -50%));
  .pop {
- width: 80%;
+ width: 50%;
  margin: 0 auto;
  padding: 25px;
  position: relative;
  background-color: #fff;
+ .quick-img {
  img {
+ width:200px;
+ max-height: 100%;
  margin: 0 auto;
+ }
  }
  .close {
  width: 40px;
@@ -875,7 +882,7 @@
  // @import 'mobile';
  @media (max-width: 1200px) {
  .navbar-nav li {
- padding: 10px 29px;
+ padding: 10px 20px;
  }
  .header .head-icon li {
  margin-left: 25px;
@@ -897,7 +904,7 @@
  }
  @media (max-width: 992px) {
  .navbar-nav li {
- padding: 10px 22px;
+ padding: 10px 15px;
  font-size: 12px;
  }
  .header .head-icon li {

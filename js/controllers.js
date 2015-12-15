@@ -68,6 +68,7 @@ $scope.brandlist = [
 {
     back_img: "img/brandlist/acrylamhov.png",
     img: "img/brandlist/acrylam.png",
+    show:false,
     products: [
     {
         img: "img/acrylyte/sample/8801.jpg",
@@ -87,6 +88,7 @@ $scope.brandlist = [
 {
     back_img: "img/brandlist/acrylytehov.png",
     img: "img/brandlist/acrylyte.png",
+    show:false,
     products: [
     {
         img: "img/acrylyte/sample/8805.jpg",
@@ -106,6 +108,7 @@ $scope.brandlist = [
 {
     back_img: "img/brandlist/corrianohov.png",
     img: "img/brandlist/corriano.png",
+    show:false,
     products: [
     {
         img: "img/acrylyte/sample/8809.jpg",
@@ -149,11 +152,17 @@ $scope.producthov = [
 ];
 
 $scope.prosee = false;
-$scope.proclick = function (view) {
-    if (view = true) {
-        $scope.prosee = !$scope.prosee;
-    } else {
-        $scope.prosee = view;
+$scope.proclick = function (index) {
+    console.log(index);
+    // for(var i=0;i<$scope.brandlist.length;i++){
+    //     if(i==index){
+    //         $scope.brandlist[i].show=true;
+    //     }else{
+    //         $scope.brandlist[i].show=false;
+    //     }
+    // }
+    if(index==1){
+        $scope.brandlist[index].show=!$scope.brandlist[index].show;
     }
 }
 })
@@ -489,9 +498,12 @@ $scope.proclick = function (view) {
 ];
 $scope.oneAtATime = true;
 $scope.open = function (image) {
-    $scope.imgsrc = image;
+    console.log(image);
+    $scope.imgsrc = image.img;
     ngDialog.open({
-        template: 'views/content/quickview.html'
+        template: 'views/content/quickview.html',
+        scope: $scope,
+        controller: 'CategoryCtrl'
     });
 };
 
