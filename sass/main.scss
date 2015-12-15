@@ -48,6 +48,9 @@
  &:hover {
  opacity: .7;
  }
+ &:focus {
+ outline:none;
+ }
  }
  p {
  margin: 0;
@@ -87,8 +90,8 @@
  .nav>li>a:hover {
  background-color: transparent;
  }
- .navbar-nav>li {
- padding: 10px 25px;
+ .navbar-nav > li {
+ padding: 10px 43px;
  }
  .navbar-nav>li > a {
  color: $menu-color;
@@ -224,7 +227,7 @@
  }
  .head-icon {
  li {
- margin-left: 15px;
+ margin-left: 25px;
  display: inline-block;
  a.fb {
  &:hover {
@@ -872,10 +875,10 @@
  // @import 'mobile';
  @media (max-width: 1200px) {
  .navbar-nav li {
- padding: 10px 15px;
+ padding: 10px 29px;
  }
  .header .head-icon li {
- margin-left: 10px;
+ margin-left: 25px;
  }
  .italic {
  font-size: 16px;
@@ -894,11 +897,11 @@
  }
  @media (max-width: 992px) {
  .navbar-nav li {
- padding: 10px;
+ padding: 10px 22px;
  font-size: 12px;
  }
  .header .head-icon li {
- margin-left: 7px;
+ margin-left: 20px;
  }
  .navbar-brand {
  padding: 0;
