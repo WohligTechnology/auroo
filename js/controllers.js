@@ -68,70 +68,59 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         {
             back_img: "img/brandlist/acrylamhov.png",
             img: "img/brandlist/acrylam.png",
-            products: [{
-                img: "img/products/8.jpg",
-                name: "Zara",
-                price: "25000"
+            products: [
+                {
+                img: "img/decolite/sample/molding/103-41.jpg",
+                name: "Decolite"
         }, {
-                img: "img/products/7.jpg",
-                name: "Zara",
-                price: "25000"
+                img: "img/decolite/sample/molding/103-43.jpg",
+                name: "Vereno"
         }, {
-                img: "img/products/6.jpg",
-                name: "Zara",
-                price: "25000"
+                img: "img/decolite/sample/molding/103C-60.jpg",
+                name: "Corriano"
         }, {
-                img: "img/products/5.jpg",
-                name: "Zara",
-                price: "25000"
-        }]
+                img: "img/decolite/sample/molding/103C-966.jpg",
+                name: "Acrylyte"
+        }
+            ]
         },
         {
             back_img: "img/brandlist/acrylytehov.png",
             img: "img/brandlist/acrylyte.png",
-            products: [
+         products: [
                 {
-                    img: "img/products/5.jpg",
-                    name: "Zara",
-                    price: "25000"
-    },
-                {
-                    img: "img/products/4.jpg",
-                    name: "Zara",
-                    price: "25000"
-    },
-                {
-                    img: "img/products/3.jpg",
-                    name: "Zara",
-                    price: "25000"
-    },
-                {
-                    img: "img/products/2.jpg",
-                    name: "Zara",
-                    price: "25000"
-    },
+                img: "img/decolite/sample/molding/103-41.jpg",
+                name: "Decolite"
+        }, {
+                img: "img/decolite/sample/molding/103-43.jpg",
+                name: "Vereno"
+        }, {
+                img: "img/decolite/sample/molding/103C-60.jpg",
+                name: "Corriano"
+        }, {
+                img: "img/decolite/sample/molding/103C-966.jpg",
+                name: "Acrylyte"
+        }
             ]
         },
         {
             back_img: "img/brandlist/corrianohov.png",
             img: "img/brandlist/corriano.png",
-            products: [{
-                img: "img/products/8.jpg",
-                name: "Zara",
-                price: "25000"
+            products: [
+                {
+                img: "img/decolite/sample/molding/103-41.jpg",
+                name: "Decolite"
         }, {
-                img: "img/products/7.jpg",
-                name: "Zara",
-                price: "25000"
+                img: "img/decolite/sample/molding/103-43.jpg",
+                name: "Vereno"
         }, {
-                img: "img/products/6.jpg",
-                name: "Zara",
-                price: "25000"
+                img: "img/decolite/sample/molding/103C-60.jpg",
+                name: "Corriano"
         }, {
-                img: "img/products/5.jpg",
-                name: "Zara",
-                price: "25000"
-        }]
+                img: "img/decolite/sample/molding/103C-966.jpg",
+                name: "Acrylyte"
+        }
+            ]
         },
 //        {
 //            back_img: "img/brandlist/mikanohov.png",
