@@ -1,7 +1,7 @@
 <div class="slider">
     <flex-slider class="carousel" flex-slide="s in slides" animation="slide" animation-loop="true">
-    <li>
-        <img ng-src="{{s}}">
+        <li>
+            <img ng-src="{{s}}">
             <!--
             <div class="slider-home">
                 <div class="slide-tagline text-uppercase text-center">
@@ -13,31 +13,26 @@
                 </div>
             </div>
         -->
-    </li>
+        </li>
 
-</flex-slider>
+    </flex-slider>
 </div>
 <div class="message">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-offset-2 col-md-8">
+            <div class="col-md-6">
+                <div class="pro">
+                    <img src="img/Adhesive-banner.jpg" alt="Products" class="img-responsive">
+                </div>
+            </div>
+            <div class="col-md-6">
                 <div class="msg-me">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-4">
-                            <p class="italic font-italic">Join for our latest update</p>
-                        </div>
-                        <div class="col-md-8 col-sm-8 mgl">
-                            <div class="row">
-                                <form action="">
-                                    <div class="col-md-8 col-sm-8 col-xs-8 nomgpd">
-                                        <input type="text" class="form-control nofocus noborder mail" placeholder="Your email here..">
-                                    </div>
-                                    <div class="col-md-4 col-sm-4 col-xs-4 nomgpd">
-                                        <button type="submit" class="subscribe nofocus">subscribe</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                    <p class="italic font-italic">Join for our latest update</p>
+                    <form action="" class="form-inline">
+                        <div class="nomgpd form-group">
+                            <input type="text" class="form-control nofocus noborder mail" placeholder="Your email here..">
+                            <button type="submit" class="subscribe nofocus">subscribe</button>
+                    </form>
                     </div>
                 </div>
             </div>
@@ -49,12 +44,12 @@
         <div class="row">
             <div class="col-md-6 col-sm-6">
                 <div class="pro">
-                    <img src="img/verenocm.png" alt="Products" class="img-responsive">
+                    <img src="img/vereno-banner.jpg" alt="Products" class="img-responsive">
                 </div>
             </div>
             <div class="col-md-6 col-sm-6">
                 <div class="pro">
-                    <img src="img/adhesive.png" alt="Products" class="img-responsive">
+                    <img src="img/lucento-banner.jpg" alt="Products" class="img-responsive">
                 </div>
             </div>
         </div>
@@ -95,19 +90,19 @@
                     </a>
                 </div>
             -->
-            <div class="col-md-6 col-sm-6">
-                <div class="pro">
-                    <img src="img/verenocm.png" alt="Products" class="img-responsive">
+                <div class="col-md-6 col-sm-6">
+                    <div class="pro">
+                        <img src="img/mikano-banner.jpg" alt="Products" class="img-responsive">
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-                <div class="pro">
-                    <img src="img/adhesive.png" alt="Products" class="img-responsive">
+                <div class="col-md-6 col-sm-6">
+                    <div class="pro">
+                        <img src="img/Decoart-banner.jpg" alt="Products" class="img-responsive">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 
 <div class="pop-pro products-name text-center">
@@ -183,7 +178,7 @@
                             <div class="pro-hov text-center text-uppercase">
                                 <div class="pro-detail">
                                     <p>{{proho.name}}</p>
-<!--
+                                    <!--
                                     <p>Rs: {{proho.price}}</p>
                                     <div class="star">
                                         <a href=""><i class="fa fa-star-o"></i></a>
@@ -194,18 +189,20 @@
                                     </div>
                                     <a href="">Enquire Now</a>
                                 -->
-                            </div>
-                            <div class="view">
-                                <a href="" ng-click="open();" class="eye"><i class="fa fa-eye"></i></a>
+                                </div>
+                                <div class="view">
+                                    <a href="" ng-click="open(proho);" class="eye"><i class="fa fa-eye"></i></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
+            </div>
+            <div class="range">
+                <a href="#/category" class="">full range</a>
             </div>
         </div>
-        <p class="range">full range</p>
     </div>
-</div>
 </div>
 
 </div>
