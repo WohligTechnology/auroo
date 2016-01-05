@@ -63,6 +63,9 @@
  ul li {
      list-style-type: none;
  }
+ .active {
+   color: #000 !important;
+ }
  .block {
      display: block;
  }
@@ -609,6 +612,10 @@
          }
      }
  }
+ .foot-logo {
+   width: 200px;
+   margin: 0 0 10px 10px;
+ }
  .back-contact {
      min-height: 400px;
      position: relative;
@@ -776,16 +783,17 @@
      @include transform(translate(-50%,
      -50%));
      .pop {
-         width: 70%;
+         width: 40%;
          margin: 0 auto;
          padding: 25px;
          position: relative;
          background-color: #fff;
          .quick-img {
+           width: 200px;
+           margin: 0 auto;
              img {
-                 width: 200px;
+               max-width:100%;
                  max-height: 100%;
-                 margin: 0 auto;
              }
          }
          .close {
@@ -812,6 +820,15 @@
          padding-top: 20px;
          border-top: 2px dotted #222;
          margin-top: 20px;
+     }
+     .quick-info {
+       margin: 10px 0;
+       h4,h5 {
+         margin: 0;
+       }
+       .code {
+         font-weight: 700;
+       }
      }
  }
  .ngdialog-close {
@@ -884,6 +901,18 @@
          }
      }
  }
+ .series {
+   margin: 50px 0 0 5px;
+   .name {
+     span {
+       display: inline-block;
+       font-size: 18px;
+     }
+     .name {
+       margin-right: 25px;
+     }
+   }
+ }
  .down-yes {
      @include transform(translateY(-100px));
      @include transition(all 500ms linear);
@@ -948,15 +977,8 @@
      .quickview .pop {
          width: 100%;
          margin: 0 auto;
-         .pro-descp {
-             h3 {
-                 font-size: 14px;
-             }
-             h4 {
-                 font-size: 16px;
-             }
-         }
      }
+
      .msg-me {
          margin: 25px 0 0;
          text-align: center;
@@ -1182,21 +1204,19 @@
      }
      .quickview .pop {
          padding: 10px;
-         .pro-descp {
-             h3 {
-                 font-size: 9px;
-             }
-             h4 {
-                 font-size: 11px;
-             }
+         .quick-info {
+           margin: 10px 0;
+           h4,h5 {
+             font-size: 9px;
+           }
+         }
+         }
+         .quickview .pop .close {
+             width: 25px;
+             height: 25px;
+             line-height: 20px;
+         }
+         .mgl {
+             margin-left: 5%;
          }
      }
-     .quickview .pop .close {
-         width: 25px;
-         height: 25px;
-         line-height: 20px;
-     }
-     .mgl {
-         margin-left: 5%;
-     }
- }

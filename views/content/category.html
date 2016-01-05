@@ -88,7 +88,7 @@
 </ul>
 </accordion-group>
 <accordion-group>
-<accordion-heading><a href="" class="block">Acrylyte<i class="pull-right glyphicon" ng-class="{'glyphicon glyphicon-minus':status.open,'glyphicon glyphicon-plus':!status.open}"></i></a></accordion-heading>
+<accordion-heading><a href="" class="block active">Acrylyte<i class="pull-right glyphicon" ng-class="{'glyphicon glyphicon-minus':status.open,'glyphicon glyphicon-plus':!status.open}"></i></a></accordion-heading>
 <ul>
     <li><a href="">1</a></li>
     <li><a href="">2</a></li>
@@ -246,7 +246,8 @@
             -->
 
             <div class="col-md-9">
-                <div class="prd-img">
+
+                <!-- <div class="prd-img">
                     <div class="molding">
                         <div class="products-name text-center">
                             <p class="head">Molding</p>
@@ -261,7 +262,7 @@
                                             </div>
                                             <div class="pro-hov text-center text-uppercase">
                                                 <div class="pro-detail">
-                                                    <p>{{pros.name}}</p>                                                    
+                                                    <p>{{pros.name}}</p>
                                                 </div>
                                                 <div class="view">
                                                     <a href="" ng-click="open(pros);" class="eye"><i class="fa fa-eye"></i></a>
@@ -273,10 +274,16 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="panel">
-                    <div class="products-name text-center">
+                    <!-- <div class="products-name text-center">
                         <p class="head">Panel</p>
+                    </div> -->
+                    <div class="series">
+                      <div class="name">
+                        <span class="category-color name">Acrylyte</span>
+                        <span>8800 series</span>
+                      </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in panel">
@@ -288,7 +295,7 @@
                                         </div>
                                         <div class="pro-hov text-center text-uppercase">
                                             <div class="pro-detail">
-                                                <p>{{pros.name}}</p>
+                                                <p>{{pros.code}}</p>
                                             </div>
                                             <div class="view">
                                                 <a href="" ng-click="open(pros);" class="eye"><i class="fa fa-eye"></i></a>

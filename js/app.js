@@ -7,7 +7,7 @@ var firstapp = angular.module('firstapp', [
 ]);
 
 firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
-    
+
     // for http request with session
     $httpProvider.defaults.withCredentials = true;
 
@@ -28,6 +28,12 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
         url: "/category",
         templateUrl: "views/template.html",
         controller: 'CategoryCtrl'
+    })
+
+    .state('download', {
+        url: "/download",
+        templateUrl: "views/template.html",
+        controller: 'DownloadCtrl'
     })
 
     .state('brands', {
