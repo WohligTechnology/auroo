@@ -29,6 +29,12 @@ var ftpdetails = {
     pass: 'enter your password',
     remotePath: "public_html/europratik"
 };
+// var ftpdetails = {
+//     host: 'uandvcreativess.com',
+//     user: 'enter your username',
+//     pass: 'enter your password',
+//     remotePath: "httpdocs/europratik"
+// };
 
 //Do not change anything below
 //Do not change anything below
@@ -154,6 +160,10 @@ gulp.task('gzipfile', function () {
             preExtension: 'gz'
         }))
         .pipe(gulp.dest('./production/'));
+});
+gulp.task('copy:indexhtml', function() {
+    return gulp.src('./w/index.html')
+        .pipe(gulpCopy("./production/"));
 });
 
 gulp.task('tarball', function () {
@@ -284,3 +294,4 @@ gulp.task('copy', ["copy:img", "copy:fonts"]);
 
 
 gulp.task('production', gulpSequence(["copy:img", "copy:fonts", "sass:production", "minify:indexproduction", "minify:views"], 'clean:tmp', ["minify:css", "templatecache"], "concat:js", 'clean:tmp', "uglify:js", 'clean:tmp', "inlinesource", 'clean:tmp', "gzipfile", 'clean:tmp', 'clean:tmp', "zip"));
+gulp.task('productionwindows', gulpSequence(["copy:img", "copy:fonts", "sass:production", "minify:indexproduction", "minify:views"], 'clean:tmp', ["minify:css", "templatecache"],'clean:tmp', "concat:js", 'clean:tmp', "uglify:js", 'clean:tmp', "inlinesource", 'clean:tmp', "copy:indexhtml", 'clean:tmp', 'clean:tmp', "zip"));
