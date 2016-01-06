@@ -502,6 +502,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.open = function(get) {
       $scope.getclass = get;
     };
+    $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+      $(window).scrollTop(0);
+    });
   })
 
 ;

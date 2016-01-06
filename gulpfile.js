@@ -104,8 +104,36 @@ gulp.task('deploy', function () {
 });
 
 
+gulp.task('deployindex', function () {
+    return gulp.src('./index.html')
+        .pipe(prompt.prompt([{
+            type: 'input',
+            name: 'username',
+            message: 'Enter FTP username:'
+        }, {
+            type: 'password',
+            name: 'password',
+            message: 'Enter FTP password:'
+        }], function (res) {
+
+            ftpdetails.user = res.username;
+            ftpdetails.pass = res.password;
+
+            gulp.start('ftpindex');
+
+        }));
+});
+
+
 gulp.task('ftp', function () {
     return gulp.src('./production/**')
+        .pipe(ftp(ftpdetails))
+        .pipe(gutil.noop());
+});
+
+
+gulp.task('ftpindex', function () {
+    return gulp.src(['./production/index.gz.html','./production/w/index.html'])
         .pipe(ftp(ftpdetails))
         .pipe(gutil.noop());
 });
