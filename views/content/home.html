@@ -169,7 +169,7 @@
     <div class="click-pro" ng-show="brand.show">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-3" ng-repeat="proho in brand.products">
+                <div class="col-md-3" ng-repeat="proho in brand.products" ng-click="open(proho)">
                     <a href="">
                         <div class="products">
                             <div class="pro-img">
@@ -177,24 +177,17 @@
                             </div>
                             <div class="pro-hov text-center text-uppercase">
                                 <div class="pro-detail">
-                                    <p>{{proho.code}}</p>
+                                  <a href="" class="eye"><i class="fa fa-eye"></i></a>
+                                    <!-- <p>{{proho.code}}</p> -->
                                     <!-- <p>{{proho.name}}</p> -->
                                     <!-- <p>{{proho.size}}</p> -->
                                     <!--
                                     <p>Rs: {{proho.price}}</p>
-                                    <div class="star">
-                                        <a href=""><i class="fa fa-star-o"></i></a>
-                                        <a href=""><i class="fa fa-star-o"></i></a>
-                                        <a href=""><i class="fa fa-star-o"></i></a>
-                                        <a href=""><i class="fa fa-star-o"></i></a>
-                                        <a href=""><i class="fa fa-star-o"></i></a>
-                                    </div>
-                                    <a href="">Enquire Now</a>
                                 -->
                                 </div>
-                                <div class="view">
+                                <!-- <div class="view">
                                     <a href="" ng-click="open(proho);" class="eye"><i class="fa fa-eye"></i></a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </a>
