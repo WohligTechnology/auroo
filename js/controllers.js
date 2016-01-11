@@ -20,6 +20,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     });
   }
 
+  // $scope.popme = function() {
+  // if (!$.jStorage.get("openDialog") || $.jStorage.get("openDialog") != false) {
+  //   $.jStorage.set("openDialog", false);
+  //   ngDialog.open({
+  //     template: 'views/content/popup.html',
+  //     scope: $scope
+  //   });
+  // }
+
   $scope.slides = [
     'img/home-slide/slider1.jpg',
     'img/home-slide/slider2.jpg',
