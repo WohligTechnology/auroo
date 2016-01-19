@@ -22,16 +22,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     });
   }
 
+  $scope.popme = function() {
+      ngDialog.open({
+        template: 'views/content/popup.html',
+        scope: $scope
+      });
+  }
 
-  // $scope.popme = function() {
-  //   if (!$.jStorage.get("openDialog") || $.jStorage.get("openDialog") != false) {
-  //     $.jStorage.set("openDialog", false);
-  //     ngDialog.open({
-  //       template: 'views/content/popup.html',
-  //       scope: $scope
-  //     });
-  //   }
-  // }
+  $scope.popme();
 
   $scope.slides = [
     'img/home-slide/slider1.jpg',
@@ -127,7 +125,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       $scope.brandlist[index].show = !$scope.brandlist[index].show;
     }
   }
-  
+
 })
 
 .controller('ContactUsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
