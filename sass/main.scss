@@ -93,9 +93,7 @@
  .nav>li>a:hover {
      background-color: transparent;
  }
- .navbar-nav > li {
-     padding: 10px 30px;
- }
+ .navbar-nav > li { padding: 10px 20px; }
  .navbar-nav>li > a {
      color: $menu-color;
      padding: 0;
@@ -484,7 +482,7 @@
      color: $footer-color;
      .comp-info {
          span {
-             margin: 15px 0;
+             margin: 10px 0;
              display: block;
              a {
                  margin-left: 5px;
@@ -652,15 +650,16 @@
          letter-spacing: 1px;
      }
      address {
-         span {
-             margin: 10px 0;
+         .contact-add {
+             margin: 10px 25px;
              display: block;
+             line-height: 22px;
          }
-         span:last-child {
-             a {
-                 text-transform: none;
-             }
+         span {
+           margin: 10px 0;
+           display: block;
          }
+         .number a { margin: 0px 5px; }
          i {
              margin-right: 5px;
              color: $category-color;
@@ -698,10 +697,11 @@
      background-attachment: fixed;
  }
  .pro-list {
+   margin: 10px 0;
      .products {
          height: 300px;
          border: 3px solid transparent;
-         margin: 35px 0;
+         margin: 0;
          &:hover {
              border: 3px solid lighten($footer-color, 27%);
              @include transition(all 1s ease-in-out);
@@ -784,14 +784,15 @@
      .pop {
          width: 40%;
          margin: 0 auto;
-         padding: 25px;
+         padding: 25px 0;
          position: relative;
          background-color: #fff;
          .quick-img {
-           width: 200px;
+           width: 430px;
+           height: 460px;
            margin: 0 auto;
              img {
-               max-width:100%;
+               width: 100%;
                  max-height: 100%;
              }
          }
@@ -840,7 +841,7 @@
      display: none;
  }
  .title {
-     margin: 30px 0;
+     margin: 15px 0;
      img:focus {
          border: none;
          outline: none;
@@ -920,8 +921,15 @@
  }
 .website-pop {
   .load-pop {
-    width: 450px;
+    width: 455px;
     background-color: transparent;
+    .close {
+      @include square(25px);
+      border-radius: 100%;
+      line-height: 20px;
+      top: 10px;
+      left: -12px;
+    }
   }
 }
  .down-yes {
@@ -931,6 +939,16 @@
  .down-no {
      @include transform(translateY(0));
      @include transition(all 500ms linear);
+ }
+ // knowus
+ .knowus {
+   margin: 70px 0;
+   font-size: 16px;
+     p { margin: 20px 0; }
+     .title-know {
+       margin: 25px 0;
+       color: #F37351;
+     }
  }
  // @import 'mobile';
  @media (max-width: 1200px) {

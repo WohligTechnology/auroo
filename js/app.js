@@ -29,6 +29,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
         templateUrl: "views/template.html",
         controller: 'CategoryCtrl'
     })
+    .state('knowus', {
+        url: "/knowus",
+        templateUrl: "views/template.html",
+        controller: 'KnowusCtrl'
+    })
 
     .state('download', {
         url: "/download",
@@ -46,10 +51,10 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
         templateUrl: "views/template.html",
         controller: 'QuickviewCtrl'
     })
-    .state('categories', {
-        url: "/categories",
+    .state('products', {
+        url: "/products",
         templateUrl: "views/template.html",
-        controller: 'CategoriesCtrl'
+        controller: 'ProductsCtrl'
     })
     .state('gallery', {
         url: "/gallery",

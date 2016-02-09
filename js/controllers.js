@@ -224,9 +224,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   ];
 })
 
-.controller('CategoriesCtrl', function($scope, TemplateService, NavigationService, $timeout) {
-  $scope.template = TemplateService.changecontent("categories");
-  $scope.menutitle = NavigationService.makeactive("Categories");
+.controller('ProductsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  $scope.template = TemplateService.changecontent("products");
+  $scope.menutitle = NavigationService.makeactive("Products");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
 
@@ -377,6 +377,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   }, {
     img: 'img/brands/17.png'
   }];
+})
+.controller('KnowusCtrl', function($scope, TemplateService, NavigationService, ngDialog, $timeout) {
+  $scope.template = TemplateService.changecontent("knowus");
+  $scope.menutitle = NavigationService.makeactive("Know Us");
+  TemplateService.title = $scope.menutitle;
+  $scope.navigation = NavigationService.getnav();
 })
 
 .controller('CategoryCtrl', function($scope, TemplateService, NavigationService, ngDialog, $timeout) {
