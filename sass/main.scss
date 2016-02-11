@@ -759,7 +759,7 @@
  .img-holder {
      width: 200px;
      height: 200px;
-     margin: 25px auto;
+     margin: 15px auto;
      position: relative;
      img {
          max-height: 100%;
@@ -847,9 +847,9 @@
          outline: none;
      }
  }
+ .product-main { margin: 50px 0; }
  .cathold {
-     width: 250px;
-     height: 250px;
+    @include size(250px,140px);
      a {
          display: block;
          opacity: 1;

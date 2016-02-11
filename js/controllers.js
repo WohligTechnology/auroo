@@ -142,64 +142,64 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
   $scope.download = [{
-    img: "img/gallery/decolite.png",
+    img: "img/gallery/decolite.jpg",
     pdf: "img/pdf/decolite.pdf"
   }, {
-    img: "img/gallery/lucento.png",
+    img: "img/gallery/lucento.jpg",
     pdf: "img/pdf/lucento.pdf"
   }, {
-    img: "img/gallery/mikano.png",
+    img: "img/gallery/mikano.jpg",
     pdf: "img/pdf/mikano.pdf"
   }, {
-    img: "img/gallery/vereno.png",
+    img: "img/gallery/vereno.jpg",
     pdf: "img/pdf/vereno.pdf"
   }, {
-    img: "img/gallery/acrylam.png",
+    img: "img/gallery/acrylam.jpg",
     pdf: "img/pdf/acrylam.pdf"
   }, {
-    img: "img/gallery/egger.png",
+    img: "img/gallery/egger.jpg",
     pdf: "img/pdf/egger.pdf"
   }, {
-    img: "img/gallery/flos.png",
+    img: "img/gallery/flos.jpg",
     pdf: "img/pdf/flos.pdf"
   }, {
-    img: "img/gallery/decoart.png",
+    img: "img/gallery/decoart.jpg",
     pdf: "img/pdf/decoart.pdf"
   }, {
-    img: "img/gallery/acrylyte.png",
+    img: "img/gallery/acrylyte.jpg",
     pdf: "img/pdf/acrylyte.pdf"
   }, {
-    img: "img/gallery/corriano.png",
+    img: "img/gallery/corriano.jpg",
     pdf: "img/pdf/corriano.pdf"
   }, {
-    img: "img/gallery/stylite.png",
+    img: "img/gallery/stylite.jpg",
     pdf: "img/pdf/stylite.pdf"
   }, {
-    img: "img/gallery/decopanel.png",
+    img: "img/gallery/decopanel.jpg",
     pdf: "img/pdf/decopanel.pdf"
   }, {
-    img: "img/gallery/decoris.png",
+    img: "img/gallery/decoris.jpg",
     pdf: "img/pdf/decoris.pdf"
   }, {
-    img: "img/gallery/forescolor.png",
+    img: "img/gallery/forescolor.jpg",
     pdf: "img/pdf/forescolor.pdf"
   }, {
-    img: "img/gallery/fashionwall.png",
+    img: "img/gallery/fashionwall.jpg",
     pdf: "img/pdf/fashionwall.pdf"
   }, {
-    img: "img/gallery/emporio.png",
+    img: "img/gallery/emporio.jpg",
     pdf: "img/pdf/emporio.pdf"
   }, {
-    img: "img/gallery/matrixwall.png",
+    img: "img/gallery/matrixwall.jpg",
     pdf: "img/pdf/matrixwall.pdf"
   }, {
-    img: "img/gallery/solido.png",
+    img: "img/gallery/solido.jpg",
     pdf: "img/pdf/solido.pdf"
   }, {
-    img: "img/gallery/d3wall.png",
+    img: "img/gallery/d3wall.jpg",
     pdf: "img/pdf/d3wall.pdf"
   }, {
-    img: "img/gallery/europratik.png",
+    img: "img/gallery/europratik.jpg",
     pdf: "img/pdf/europratik.pdf"
   }];
 })
@@ -231,45 +231,45 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.navigation = NavigationService.getnav();
 
   $scope.catmain = [{
-    img: "img/gallery/decolite.png"
+    img: "img/gallery/decolite.jpg"
   }, {
-    img: "img/gallery/lucento.png"
+    img: "img/gallery/lucento.jpg"
   }, {
-    img: "img/gallery/mikano.png"
+    img: "img/gallery/mikano.jpg"
   }, {
-    img: "img/gallery/vereno.png"
+    img: "img/gallery/vereno.jpg"
   }, {
-    img: "img/gallery/acrylam.png"
+    img: "img/gallery/acrylam.jpg"
   }, {
-    img: "img/gallery/egger.png"
+    img: "img/gallery/egger.jpg"
   }, {
-    img: "img/gallery/flos.png"
+    img: "img/gallery/flos.jpg"
   }, {
-    img: "img/gallery/decoart.png"
+    img: "img/gallery/decoart.jpg"
   }, {
-    img: "img/gallery/acrylyte.png"
+    img: "img/gallery/acrylyte.jpg"
   }, {
-    img: "img/gallery/corriano.png"
+    img: "img/gallery/corriano.jpg"
   }, {
-    img: "img/gallery/stylite.png"
+    img: "img/gallery/stylite.jpg"
   }, {
-    img: "img/gallery/decopanel.png"
+    img: "img/gallery/decopanel.jpg"
   }, {
-    img: "img/gallery/decoris.png"
+    img: "img/gallery/decoris.jpg"
   }, {
-    img: "img/gallery/forescolor.png"
+    img: "img/gallery/forescolor.jpg"
   }, {
-    img: "img/gallery/fashionwall.png"
+    img: "img/gallery/fashionwall.jpg"
   }, {
-    img: "img/gallery/emporio.png"
+    img: "img/gallery/emporio.jpg"
   }, {
-    img: "img/gallery/matrixwall.png"
+    img: "img/gallery/matrixwall.jpg"
   }, {
-    img: "img/gallery/solido.png"
+    img: "img/gallery/solido.jpg"
   }, {
-    img: "img/gallery/d3wall.png"
+    img: "img/gallery/d3wall.jpg"
   }, {
-    img: "img/gallery/europratik.png"
+    img: "img/gallery/europratik.jpg"
   }];
 })
 
@@ -279,45 +279,45 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
   $scope.gallery = [{
-    img: "img/gallery/decolite.png"
+    img: "img/gallery/decolite.jpg"
   }, {
-    img: "img/gallery/lucento.png"
+    img: "img/gallery/lucento.jpg"
   }, {
-    img: "img/gallery/mikano.png"
+    img: "img/gallery/mikano.jpg"
   }, {
-    img: "img/gallery/vereno.png"
+    img: "img/gallery/vereno.jpg"
   }, {
-    img: "img/gallery/acrylam.png"
+    img: "img/gallery/acrylam.jpg"
   }, {
-    img: "img/gallery/egger.png"
+    img: "img/gallery/egger.jpg"
   }, {
-    img: "img/gallery/flos.png"
+    img: "img/gallery/flos.jpg"
   }, {
-    img: "img/gallery/decoart.png"
+    img: "img/gallery/decoart.jpg"
   }, {
-    img: "img/gallery/acrylyte.png"
+    img: "img/gallery/acrylyte.jpg"
   }, {
-    img: "img/gallery/corriano.png"
+    img: "img/gallery/corriano.jpg"
   }, {
-    img: "img/gallery/stylite.png"
+    img: "img/gallery/stylite.jpg"
   }, {
-    img: "img/gallery/decopanel.png"
+    img: "img/gallery/decopanel.jpg"
   }, {
-    img: "img/gallery/decoris.png"
+    img: "img/gallery/decoris.jpg"
   }, {
-    img: "img/gallery/forescolor.png"
+    img: "img/gallery/forescolor.jpg"
   }, {
-    img: "img/gallery/fashionwall.png"
+    img: "img/gallery/fashionwall.jpg"
   }, {
-    img: "img/gallery/emporio.png"
+    img: "img/gallery/emporio.jpg"
   }, {
-    img: "img/gallery/matrixwall.png"
+    img: "img/gallery/matrixwall.jpg"
   }, {
-    img: "img/gallery/solido.png"
+    img: "img/gallery/solido.jpg"
   }, {
-    img: "img/gallery/d3wall.png"
+    img: "img/gallery/d3wall.jpg"
   }, {
-    img: "img/gallery/europratik.png"
+    img: "img/gallery/europratik.jpg"
   }];
   $scope.slide = [
     'img/mikano/1.jpg',
