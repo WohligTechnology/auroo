@@ -391,39 +391,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
 
-  //     $scope.molding = [
-  //         {
-  //             img: "img/acrylyte/sample/8801.jpg",
-  //             name: "Acrylyte",
-  //             code: "8801",
-  //             size: "1220 x 2440mm x 3mm (T)"
-  // },
-  //         {
-  //             img: "img/acrylyte/sample/8802.jpg",
-  //             name: "Acrylyte",
-  //             code: "8801",
-  //             size: "1220 x 2440mm x 3mm (T)"
-  // },
-  //         {
-  //             img: "img/acrylyte/sample/8803.jpg",
-  //             name: "Acrylyte",
-  //             code: "8801",
-  //             size: "1220 x 2440mm x 3mm (T)"
-  // },
-  //         {
-  //             img: "img/acrylyte/sample/8804.jpg",
-  //             name: "Acrylyte",
-  //             code: "8801",
-  //             size: "1220 x 2440mm x 3mm (T)"
-  // },
-  //         {
-  //             img: "img/acrylyte/sample/8805.jpg",
-  //             name: "Acrylyte",
-  //             code: "8801",
-  //             size: "1220 x 2440mm x 3mm (T)"
-  // }
-  //
-  // ];
+  $scope.oneAtATime = true;
 
   $scope.panel = [{
     img: "img/acrylyte/sample/8801.jpg",
@@ -506,7 +474,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     code: "8816",
     size: "1220 x 2440mm x 3mm (T)"
   }, ];
-  $scope.oneAtATime = true;
+
   $scope.open = function(data) {
     $scope.showpop = data;
     ngDialog.open({
@@ -514,6 +482,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       scope: $scope,
       controller: 'CategoryCtrl'
     });
+  };
+  $scope.feature = function() {
+    ngDialog.open({
+        template: 'views/content/featurespopup.html',
+        scope: $scope,
+        controller: 'CategoryCtrl'
+      });
   };
 
 })

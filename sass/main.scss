@@ -362,7 +362,7 @@
      }
      .pro-hov {
          opacity: 0;
-         background-color: rgba(255, 255, 255, .9);
+         background-color: rgba(255, 255, 255, 0.5);
          position: relative;
          height: 350px;
          @include transition(all 1s ease-in-out);
@@ -911,11 +911,9 @@
    margin: 50px 0 0 5px;
    .name {
      span {
+       margin-right: 5px;
        display: inline-block;
        font-size: 18px;
-     }
-     .name {
-       margin-right: 25px;
      }
    }
  }
