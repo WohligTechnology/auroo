@@ -948,6 +948,11 @@
        color: #F37351;
      }
  }
+ // features-popup
+ .features .feature-imgholder {
+    width: 70%;
+    margin: 0 auto;
+ }
  // @import 'mobile';
  @media (max-width: 1200px) {
      .navbar-nav li {
