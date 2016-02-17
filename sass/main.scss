@@ -1114,6 +1114,22 @@
      .title {
          margin: 20px 0;
      }
+     .footer-menu {
+       text-align: center;
+       .foot-logo { margin: 0 auto; }
+       address {
+         &:after {
+           width: 100px;
+           left: 50%;
+           @include transform(translateX(-50%));
+         }
+         &:before {
+           width: 100px;
+           left: 50%;
+           @include transform(translateX(-50%));
+         }
+       }
+     }
  }
  @media (max-width: 420px) {
      //     .italic {
