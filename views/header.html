@@ -16,43 +16,48 @@
           <div id="euro" class="collapse navbar-collapse">
             <div class="template menu" ng-include="template.menu"></div>
           </div>
+      </div>
+      <div class="col-md-2 col-sm-2 col-xs-12 nomgpd">
+        <div class="lh40">
+          <ul class="head-icon mgtb text-center">
+            <li>
+              <a href="" ng-click="getsearch();">
+                <i class="fa fa-search"></i>
+              </a>
+            </li>
+            <li>
+              <a href="" class="fb" target="_blank">
+                <i class="fa fa-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a href="" class="twi" target="_blank">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="" class="youtube" target="_blank">
+                <i class="fa fa-youtube"></i>
+              </a>
+            </li>
+          </ul>
         </div>
-        <div class="col-md-2 col-sm-2 col-xs-12 nomgpd">
-          <div class="lh40">
-            <ul class="head-icon mgtb text-center">
-              <li>
-                <a href="" class="fb" target="_blank">
-                  <i class="fa fa-facebook"></i>
-                </a>
-              </li>
-              <li>
-                <a href="" class="twi" target="_blank">
-                  <i class="fa fa-twitter"></i>
-                </a>
-              </li>
-              <li>
-                <a href="" class="youtube" target="_blank">
-                  <i class="fa fa-youtube"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+      </div>
       </nav>
     </div>
   </div>
-  <!--   <div class="search-box {{getclass}}">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-xs-10">
-                    <form action="">
-                        <input type="search" class="form-control" placeholder="Type your search and hit enter">
-                    </form>
-                </div>
-                <div class="col-md-2 col-xs-2">
-                    <a href="" ng-click="open('down-yes');" class="close"><i class="fa fa-times"></i></a>
-                </div>
-            </div>
+  <div class="search-box {{getclass}}">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-xs-10">
+          <form action="">
+            <input type="search" class="form-control" placeholder="Type your search and hit enter">
+          </form>
         </div>
-    </div> -->
+        <div class="col-md-2 col-xs-2">
+          <a href="" ng-click="open('down-yes');" class="close"><i class="fa fa-times"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>

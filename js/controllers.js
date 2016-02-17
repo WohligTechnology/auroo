@@ -496,17 +496,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 .controller('headerctrl', function($scope, TemplateService) {
   $scope.template = TemplateService;
   $scope.getclass = "down-yes";
-  $scope.open = function(get) {
-    $scope.getclass = get;
+  $scope.getsearch = function() {
+    if ($scope.getclass == "down-yes")
+    $scope.getclass = "down-no";
+    else
+    $scope.getclass = "down-yes";
   };
-  $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-    $(window).scrollTop(0);
-  });
+  // $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+  //   $(window).scrollTop(0);
+  // });
+  $scope.top = function() {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 1000);
+  };
+
 });
-//$scope.toggle = function (flag) {
-//    //            if (flag = true) {
-//    //                $scope.showsearch = !$scope.showsearch;
-//    //            } else {
-//    $scope.showsearch = flag;
-//    //            }
-//}
