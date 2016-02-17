@@ -1,7 +1,7 @@
 var adminurl = "http://192.168.0.123/eurobackend/index.php/json/";
 var navigationservice = angular.module('navigationservice', [])
 
-.factory('NavigationService', function() {
+.factory('NavigationService', function($http) {
   var navigation = [{
     name: "Home",
     classis: "active",

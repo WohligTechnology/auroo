@@ -94,6 +94,7 @@
      background-color: transparent;
  }
  .navbar-nav > li { padding: 10px 20px; }
+
  .navbar-nav>li > a {
      color: $menu-color;
      padding: 0;
@@ -102,9 +103,11 @@
          opacity: 1;
          color: $menu-color;
          border-bottom: 1px dotted $menu-color;
-         @include transition(all 500ms ease-in-out);
+         @include transition(all 500ms ease-in-out);   
      }
  }
+ .navbar-nav > li.active a { border-bottom: 1px dotted #222; }
+ 
  .navbar-brand {
      padding: 4px;
      img {

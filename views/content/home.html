@@ -1,5 +1,5 @@
 <div class="slider">
-    <flex-slider class="carousel" flex-slide="s in slides" animation="slide" animation-loop="true">
+    <flex-slider class="carousel" flex-slide="s in slides track by $index" animation="slide" animation-loop="true">
         <li>
             <img ng-src="{{s.image|serverimage}}">
             <!--
@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="pro">
-                    <img src="{{homeImage.image1}}" alt="Products" class="img-responsive">
+                    <img src="img/adhesive-banner.jpg" alt="Products" class="img-responsive">
                 </div>
             </div>
             <div class="col-md-6">
@@ -46,12 +46,12 @@
         <div class="row">
             <div class="col-md-6 col-sm-6">
                 <div class="pro">
-                    <img src="{{homeImage.image2}}" alt="Products" class="img-responsive">
+                    <img src="img/1.jpg" alt="Products" class="img-responsive">
                 </div>
             </div>
             <div class="col-md-6 col-sm-6">
                 <div class="pro">
-                    <img src="{{homeImage.image3}}" alt="Products" class="img-responsive">
+                    <img src="img/2.jpg" alt="Products" class="img-responsive">
                 </div>
             </div>
         </div>
@@ -94,12 +94,12 @@
             -->
                 <div class="col-md-6 col-sm-6">
                     <div class="pro">
-                        <img src="{{exclusiveProduct.image1}}" alt="Products" class="img-responsive">
+                        <img src="img/mikano-banner.jpg" alt="Products" class="img-responsive">
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6">
                     <div class="pro">
-                        <img src="{{exclusiveProduct.image2}}" alt="Products" class="img-responsive">
+                        <img src="img/decoart-banner.jpg" alt="Products" class="img-responsive">
                     </div>
                 </div>
             </div>
@@ -161,11 +161,11 @@
     <div class="brand-list" ng-click="proclick($index)">
         <div class="list-brand">
             <div class="brand-img">
-                <img ng-src="{{brand.frontImage}}" alt="Brand" class="img-responsive">
+                <img ng-src="{{brand.frontImage|serverimage}}" alt="Brand" class="img-responsive">
             </div>
         </div>
         <div class="back-img">
-            <img ng-src="{{brand.backImage}}" alt="Brand" class="img-responsive" ng-click="getCategory(brand.id)">
+            <img ng-src="{{brand.backImage|serverimage}}" alt="Brand" class="img-responsive">
         </div>
     </div>
     <div class="click-pro" ng-show="brand.show">
