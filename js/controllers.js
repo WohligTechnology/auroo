@@ -63,7 +63,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   };
 
   // $.jStorage.set('popNot', undefined)
-  // console.log('popNot value: ', $.jStorage.get('popNot'))
+  console.log('popNot value: ', $.jStorage.get('popNot'))
   popNot = $.jStorage.get('popNot');
   $scope.popme = function() {
     ngDialog.open({
