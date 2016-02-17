@@ -38,37 +38,37 @@ Vile Parle (East), Mumbai 400 057.Maharshtra, India</span>
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <form>
-                    <div class="separte">
-                        <span>*<label for="name" class="label-control">Name</label></span>
-                        <input type="text" class="form-control" id="name">
-                        <!-- <span style="display:none;">Please enter name</span> -->
-                    </div>
-                    <div class="separte">
-                        <span>*<label for="mail" class="label-control">Email</label></span>
-                        <input type="Email" class="form-control" id="mail">
-                        <!-- <span style="display:none;">Please enter Email</span> -->
-                    </div>
-                    <div class="separte">
-                        <span><label for="tel" class="label-control">Telephone</label></span>
-                        <input type="Tel" class="form-control" id="tel">
-                        <!-- <span style="display:none;">Please enter Telephone</span> -->
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-6">
-                <form action="">
-                    <div class="separte">
-                        <span>*<label for="comment">comment</label></span>
-                        <textarea name="" id="comment" cols="30" rows="10" class="form-control"></textarea>
+                <form name="feedback" ng-hide="formComplete">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="separte">
+                                <span>*<label for="name" class="label-control">Name</label></span>
+                                <input name="name" required ng-model="formFeedback.name" type="text" class="form-control" id="name">
+                                <div class="" ng-show="feedback.name.$error.required && feedback.name.$touched">Please Enter Your Name.</div>
+                            </div>
+                            <div class="separte">
+                                <span>*<label for="mail" class="label-control">Email</label></span>
+                                <input name="email" required type="email" ng-model="formFeedback.email" class="form-control" id="mail">
+                                <div class="" ng-show="feedback.email.$error.required && feedback.email.$touched">Please Enter Your Email Id</div>
+                            </div>
+                            <div class="separte">
+                                <span><label for="tel" class="label-control">Telephone</label></span>
+                                <input type="text" ng-model="formFeedback.telephone" class="form-control" id="tel">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="separte">
+                                <span>*<label for="comment">comment</label></span>
+                                <textarea name="msg" ng-model="formFeedback.comment" id="comment" cols="30" rows="10" class="form-control" required></textarea>
+                                <div class="" ng-show="feedback.msg.$error.required && feedback.msg.$touched">Please Enter Your Comment</div>
+                            </div>
+                        </div>            
+                        <div class="submit-btn text-center">
+                            <a href="" class="submit button" ng-class="{'disabled' : !feedback.$valid }" ng-click="submitForm(formFeeback,feedback)">Submit</a>
+                        </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    <div class="submit-btn text-center">
-        <a href="" class="submit button">Sumbit</a>
-    </div>
-</div>
-</div>
 </div>

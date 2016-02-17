@@ -1,3 +1,5 @@
+
+
 // JavaScript Document
 var firstapp = angular.module('firstapp', [
     'ui.router',
@@ -16,29 +18,50 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
     .state('home', {
         url: "/home",
         templateUrl: "views/template.html",
-        controller: 'HomeCtrl'
+        controller: 'HomeCtrl',
+        params: {activeItem: 'item1'}
     })
 
-    .state('contactus', {
-        url: "/contactus",
-        templateUrl: "views/template.html",
-        controller: 'ContactUsCtrl'
-    })
-    .state('category', {
-        url: "/category",
-        templateUrl: "views/template.html",
-        controller: 'CategoryCtrl'
-    })
     .state('knowus', {
         url: "/knowus",
         templateUrl: "views/template.html",
-        controller: 'KnowusCtrl'
+        controller: 'KnowusCtrl',
+        params: {activeItem: 'item2'}
+    })
+
+    .state('products', {
+        url: "/products",
+        templateUrl: "views/template.html",
+        controller: 'ProductsCtrl',
+        params: {activeItem: 'item3'}
+    })
+
+    .state('gallery', {
+        url: "/gallery",
+        templateUrl: "views/template.html",
+        controller: 'GalleryCtrl',
+        params: {activeItem: 'item4'}
     })
 
     .state('download', {
         url: "/download",
         templateUrl: "views/template.html",
-        controller: 'DownloadCtrl'
+        controller: 'DownloadCtrl',
+        params: {activeItem: 'item5'}
+    })
+
+    .state('contactus', {
+        url: "/contactus",
+        templateUrl: "views/template.html",
+        controller: 'ContactUsCtrl',
+        params: {activeItem: 'item6'}
+
+    })
+
+    .state('category', {
+        url: "/category/:id/series/:code",
+        templateUrl: "views/template.html",
+        controller: 'CategoryCtrl'
     })
 
     .state('brands', {
@@ -46,26 +69,19 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
         templateUrl: "views/template.html",
         controller: 'BrandsCtrl'
     })
+    
     .state('quickview', {
         url: "/quickview",
         templateUrl: "views/template.html",
         controller: 'QuickviewCtrl'
     })
-    .state('products', {
-        url: "/products",
-        templateUrl: "views/template.html",
-        controller: 'ProductsCtrl'
-    })
-    .state('gallery', {
-        url: "/gallery",
-        templateUrl: "views/template.html",
-        controller: 'GalleryCtrl'
-    })
+    
+    
     .state('galleryimage', {
         url: "/galleryimage",
         templateUrl: "views/template.html",
         controller: 'GalleryimageCtrl'
-    })
+    });
 
     $urlRouterProvider.otherwise("/home");
 
@@ -93,4 +109,16 @@ firstapp.directive('img', function($compile, $parse) {
             }
         }
     };
+});
+
+firstapp.filter('serverimage', function() {
+  return function(input) {
+    if (input) {
+      // console.log('serverimage: ', input);
+      // return input;
+      return  "http://vinod.io/eurobackend/uploads/" + input;
+    } else {
+      return "img/logo.png";
+    }
+  };
 });
