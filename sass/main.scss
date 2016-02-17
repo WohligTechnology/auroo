@@ -981,6 +981,7 @@
              width: 300px;
          }
      }
+     .quickview .pop .quick-img { width: 360px; }
  }
  @media (max-width: 992px) {
      .navbar-nav li {
@@ -1130,6 +1131,7 @@
          }
        }
      }
+     .quickview .pop .quick-img { @include size(95%, auto); }
  }
  @media (max-width: 420px) {
      //     .italic {
