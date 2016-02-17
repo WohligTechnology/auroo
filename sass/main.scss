@@ -981,6 +981,7 @@
              width: 300px;
          }
      }
+     .quickview .pop .quick-img { width: 360px; }
  }
  @media (max-width: 992px) {
      .navbar-nav li {
@@ -1114,6 +1115,23 @@
      .title {
          margin: 20px 0;
      }
+     .footer-menu {
+       text-align: center;
+       .foot-logo { margin: 0 auto; }
+       address {
+         &:after {
+           width: 100px;
+           left: 50%;
+           @include transform(translateX(-50%));
+         }
+         &:before {
+           width: 100px;
+           left: 50%;
+           @include transform(translateX(-50%));
+         }
+       }
+     }
+     .quickview .pop .quick-img { @include size(95%, auto); }
  }
  @media (max-width: 420px) {
      //     .italic {
