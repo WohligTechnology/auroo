@@ -1,11 +1,12 @@
 <div class="container pdt10">
     <div class="product-main">
       <div class="row">
-          <div class="col-md-3 col-sm-4 col-xs-6" ng-repeat="pdf in download">
+          <div class="col-md-3 col-sm-4 col-xs-6" ng-repeat="getpdf in download">
               <div class="title">
-                  <a ng-href="{{pdf.pdf}}" target="_blank"><img ng-src="{{pdf.categoryImg}}" alt="" class="img-responsive" ></a>
+                  <a ng-href="{{getpdf.pdf|serverimage}}" target="_blank"><img ng-src="{{getpdf.image|serverimage}}" alt="" class="img-responsive" ></a>
               </div>
           </div>
       </div>
+
     </div>
 </div>

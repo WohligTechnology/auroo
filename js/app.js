@@ -57,7 +57,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
     })
 
     .state('category', {
-        url: "/category/:id/series/:code",
+        url: "/category/:id",
         templateUrl: "views/template.html",
         controller: 'CategoryCtrl'
     })
@@ -67,16 +67,16 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
         templateUrl: "views/template.html",
         controller: 'BrandsCtrl'
     })
-    
+
     .state('quickview', {
         url: "/quickview",
         templateUrl: "views/template.html",
         controller: 'QuickviewCtrl'
     })
-    
-    
+
+
     .state('galleryimage', {
-        url: "/galleryimage",
+        url: "/galleryimage/:id",
         templateUrl: "views/template.html",
         controller: 'GalleryimageCtrl'
     });
@@ -114,7 +114,7 @@ firstapp.filter('serverimage', function() {
     if (input) {
       // console.log('serverimage: ', input);
       // return input;
-      return  "http://vinod.io/eurobackend/uploads/" + input;
+      return  "http://192.168.0.123/eurobackend/uploads/" + input;
     } else {
       return "img/logo.png";
     }

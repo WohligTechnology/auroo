@@ -7,7 +7,7 @@
     </div>
 -->
   <div class="banner-holder">
-    <img src="{{category.bannerImage}}" alt="" class="img-responsive">
+    <img src="{{Categorybanner.banner|serverimage}}" alt="" class="img-responsive">
   </div>
   <div class="categ-page">
     <div class="container">
@@ -280,22 +280,23 @@
                     </div> -->
             <div class="series clearfix">
               <div class="name pull-left">
-                <span class="category-color">{{category.productName}}</span>
-                <span ng-repeat="s in category.series">
-                  <a ui-sref="category({id: category.id, code: s})">{{s}} Series</a>
+                <span class="category-color">{{category.name}}</span>
+                <span ng-repeat="s in eachseries">
+                  <a ui-sref="category({id: category.id})">{{s.name}} </a>
                 </span>
               </div>
               <div class="pull-right name">
                 <span class="category-color" ng-click="feature();">Features</span>
               </div>
             </div>
+
             <div class="row">
-              <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in series" ng-click="open(pros);">
+              <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in series" ng-click="open(pros);" ng-hide="thisseries">
                 <div class="pro-list">
                   <a href="">
                     <div class="products">
                       <div class="pro-img">
-                        <img ng-src="{{pros.image}}" alt="Products" class="img-responsive">
+                        <img ng-src="{{pros.image|serverimage}}" alt="Products" class="img-responsive">
                       </div>
                       <div class="pro-hov text-center text-uppercase">
                         <div class="pro-detail">
@@ -308,6 +309,34 @@
                     </div>
                     <div class="product-code">
                       <p class="text-center">{{pros.code}}</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+            <div class="row">
+              <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in seriesProducts" ng-show="thisseries" ng-click="open(pros);">
+                <div class="pro-list">
+                  <a href="">
+                    <div class="products">
+                      <div class="pro-img">
+                        <img ng-src="{{pros.image|serverimage}}" alt="Products" class="img-responsive">
+                      </div>
+                      <div class="pro-hov text-center text-uppercase">
+                        <div class="pro-detail">
+                          <a href="" class="eye"><i class="fa fa-eye"></i></a>
+                        </div>
+                        <!-- <div class="view">
+                                                <a href="" ng-click="open(pros);" class="eye"><i class="fa fa-eye"></i></a>
+                                            </div> -->
+                      </div>
+                    </div>
+                    <div class="product-code">
+                      <p class="text-center">{{pros.name}}</p>
                     </div>
                   </a>
                 </div>

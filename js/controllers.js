@@ -62,7 +62,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
   };
 
-  // $.jStorage.set('popNot', undefined)
+  $.jStorage.set('popNot', true)
   console.log('popNot value: ', $.jStorage.get('popNot'))
   popNot = $.jStorage.get('popNot');
   $scope.popme = function() {
@@ -83,6 +83,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
   NavigationService.getSlider(function(data) {
     $scope.slides = data;
+
     // console.log('slider: ', $scope.slides);
   });
 
@@ -261,11 +262,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.menutitle = NavigationService.makeactive("Download");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
-  
+
   NavigationService.getGallery(function(data) {
     $scope.download = data;
-    // console.log($scope.download);
+    console.log($scope.download);
   });
+  // $scope.getpdf=function(id)
+  // {
+  //   NavigationService.getdownload(id,function(data) {
+  //     $scope.downloadpdf = data;
+  //     console.log($scope.downloadpdf);
+  //
+  //   });
+  //};
   // $scope.download = [{
   //   img: "img/gallery/decolite.png",
   //   pdf: "img/pdf/decolite.pdf"
@@ -336,12 +345,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.navigation = NavigationService.getnav();
 })
 
-.controller('GalleryimageCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+.controller('GalleryimageCtrl', function($scope, TemplateService, NavigationService, $timeout,$stateParams) {
   $scope.template = TemplateService.changecontent("galleryimage");
   $scope.menutitle = NavigationService.makeactive("Galleryimage");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
   $scope.slide = [];
+  NavigationService.getEachProductGallery(id,function(data) {
+    $scope.slide = data;
+    // console.log($scope.gallery);
+  });
 })
 
 .controller('ProductsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -405,15 +418,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   NavigationService.getGallery(function(data) {
     $scope.gallery = data;
     // console.log($scope.gallery);
-  })
-  
-  $scope.open = function() {
+  });
+
+  $scope.open = function(id) {
+    NavigationService.getEachProductGallery(id,function(data) {
+      $scope.slide = data;
+      // console.log($scope.gallery);
+    });
     ngDialog.open({
       template: 'views/content/galleryimage.html',
       scope: $scope,
       controller: 'GalleryCtrl'
     });
-  }
+  };
 })
 
 .controller('BrandsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -467,7 +484,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.navigation = NavigationService.getnav();
 })
 
-.controller('CategoryCtrl', function($scope, TemplateService, NavigationService, ngDialog, $timeout) {
+.controller('CategoryCtrl', function($scope, TemplateService, NavigationService, ngDialog, $timeout,$stateParams) {
   $scope.template = TemplateService.changecontent("category");
   $scope.menutitle = NavigationService.makeactive("Category");
   TemplateService.title = $scope.menutitle;
@@ -479,12 +496,28 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     // console.log('State: ', $stateParams.id);
   })
 
-  NavigationService.getEachSeries($stateParams.id, $stateParams.code, function (data) {
-    $scope.series = data;
-    // console.log('Series: ', $scope.series);
+  NavigationService.getEachSeries($stateParams.id, function (data) {
+    $scope.series = data.data.queryresult;
+    $scope.eachseries=data.filter.subcategory;
+    console.log($scope.series);
   })
-  // } 
-  
+
+
+$scope.showseries=function(){
+  $scope.thisseries=true;
+NavigationService.getThisSeries($stateParams.id, function (data) {
+  $scope.seriesProducts = data.data.queryresult;
+  // $scope.eachseries=data.filter.subcategory;
+  console.log($scope.seriesProducts);
+})
+};
+  NavigationService.getBanner($stateParams.id, function (data) {
+    $scope.Categorybanner = data;
+    console.log($scope.Categorybanner);
+  })
+
+  // }
+
   //     $scope.molding = [
   //         {
   //             img: "img/acrylyte/sample/8801.jpg",
