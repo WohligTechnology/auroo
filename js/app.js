@@ -6,7 +6,7 @@ var firstapp = angular.module('firstapp', [
     'navigationservice'
 ]);
 
-firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
+firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider, $locationProvider) {
 
     // for http request with session
     $httpProvider.defaults.withCredentials = true;
@@ -57,7 +57,13 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
     })
 
     .state('category', {
-        url: "/category/:id/series/:code",
+        url: "/category/:id",
+        templateUrl: "views/template.html",
+        controller: 'CategoryCtrl'
+    })
+
+    .state('category.series', {
+        url: "/series/:code",
         templateUrl: "views/template.html",
         controller: 'CategoryCtrl'
     })
@@ -81,6 +87,8 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
         controller: 'GalleryimageCtrl'
     });
 
+    // use the HTML5 History API
+    // $locationProvider.html5Mode(true);
     $urlRouterProvider.otherwise("/home");
 
 });

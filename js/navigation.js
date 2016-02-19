@@ -91,7 +91,7 @@ var navigationservice = angular.module('navigationservice', [])
     },
 
     getAllProducts:function (callback) {
-      $http.get(adminurl+'getAllProducts').success(callback);
+      $http.get(adminurl+'getAllCategories').success(callback);
       //$http.get('http://amit.io/selfbackend/index.php/json/getCategory').success(callback);
     },
 
@@ -100,10 +100,16 @@ var navigationservice = angular.module('navigationservice', [])
       $http.get(adminurl + 'getCategoryById?id=' + id).success(callback);
     },
 
-    getEachSeries: function (id, code, callback) {
+    getEachSeries: function (id, callback) {
       // console.log('Code: ', id);
       // console.log('Code: ', id);
-      $http.get(adminurl + 'category?id=' + id + '/series?code=' + code).success(callback);
+      $http.get(adminurl + 'getProductsByCategory?categoryid=' + id).success(callback);
+    },
+
+    getEachSeriesPdts:function (id, code, callback) {
+      console.log('Id: ', id);
+      console.log('Code: ', code);
+      $http.get(adminurl + 'getProductsByCategory?categoryid=' + id + '&subcategories=' + code).success(callback);
     }
   }
 });
