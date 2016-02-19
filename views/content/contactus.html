@@ -60,9 +60,9 @@ Vile Parle (East), Mumbai 400 057.Maharshtra, India</span>
                                 <textarea name="msg" ng-model="formFeedback.comment" id="comment" cols="30" rows="10" class="form-control" required></textarea>
                                 <div class="" ng-show="feedback.msg.$error.required && feedback.msg.$touched">Please Enter Your Comment</div>
                             </div>
-                        </div>            
+                        </div>
                         <div class="submit-btn text-center">
-                            <a href="" class="submit button" ng-class="{'disabled' : !feedback.$valid }" ng-click="submitForm(formFeeback,feedback)">Submit</a>
+                            <a href="" class="submit button" ng-class="{'disabled' : !feedback.$valid }" ng-click="submitForm(feedback)">Submit</a>
                         </div>
                     </div>
                 </form>

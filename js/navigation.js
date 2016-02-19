@@ -56,14 +56,17 @@ var navigationservice = angular.module('navigationservice', [])
     //     $http.get(adminurl + 'getCategoryById?id='+id).success(callback);
     //
     // },
-    contactSubmit:function(mail,callback){
+    contactSubmit:function(request,callback){
 
       $http({
         url: adminurl + 'contactUs',
         method: 'POST',
         withCredentials: true,
         data: {
-          "email": mail
+          "name":request.name,
+          "email": request.mail,
+          "telephone":request.telephone,
+          "comment":request.comment
         }
       }).success(callback);
     },
