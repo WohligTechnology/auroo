@@ -40,7 +40,7 @@ var navigationservice = angular.module('navigationservice', [])
       $http.get(adminurl + 'getExclusivePdt').success(callback);
     },
     getGallery: function(callback) {
-      $http.get(adminurl + 'getGalleryImages').success(callback);
+      $http.get(adminurl + 'getAllCategories').success(callback);
     },
     getSlide: function(callback) {
       $http.get(adminurl + 'getGalleryImages').success(callback);
@@ -50,8 +50,12 @@ var navigationservice = angular.module('navigationservice', [])
     },
     getEachProductGallery: function(id,callback) {
       // console.log(id);
-      $http.get(adminurl + 'getEachProductGallery/'+id).success(callback);
+      $http.get(adminurl + 'getEachProductGallery?id='+id).success(callback);
     },
+    // getdownload:function(id,callback){
+    //     $http.get(adminurl + 'getCategoryById?id='+id).success(callback);
+    //
+    // },
     contactSubmit:function(mail,callback){
 
       $http({

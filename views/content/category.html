@@ -7,7 +7,9 @@
     </div>
 -->
   <div class="banner-holder">
+
     <img src="{{category.banner|serverimage}}" alt="" class="img-responsive">
+
   </div>
   <div class="categ-page">
     <div class="container">
@@ -104,14 +106,16 @@
               <div class="name pull-left">
                 <span class="category-color">{{category.name}}</span>
                 <span ng-repeat="s in series">
-                  
+
                   <a ng-click="eachSeries(category.id, s.id)" ui-sref="category.series({id:category.id, code:s.name})">{{s.name}}</a>
+
                 </span>
               </div>
               <div class="pull-right name">
                 <span class="category-color" ng-click="feature();">Features</span>
               </div>
             </div>
+
             <div class="row">
               <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in products" ng-click="open(pros);" ng-hide="isSeries">
                 <div class="pro-list">
@@ -146,6 +150,34 @@
                         <div class="pro-detail">
                           <a href="" class="eye"><i class="fa fa-eye"></i></a>
                         </div>
+                      </div>
+                    </div>
+                    <div class="product-code">
+                      <p class="text-center">{{pros.name}}</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+            <div class="row">
+              <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in seriesProducts" ng-show="thisseries" ng-click="open(pros);">
+                <div class="pro-list">
+                  <a href="">
+                    <div class="products">
+                      <div class="pro-img">
+                        <img ng-src="{{pros.image|serverimage}}" alt="Products" class="img-responsive">
+                      </div>
+                      <div class="pro-hov text-center text-uppercase">
+                        <div class="pro-detail">
+                          <a href="" class="eye"><i class="fa fa-eye"></i></a>
+                        </div>
+                        <!-- <div class="view">
+                                                <a href="" ng-click="open(pros);" class="eye"><i class="fa fa-eye"></i></a>
+                                            </div> -->
                       </div>
                     </div>
                     <div class="product-code">
