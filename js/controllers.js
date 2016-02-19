@@ -62,7 +62,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
   };
 
-  $.jStorage.set('popNot', true)
+  // $.jStorage.set('popNot', true);
   console.log('popNot value: ', $.jStorage.get('popNot'))
   popNot = $.jStorage.get('popNot');
   $scope.popme = function() {
@@ -484,11 +484,86 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.navigation = NavigationService.getnav();
 })
 
-.controller('CategoryCtrl', function($scope, TemplateService, NavigationService, ngDialog, $timeout,$stateParams) {
+.controller('CategoryCtrl', function($location, $state, $scope, TemplateService, NavigationService, ngDialog, $timeout, $stateParams) {
   $scope.template = TemplateService.changecontent("category");
   $scope.menutitle = NavigationService.makeactive("Category");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
+
+  // console.log('is series params: ', $stateParams.isSeries)
+  // if($stateParams.isSeries) {
+  //   console.log('for deep linking')
+  //   NavigationService.getEachSeriesPdts(id, code, function (data) {
+  //     $scope.isSeries = true;
+  //     $scope.seriesProducts = data.data.queryresult;
+  //     if($stateParams.isSeries)
+  //     $state.go('category.series', {code: name})
+  //   })
+  // }
+  // NavigationService.getAllProducts($stateParams.id, function (data) {
+  //   $scope.category = data;
+  //   // console.log('Category: ', $scope.category);
+  //   // console.log('State: ', $stateParams.id);
+  // })
+
+  var url = window.location.href;
+  console.log('current url: ', url);
+  if(url.match(/series.*/)) {
+    // console.log('Testing 123')
+    console.log('params: ', $stateParams)
+    var page = url.substring(url.lastIndexOf('/') + 1);
+    console.log('page: ', page)
+
+    NavigationService.getEachSeries($stateParams.id, function (data) {
+      $scope.series = data.filter.subcategory;
+      // var l = $scope.series.length;
+      // return l;
+      // $scope.products = data.data.queryresult;
+      console.log('Series deep link: ', $scope.series.length);
+
+      for (i = 0; i < $scope.series.length; i++) {
+        if($scope.series[i].name == page) {
+          $scope.code = $scope.series[i].id;
+        }
+      }
+
+      console.log('code in deep link: ', $scope.code);
+      NavigationService.getEachSeriesPdts($stateParams.id, $scope.code, function (data) {
+        // $state.go('category.series', {code: name})
+        $scope.isSeries = true;
+        $scope.seriesProducts = data.data.queryresult;
+        console.log('seriesProducts: ', $scope.seriesProducts)
+        // if($stateParams.isSeries)
+      })
+    })
+  }
+
+  //   NavigationService.getEachCategory($stateParams.id, function (data) {
+  //     $scope.category = data;
+  //     // console.log('Category: ', $scope.category);
+  //     // console.log('State: ', $stateParams.id);
+  //   })
+
+  //   NavigationService.getEachSeries($stateParams.id, function (data) {
+  //     $scope.series = data.filter.subcategory;
+  //     $scope.products = data.data.queryresult;
+  //     console.log('Series: ', $scope.seriesProducts);
+  //   })
+  // }
+
+  NavigationService.getAllProducts(function (data) {
+    $scope.categories = data;
+    // console.log('Category: ', $scope.category);
+    // console.log('State: ', $stateParams.id);
+  })
+
+  $scope.isCategory = function (cat, category) {
+    if (cat.id == category.id) {
+      return true;
+    }
+
+    return false;
+  }
 
   NavigationService.getEachCategory($stateParams.id, function (data) {
     $scope.category = data;
@@ -497,26 +572,21 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   })
 
   NavigationService.getEachSeries($stateParams.id, function (data) {
-    $scope.series = data.data.queryresult;
-    $scope.eachseries=data.filter.subcategory;
-    console.log($scope.series);
+    $scope.series = data.filter.subcategory;
+    $scope.products = data.data.queryresult;
+    console.log('Series: ', $scope.seriesProducts);
   })
 
-
-$scope.showseries=function(){
-  $scope.thisseries=true;
-NavigationService.getThisSeries($stateParams.id, function (data) {
-  $scope.seriesProducts = data.data.queryresult;
-  // $scope.eachseries=data.filter.subcategory;
-  console.log($scope.seriesProducts);
-})
-};
-  NavigationService.getBanner($stateParams.id, function (data) {
-    $scope.Categorybanner = data;
-    console.log($scope.Categorybanner);
-  })
-
-  // }
+  $scope.eachSeries = function (id, code) {
+    console.log('Id: ', id);
+    console.log('Code: ', code);
+    NavigationService.getEachSeriesPdts(id, code, function (data) {
+      // $state.go('category.series', {code: name})
+      $scope.isSeries = true;
+      $scope.seriesProducts = data.data.queryresult;
+      // if($stateParams.isSeries)
+    })
+  }
 
   //     $scope.molding = [
   //         {

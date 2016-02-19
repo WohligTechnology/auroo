@@ -103,32 +103,17 @@ var navigationservice = angular.module('navigationservice', [])
       // console.log('nsId: ', id);
       $http.get(adminurl + 'getCategoryById?id=' + id).success(callback);
     },
-    getBanner: function (id, callback) {
-          // console.log('nsId: ', id);
-          $http.get(adminurl + 'getCategoryById?id=' + id).success(callback);
-        },
-    //
-    // getEachSeries: function (id, callback) {
-    //   // console.log('Code: ', id);
-    //   // console.log('Code: ', id);
-    //   $http.get(adminurl + 'getProductsByCategory?categoryid=' + id ).success(callback);
-    // },
+
     getEachSeries: function (id, callback) {
       // console.log('Code: ', id);
       // console.log('Code: ', id);
-      $http.get(adminurl + 'getProductsByCategory?categoryid=' + id ).success(callback);
+      $http.get(adminurl + 'getProductsByCategory?categoryid=' + id).success(callback);
     },
-  //
-  // getEachSeries: function (id, name, callback) {
-  //     // console.log('Code: ', id);
-  //     // console.log('Code: ', id);
-  //     $http.get(adminurl + 'getProductsByCategory?categoryid=' + id + '&subcategories' + name ).success(callback);
-  //   },
-    // getEachSeries: function (id, code, callback) {
-    //   // console.log('Code: ', id);
-    //   // console.log('Code: ', id);
-    //   $http.get(adminurl + 'category?id=' + id + '/series?code=' + code).success(callback);
-    // },
 
-  };
+    getEachSeriesPdts:function (id, code, callback) {
+      console.log('Id: ', id);
+      console.log('Code: ', code);
+      $http.get(adminurl + 'getProductsByCategory?categoryid=' + id + '&subcategories=' + code).success(callback);
+    }
+  }
 });
