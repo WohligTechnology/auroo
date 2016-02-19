@@ -16,11 +16,11 @@
           <div class="cat-list">
 
             <accordion close-others="oneAtATime">
-              <accordion-group is-status="open7" ng-repeat="cat in categories">
-                <accordion-heading><a href="" class="block">{{cat.name}}
+              <accordion-group is-status="open7">
+                <accordion-heading><a href="" class="block">{{category.name}}
                 <i class="pull-right fa" ng-class="{'fa-minus':status.open7,'fa-plus':!status.open7}"></i>
                 </a></accordion-heading>
-                <ul ng-if="isCategory(cat, category)" ng-repeat="s in series">
+                <ul ng-repeat="s in series">
                   <li><a ng-click="eachSeries(category.id, s.id)" ui-sref="category.series({id:category.id, code:s.name})">{{s.name}}</a></li>
                   <!-- <li><a href="">2</a></li>
                   <li><a href="">3</a></li>
