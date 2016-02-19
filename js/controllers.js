@@ -240,12 +240,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
 
-  $scope.submitForm = function(formData,formValid) {
+  $scope.formFeedback = {};
+  $scope.submitForm = function(formValid) {
+    // console.log('form values: ', formData);
+    console.log('form values: ', formValid);
+    console.log('form values: ', $scope.formFeedback);
     if(formValid.$valid)
     {
       $scope.formComplete = true;
-      NavigationService.contactSubmit(function(data){
-        $scope.contact=data;
+      NavigationService.contactSubmit($scope.formFeedback, function (data) {
+        // $scope.contact=data;
         // console.log($scope.contact);
       });
     }
