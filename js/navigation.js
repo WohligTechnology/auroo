@@ -1,4 +1,6 @@
+//var adminurl = "http://wohlig.io:81/callApi/euro/";
 var adminurl = "http://192.168.0.123/eurobackend/index.php/json/";
+
 var navigationservice = angular.module('navigationservice', [])
 
 .factory('NavigationService', function($http) {
@@ -56,17 +58,18 @@ var navigationservice = angular.module('navigationservice', [])
     //     $http.get(adminurl + 'getCategoryById?id='+id).success(callback);
     //
     // },
-    contactSubmit:function(request,callback){
 
+    contactSubmit:function(formData, callback){
+      console.log('form data: ', formData);
       $http({
         url: adminurl + 'contactUs',
         method: 'POST',
         withCredentials: true,
         data: {
-          "name":request.name,
-          "email": request.mail,
-          "telephone":request.telephone,
-          "comment":request.comment
+          "email": formData.email,
+          "telephone":formData.telephone,
+          "comment":formData.comment,
+          "name":formData.name,
         }
       }).success(callback);
     },
@@ -112,11 +115,18 @@ var navigationservice = angular.module('navigationservice', [])
       // console.log('Code: ', id);
       $http.get(adminurl + 'getProductsByCategory?categoryid=' + id).success(callback);
     },
+    getfeature: function (callback) {
+      $http.get(adminurl + 'getAllCategories').success(callback);
+    },
+    getsearchresult: function (name,callback) {
+      console.log('Name:',name);
+      $http.get(adminurl + 'searchByCategory?name=' + name).success(callback);
+    },
 
     getEachSeriesPdts:function (id, code, callback) {
       console.log('Id: ', id);
       console.log('Code: ', code);
       $http.get(adminurl + 'getProductsByCategory?categoryid=' + id + '&subcategories=' + code).success(callback);
     }
-  }
+  };
 });

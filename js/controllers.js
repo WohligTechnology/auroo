@@ -63,7 +63,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   };
 
   // $.jStorage.set('popNot', true);
-  console.log('popNot value: ', $.jStorage.get('popNot'))
+  console.log('popNot value: ', $.jStorage.get('popNot'));
   popNot = $.jStorage.get('popNot');
   $scope.popme = function() {
     ngDialog.open({
@@ -73,9 +73,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   };
 
   $scope.close = function () {
-    $.jStorage.set('popNot', true)
+    $.jStorage.set('popNot', true);
     // console.log('popNot value: ', $.jStorage.get('popNot'))
-  }
+  };
 
   if(!popNot) {
     $scope.popme();
@@ -239,16 +239,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.menutitle = NavigationService.makeactive("Contact-Us");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
-$scope.formFeedback={};
+  $scope.formFeedback = {};
   $scope.submitForm = function(formValid) {
-    //console.log(formData);
+    // console.log('form values: ', formData);
+    console.log('form values: ', formValid);
+    console.log('form values: ', $scope.formFeedback);
     if(formValid.$valid)
     {
       $scope.formComplete = true;
-      NavigationService.contactSubmit($scope.formFeedback,function(data){
-        console.log(data);
-        //$scope.contact=data;
-        //console.log($scope.contact);
+      NavigationService.contactSubmit($scope.formFeedback, function (data) {
+        // $scope.contact=data;
+        // console.log($scope.contact);
       });
     }
     else
@@ -347,17 +348,55 @@ $scope.formFeedback={};
   $scope.navigation = NavigationService.getnav();
 })
 
+.controller('SearchResultCtrl', function($scope, TemplateService, NavigationService, $timeout,$stateParams) {
+  $scope.template = TemplateService.changecontent("searchresult");
+  $scope.menutitle = NavigationService.makeactive("SearchResult");
+  TemplateService.title = $scope.menutitle;
+  $scope.navigation = NavigationService.getnav();
+  $scope.name = "";
+
+  console.log($stateParams.name);
+  NavigationService.getsearchresult($stateParams.name,function (data) {
+    $scope.products = data;
+    console.log($scope.products);
+  });
+  // $scope.name = "";
+  // $scope.getsearchresult = function(name) {
+  //   NavigationService.getsearchresult($stateParams.name,function (data) {
+  //     $scope.products = data;
+  //    console.log($scope.products);
+  //  });
+  // };
+
+    // NavigationService.getsearchresult(function (data) {
+    //   $scope.products = data;
+    //  console.log($scope.products);
+    // });
+
+})
+
 .controller('GalleryimageCtrl', function($scope, TemplateService, NavigationService, $timeout,$stateParams) {
   $scope.template = TemplateService.changecontent("galleryimage");
   $scope.menutitle = NavigationService.makeactive("Galleryimage");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
-  $scope.slide = [];
-  NavigationService.getEachProductGallery(id,function(data) {
-    $scope.slide = data;
-    // console.log($scope.gallery);
-  });
+  //$scope.slide = [];
+  // NavigationService.getEachProductGallery(id,function(data) {
+  //   $scope.slide = data;
+  //   // console.log($scope.gallery);
+  // });
 })
+// .controller('FeaturespopCtrl', function($scope, TemplateService, NavigationService, $timeout,$stateParams) {
+//   $scope.template = TemplateService.changecontent("featurespopup");
+//   $scope.menutitle = NavigationService.makeactive("Featurespopup");
+//   TemplateService.title = $scope.menutitle;
+//   $scope.navigation = NavigationService.getnav();
+//   //$scope.slide = [];
+//   // NavigationService.getEachProductGallery(id,function(data) {
+//   //   $scope.slide = data;
+//   //   // console.log($scope.gallery);
+//   // });
+// })
 
 .controller('ProductsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
   $scope.template = TemplateService.changecontent("products");
@@ -509,12 +548,12 @@ $scope.formFeedback={};
   // })
 
   var url = window.location.href;
-  console.log('current url: ', url);
+  //console.log('current url: ', url);
   if(url.match(/series.*/)) {
     // console.log('Testing 123')
-    console.log('params: ', $stateParams)
+    console.log('params: ', $stateParams);
     var page = url.substring(url.lastIndexOf('/') + 1);
-    console.log('page: ', page)
+    console.log('page: ', page);
 
     NavigationService.getEachSeries($stateParams.id, function (data) {
       $scope.series = data.filter.subcategory;
@@ -534,10 +573,10 @@ $scope.formFeedback={};
         // $state.go('category.series', {code: name})
         $scope.isSeries = true;
         $scope.seriesProducts = data.data.queryresult;
-        console.log('seriesProducts: ', $scope.seriesProducts)
+        console.log('seriesProducts: ', $scope.seriesProducts);
         // if($stateParams.isSeries)
-      })
-    })
+      });
+    });
   }
 
   //   NavigationService.getEachCategory($stateParams.id, function (data) {
@@ -557,7 +596,7 @@ $scope.formFeedback={};
     $scope.categories = data;
     // console.log('Category: ', $scope.category);
     // console.log('State: ', $stateParams.id);
-  })
+  });
 
   $scope.isCategory = function (cat, category) {
     if (cat.id == category.id) {
@@ -565,19 +604,19 @@ $scope.formFeedback={};
     }
 
     return false;
-  }
+  };
 
   NavigationService.getEachCategory($stateParams.id, function (data) {
     $scope.category = data;
     // console.log('Category: ', $scope.category);
     // console.log('State: ', $stateParams.id);
-  })
+  });
 
   NavigationService.getEachSeries($stateParams.id, function (data) {
     $scope.series = data.filter.subcategory;
     $scope.products = data.data.queryresult;
-    console.log('Series: ', $scope.seriesProducts);
-  })
+    //console.log('Series: ', $scope.seriesProducts);
+  });
 
   $scope.eachSeries = function (id, code) {
     console.log('Id: ', id);
@@ -587,124 +626,8 @@ $scope.formFeedback={};
       $scope.isSeries = true;
       $scope.seriesProducts = data.data.queryresult;
       // if($stateParams.isSeries)
-    })
-  }
-
-  //     $scope.molding = [
-  //         {
-  //             img: "img/acrylyte/sample/8801.jpg",
-  //             name: "Acrylyte",
-  //             code: "8801",
-  //             size: "1220 x 2440mm x 3mm (T)"
-  // },
-  //         {
-  //             img: "img/acrylyte/sample/8802.jpg",
-  //             name: "Acrylyte",
-  //             code: "8801",
-  //             size: "1220 x 2440mm x 3mm (T)"
-  // },
-  //         {
-  //             img: "img/acrylyte/sample/8803.jpg",
-  //             name: "Acrylyte",
-  //             code: "8801",
-  //             size: "1220 x 2440mm x 3mm (T)"
-  // },
-  //         {
-  //             img: "img/acrylyte/sample/8804.jpg",
-  //             name: "Acrylyte",
-  //             code: "8801",
-  //             size: "1220 x 2440mm x 3mm (T)"
-  // },
-  //         {
-  //             img: "img/acrylyte/sample/8805.jpg",
-  //             name: "Acrylyte",
-  //             code: "8801",
-  //             size: "1220 x 2440mm x 3mm (T)"
-  // }
-  //
-  // ];
-
-  // $scope.panel = [{
-  //   img: "img/acrylyte/sample/8801.jpg",
-  //   name: "Acrylyte",
-  //   code: "8801",
-  //   size: "1220 x 2440mm x 3mm (T)"
-  // }, {
-  //   img: "img/acrylyte/sample/8802.jpg",
-  //   name: "Acrylyte",
-  //   code: "8802",
-  //   size: "1220 x 2440mm x 3mm (T)"
-  // }, {
-  //   img: "img/acrylyte/sample/8803.jpg",
-  //   name: "Acrylyte",
-  //   code: "8803",
-  //   size: "1220 x 2440mm x 3mm (T)"
-  // }, {
-  //   img: "img/acrylyte/sample/8804.jpg",
-  //   name: "Acrylyte",
-  //   code: "8804",
-  //   size: "1220 x 2440mm x 3mm (T)"
-  // }, {
-  //   img: "img/acrylyte/sample/8805.jpg",
-  //   name: "Acrylyte",
-  //   code: "8805",
-  //   size: "1220 x 2440mm x 3mm (T)"
-  // }, {
-  //   img: "img/acrylyte/sample/8806.jpg",
-  //   name: "Acrylyte",
-  //   code: "8806",
-  //   size: "1220 x 2440mm x 3mm (T)"
-  // }, {
-  //   img: "img/acrylyte/sample/8807.jpg",
-  //   name: "Acrylyte",
-  //   code: "8807",
-  //   size: "1220 x 2440mm x 3mm (T)"
-  // }, {
-  //   img: "img/acrylyte/sample/8808.jpg",
-  //   name: "Acrylyte",
-  //   code: "8808",
-  //   size: "1220 x 2440mm x 3mm (T)"
-  // }, {
-  //   img: "img/acrylyte/sample/8809.jpg",
-  //   name: "Acrylyte",
-  //   code: "8809",
-  //   size: "1220 x 2440mm x 3mm (T)"
-  // }, {
-  //   img: "img/acrylyte/sample/8810.jpg",
-  //   name: "Acrylyte",
-  //   code: "8810",
-  //   size: "1220 x 2440mm x 3mm (T)"
-  // }, {
-  //   img: "img/acrylyte/sample/8811.jpg",
-  //   name: "Acrylyte",
-  //   code: "8811",
-  //   size: "1220 x 2440mm x 3mm (T)"
-  // }, {
-  //   img: "img/acrylyte/sample/8812.jpg",
-  //   name: "Acrylyte",
-  //   code: "8812",
-  //   size: "1220 x 2440mm x 3mm (T)"
-  // }, {
-  //   img: "img/acrylyte/sample/8813.jpg",
-  //   name: "Acrylyte",
-  //   code: "8813",
-  //   size: "1220 x 2440mm x 3mm (T)"
-  // }, {
-  //   img: "img/acrylyte/sample/8814.jpg",
-  //   name: "Acrylyte",
-  //   code: "8814",
-  //   size: "1220 x 2440mm x 3mm (T)"
-  // }, {
-  //   img: "img/acrylyte/sample/8815.jpg",
-  //   name: "Acrylyte",
-  //   code: "8815",
-  //   size: "1220 x 2440mm x 3mm (T)"
-  // }, {
-  //   img: "img/acrylyte/sample/8816.jpg",
-  //   name: "Acrylyte",
-  //   code: "8816",
-  //   size: "1220 x 2440mm x 3mm (T)"
-  // }, ];
+    });
+  };
   $scope.oneAtATime = true;
   $scope.open = function(data) {
     $scope.showpop = data;
@@ -714,9 +637,13 @@ $scope.formFeedback={};
       controller: 'CategoryCtrl'
     });
   };
-    $scope.feature = function() {
+    $scope.feature = function(id) {
+       NavigationService.getfeature(function(data){
+        $scope.features=data;
+        console.log(data);
+       });
     ngDialog.open({
-      template: 'views/content/featurespop.html',
+      template: 'views/content/featurespopup.html',
       scope: $scope,
       controller: 'CategoryCtrl'
     });
@@ -724,15 +651,27 @@ $scope.formFeedback={};
 
 })
 
-.controller('headerctrl', function($scope, TemplateService) {
+.controller('headerctrl', function($scope, TemplateService,NavigationService,$stateParams) {
   $scope.template = TemplateService;
+
+
   $scope.getclass = "down-yes";
-  $scope.getsearch = function() {
-    if ($scope.getclass == "down-yes")
+
+  $scope.getsearch = function(name) {
+    if ($scope.getclass === "down-yes")
+
     $scope.getclass = "down-no";
     else
     $scope.getclass = "down-yes";
   };
+  // $scope.name = "";
+  // $scope.getsearchresult = function() {
+  //   NavigationService.getsearchresult($stateParams.name,function (data) {
+  //     $scope.products = data;
+  //    console.log($scope.products);
+  //  });
+  // };
+
   // $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
   //   $(window).scrollTop(0);
   // });

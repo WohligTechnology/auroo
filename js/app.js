@@ -80,11 +80,22 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider, $loca
         controller: 'QuickviewCtrl'
     })
 
+        .state('featurespopup', {
+            url: "/featurespopup",
+            templateUrl: "views/template.html",
+            controller: 'FeaturespopCtrl'
+        })
+
 
     .state('galleryimage', {
         url: "/galleryimage/:id",
         templateUrl: "views/template.html",
         controller: 'GalleryimageCtrl'
+    })
+    .state('searchresult', {
+        url: "/searchresult/:name",
+        templateUrl: "views/template.html",
+        controller: 'SearchResultCtrl'
     });
 
     // use the HTML5 History API
@@ -117,11 +128,22 @@ firstapp.directive('img', function($compile, $parse) {
     };
 });
 
+  firstapp.filter('customFilter', function() {
+      return function(query) {
+          var out = [];
+          angular.forEach($scope.products, function(value, key) {
+              if (value.name == query)
+                  this.out.push(value);
+          });
+          return out;
+      };
+  });
+
 firstapp.filter('serverimage', function() {
   return function(input) {
     if (input) {
       // console.log('serverimage: ', input);
-      // return input;
+       //return input;
       return  "http://192.168.0.123/eurobackend/uploads/" + input;
     } else {
       return "img/logo.png";
