@@ -1,0 +1,32 @@
+<div class="searchresult">
+  <div class="container" ng-if="products.length!=0">
+    <h3 class="category-color">Your search result are: </h3>
+    <div class="row">
+      <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pr in products">
+        <div class="pro-list">
+          <a href="">
+            <div class="products">
+              <div class="pro-img">
+                <img ng-src="{{pr.image|serverimage}}" alt="Products" class="img-responsive">
+              </div>
+              <div class="pro-hov text-center text-uppercase">
+                <div class="pro-detail">
+                  <a href="" class="eye"><i class="fa fa-eye"></i></a>
+                </div>
+                <!-- <div class="view">
+                                        <a href="" ng-click="open(pros);" class="eye"><i class="fa fa-eye"></i></a>
+                                    </div> -->
+              </div>
+            </div>
+            <div class="product-code">
+              <p class="text-center">{{pros.name}}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div ng-if="products.length==0">
+    <h3><center>No Product Found</center></h3>
+  </div>
+</div>
