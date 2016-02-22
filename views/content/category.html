@@ -22,7 +22,7 @@
                 <accordion-heading ><a href="" class="block" >{{category.name}}
                 <i class="pull-right fa" ng-class="{'fa-minus':status.open7,'fa-plus':!status.open7}"></i>
                 </a></accordion-heading>
-                <ul ng-repeat="s in series">
+                <ul ng-repeat="s in allSeries" ng-if="s.category == category.id">
                   <li><a ng-click="eachSeries(category.id, s.id)" ui-sref="category.series({id:category.id, code:s.name})">{{s.name}}</a></li>
                   <!-- <li><a href="">2</a></li>
                   <li><a href="">3</a></li>

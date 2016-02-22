@@ -10,21 +10,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
   NavigationService.getHomePics(function (data) {
       $scope.homeImage = data;
-      // console.log($scope.homeImage);
     });
 
   NavigationService.getPopularPdts(function (data) {
     $scope.brandlist = data;
-    // console.log($scope.brandlist);
   });
 
-  // $scope.subscribe = function (email) {
-  //   return email;
-  // }
-
-  // $scope.input = $scope.subscribe(email) {
-  //   return email;
-  // };
   $scope.getCategory = function (brandId) {
     // console.log('Brand Id:', brandId);
     NavigationService.getCategoryImages(brandId, function (data) {
@@ -38,10 +29,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
   $scope.subscribe = {};
   $scope.subscribe.email = "";
+//
+// $scope.checkemail=function(email){
+//
+// }
 
-
-
-
+  $scope.checkEmail = false;
+  $scope.subscribeEmail = false;
   $scope.subscribe = function (email) {
     // if(!email) {
     //     alert("please enter your email");
@@ -50,6 +44,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     NavigationService.subscribe(email, function (data) {
 
        console.log(data);
+       if(!data.value) {
+         $scope.checkEmail = true;
+         $scope.subscribeEmail = false;
+       }
+       else {
+         $scope.subscribeEmail = true;
+         $scope.checkEmail = false;
+       }
        console.log(email);
        $scope.subscribe.email = "";
     });
@@ -581,6 +583,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
       }
 
+      NavigationService.getAllSeries( function(data) {
+        $scope.allSeries = data;
+        console.log('all series: ', $scope.allSeries);
+      });
+
       console.log('code in deep link: ', $scope.code);
       NavigationService.getEachSeriesPdts($stateParams.id, $scope.code, function (data) {
         // $state.go('category.series', {code: name})
@@ -609,7 +616,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.categories = data;
     // console.log('Category: ', $scope.category);
     // console.log('State: ', $stateParams.id);
+    _.each($scope.allcategory,function(key){
+      key.isOpen=false;
   });
+  // NavigationService.getAllProducts(function(data){
+  //  $scope.allcategory = data;
+  //  _.each($scope.allcategory,function(key){
+  //    key.isOpen=false;
+  //  })
 
   $scope.isCategory = function (cat, category) {
     if (cat.id == category.id) {

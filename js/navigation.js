@@ -116,6 +116,11 @@ var navigationservice = angular.module('navigationservice', [])
       // console.log('Code: ', id);
       $http.get(adminurl + 'getProductsByCategory?categoryid=' + id).success(callback);
     },
+
+    getAllSeries: function (callback) {
+      $http.get(adminurl + 'getAllSeries').success(callback);
+    },
+
     getfeature: function (callback) {
       $http.get(adminurl + 'getAllCategories').success(callback);
     },
