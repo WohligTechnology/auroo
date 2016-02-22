@@ -18,10 +18,10 @@
           <div class="cat-list">
 
             <accordion close-others="oneAtATime">
-              <accordion-group ng-repeat="category in allcategory">
+              <accordion-group ng-repeat="category in allcategory" is-open="category.isOpen" >
                 <accordion-heading ><a href="" class="block" >{{category.name}}
-                <i class="pull-right fa" ng-class="{'fa-minus':status.open7,'fa-plus':!status.open7}"></i>
-                </a></accordion-heading>
+                <i class="pull-right fa" ng-class="{'fa-minus':category.isOpen,'fa-plus':!category.isOpen}"></i>
+                </a></accordion-heading  ng-click="category.isOpen = !category.isOpen">
                 <ul ng-repeat="s in series">
                   <li><a ng-click="eachSeries(category.id, s.id)" ui-sref="category.series({id:category.id, code:s.name})">{{s.name}}</a></li>
                   <!-- <li><a href="">2</a></li>

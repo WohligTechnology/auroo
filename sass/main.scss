@@ -16,6 +16,19 @@
  $footer-color: #B1B0B0;
  $category-color: #F37351;
  $menu-color: #222;
+
+ html.ngdialog-open,
+ body.ngdialog-open { padding-right: 0 !important; }
+ 
+button:focus { outline: none !important; }
+ .btn {
+   border-radius: 0;
+   margin: 5px 0;
+ }
+ .btn-primary {
+   @include button-variant(white, $category-color, $category-color);
+   &:focus { outline: none; }
+ }
  body {
      padding-top: 100px;
      font-family: $font-whole;
@@ -957,6 +970,7 @@
     margin: 0 auto;
     img { margin: 0 auto; }
  }
+ .showerror { padding: 10% 0; }
  // @import 'mobile';
  @media (max-width: 1200px) {
      .navbar-nav li {
