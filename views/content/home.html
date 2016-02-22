@@ -34,8 +34,8 @@
                             <button ng-click="subscribe(subscribe.email);" class="subscribe nofocus">subscribe</button>
                             <div ng-messages="subForm.email.$error" ng-messages-include="error-messages">
                         </div>
-                        <p ng-if="subscribeEmail">Thankyou For subscribing</p>
-                        <p ng-if="checkEmail">This email already exists</p>
+                        <h4 class="category-color" ng-if="subscribeEmail">Thankyou For Subscribing</h4>
+                        <h4 class="category-color" ng-if="checkEmail">This email already exists</h4>
                     </form>
                     </div>
                 </div>

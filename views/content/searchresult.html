@@ -2,7 +2,7 @@
   <div class="container" ng-if="products.length!=0">
     <h3 class="category-color">Your search results are: </h3>
     <div class="row">
-      <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pr in products">
+      <div class="col-md-3 col-sm-4 col-xs-6" ng-repeat="pr in products">
         <div class="pro-list">
           <a href="">
             <div class="products">
@@ -26,7 +26,7 @@
       </div>
     </div>
   </div>
-  <div ng-if="products.length==0">
-    <h3><center>No Product Found</center></h3>
+  <div ng-if="products.length==0" class="showerror">
+    <h3 class="text-center">No Product Found</center>
   </div>
 </div>

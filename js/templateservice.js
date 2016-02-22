@@ -4,7 +4,7 @@ templateservicemod.service('TemplateService', function() {
     this.meta = "Google";
     this.metadesc = "Home";
 
-    var d = new Date();
+    var d = new Date(); 
     this.year = d.getFullYear();
 
     this.init = function() {

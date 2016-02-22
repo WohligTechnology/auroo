@@ -118,6 +118,7 @@ var navigationservice = angular.module('navigationservice', [])
     },
 
     getAllSeries: function (callback) {
+      console.log('in all series');
       $http.get(adminurl + 'getAllSeries').success(callback);
     },
 
