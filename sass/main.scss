@@ -11,13 +11,13 @@
  @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
  @import "../bower_components/ng-dialog/css/ngDialog.css";
  $font-italic: "Playfair Display";
- $font-whole: "Roboto";  
+ $font-whole: "Roboto";
  $main-color: #ED3237;
  $footer-color: #B1B0B0;
  $category-color: #F37351;
  $menu-color: #222;
  body {
-     padding-top: 90px;
+     padding-top: 100px;
      font-family: $font-whole;
  }
  a {
@@ -114,6 +114,7 @@
          width: 240px;
      }
  }
+ .banner-holder img { margin: 0 auto; }
  .slider {
      .slider-home {
          position: relative;
@@ -236,6 +237,7 @@
          li {
              margin-left: 25px;
              display: inline-block;
+             i.fa-search { margin-left: 2px; }
              a.fb {
                  &:hover {
                      color: #3b5998;
@@ -635,7 +637,7 @@
      }
  }
  .submit-btn {
-     margin: 50px 0;
+     margin: 30px 0;
  }
  .contact {
      .info {
@@ -653,6 +655,7 @@
          letter-spacing: 1px;
      }
      address {
+     .icon-space { margin-right: 5px; }
          .contact-add {
              margin: 10px 25px;
              display: block;
@@ -663,10 +666,6 @@
            display: block;
          }
          .number a { margin: 0px 5px; }
-         i {
-             margin-right: 5px;
-             color: $category-color;
-         }
      }
  }
  .get-in-touch {
@@ -693,6 +692,7 @@
              resize: none;
          }
      }
+     .error-msg { position: absolute; }
  }
  .cat {
      min-height: 400px;
@@ -934,7 +934,7 @@
   }
 }
  .down-yes {
-     @include transform(translateY(-100px));
+     @include transform(translateY(-125px));
      @include transition(all 500ms linear);
  }
  .down-no {
@@ -975,15 +975,13 @@
              height: 300px;
          }
      }
-     .cathold {
-         width: 200px;
-         height: 200px;
-     }
+     .cathold { @include size(200px,110px); }
      .msg-me {
          .mail {
              width: 300px;
          }
      }
+     .product-main { margin: 0; }
      .quickview .pop .quick-img { width: 360px; }
  }
  @media (max-width: 992px) {
@@ -1026,6 +1024,7 @@
      }
  }
  @media (max-width: 768px) {
+   .content { margin-top: -15px; }
      header .lh40 {
          line-height: 0;
          .mgtb {
@@ -1080,9 +1079,8 @@
          }
      }
      .cathold {
-         width: 170px;
-         height: 170px;
-         margin: 20px auto;
+       @include size(170px,100);
+       margin: 20px auto;
      }
      .pdt10 {
          padding-top: 10%;
@@ -1100,6 +1098,7 @@
          font-size: 30px;
          letter-spacing: 12px;
      }
+     .knowus { margin: 30px 0; }
      footer {
          p {
              text-align: center;
@@ -1181,8 +1180,7 @@
          font-size: 12px;
      }
      .cathold {
-         width: 120px;
-         height: 120px;
+        @include size(120px,70px);
          margin: 10px auto;
      }
      .pro-list {

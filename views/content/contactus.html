@@ -1,89 +1,81 @@
-<!-- <div class="contact"> -->
-<!-- <div class="back-contact">
+<div class="contact">
+  <!-- <div class="back-contact">
         <div class="cont-head text-uppercase">
             <h2>contact us</h2>
         </div>
     </div> -->
-<div class="container-fluid">
-  <div class="text-center">
-    <h3 class="head text-uppercase info">Contact Info</h3>
-  </div>
-  <div class="row">
-    <!--
-            <div class="col-md-6 nomgpd">
-                <div class="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d942.8559468730115!2d72.86229082914882!3d19.04509616688978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8d1dd597859%3A0xc56313f81c612646!2sLaxmi+Nivas%2C+Swamy+Vallabhdas+Rd%2C+Sion+West%2C+Sion%2C+Mumbai%2C+Maharashtra+400022!5e0!3m2!1sen!2sin!4v1445942394575" width="100%" height="550" frameborder="0" style="border:0" allowfullscreen></iframe>
-                </div>
--->
-  </div>
-  <div class="col-md-12">
-    <div class="comp-add text-uppercase">
-      <div class="row">
-        <div class="col-md-offset-4 col-md-4 text-center">
-          <span class="head text-uppercase office">Head office</span>
-          <address class="text-center text-capitalize">
+  <div class="container">
+    <div class="text-center">
+      <h3 class="head text-uppercase info">Contact Info</h3>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="comp-add text-uppercase">
+          <div class="row">
+            <div class="col-md-offset-4 col-md-4 text-center">
+              <span class="head text-uppercase office">Head office</span>
+              <address class="text-center text-capitalize">
             <span class="contact-add">
-              <i class="fa fa-home"></i>EURO PRATIK SALES CORPORATION 101, Universal Paradise, Nanda Patkar road, Vile Parle (East), Mumbai 400 057.Maharshtra, India</span>
+              <i class="fa fa-home category-color icon-space"></i>EURO PRATIK SALES CORPORATION 101, Universal Paradise, Nanda Patkar road, Vile Parle (East), Mumbai 400 057.Maharshtra, India</span>
             <span class="number">
-              <i class="fa fa-phone"></i>
+              <i class="fa fa-phone category-color icon-space"></i>
               <a href="tel:+91226146556">+91-22-614 6556</a>
               <a href="tel:+91226145955">+91-22-614 5955</a>
             </span>
             <span>
-              <i class="fa fa-envelope-o"></i>
+              <i class="fa fa-envelope-o category-color icon-space"></i>
               <a href="mailto:info@europratik.com" class="text-lowercase">info@europratik.com</a>
             </span>
           </address>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-</div>
-<div class="get-in-touch">
-<div class="container">
-  <form name="feedback" ng-hide="formComplete">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="separte">
-          <span>*
+  <div class="get-in-touch">
+    <div class="container">
+      <form name="feedback" ng-hide="formComplete">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="separte">
+              <span>*
             <label for="name" class="label-control">Name</label>
           </span>
-          <input name="name" required ng-model="formFeedback.name" type="text" class="form-control" id="name">
-          <div class="" ng-show="feedback.name.$error.required && feedback.name.$touched">Please Enter Your Name.</div>
-        </div>
-        <div class="separte">
-          <span>*
+              <input name="name" required ng-model="formFeedback.name" type="text" class="form-control" id="name">
+              <div class="error-msg" ng-show="feedback.name.$error.required && feedback.name.$touched">Please Enter Your Name.</div>
+            </div>
+            <div class="separte">
+              <span>*
             <label for="mail" class="label-control">Email</label>
           </span>
-          <input name="email" required type="email" ng-model="formFeedback.email" class="form-control" id="mail">
-          <div class="" ng-show="feedback.email.$error.required && feedback.email.$touched">Please Enter Your Email Id</div>
-        </div>
-        <div class="separte">
-          <span>
+              <input name="email" required type="email" ng-model="formFeedback.email" class="form-control" id="mail">
+              <div class="error-msg" ng-show="feedback.email.$error.required && feedback.email.$touched">Please Enter Your Email Id</div>
+            </div>
+            <div class="separte">
+              <span>
             <label for="tel" class="label-control">Telephone</label>
           </span>
-          <input type="text" ng-model="formFeedback.telephone" class="form-control" id="tel">
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="separte">
-          <span>*
+              <input type="text" ng-model="formFeedback.telephone" class="form-control" id="tel">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="separte">
+              <span>*
             <label for="comment">comment</label>
           </span>
-          <textarea name="msg" ng-model="formFeedback.comment" id="comment" cols="30" rows="10" class="form-control" required></textarea>
-          <div class="" ng-show="feedback.msg.$error.required && feedback.msg.$touched">Please Enter Your Comment</div>
+              <textarea name="msg" ng-model="formFeedback.comment" id="comment" cols="30" rows="10" class="form-control" required></textarea>
+              <div class="error-msg" ng-show="feedback.msg.$error.required && feedback.msg.$touched">Please Enter Your Comment</div>
+            </div>
+          </div>
+          <div class=" text-center">
+            <a href="" class="submit-btn button" ng-class="{'disabled' : !feedback.$valid }" ng-click="submitForm(feedback)">Submit</a>
+          </div>
         </div>
-      </div>
-      <div class="submit-btn text-center">
-        <a href="" class="submit button" ng-class="{'disabled' : !feedback.$valid }" ng-click="submitForm(feedback)">Submit</a>
-      </div>
+      </form>
     </div>
-  </form>
-</div>
-<div class="text-center" ng-show="formComplete">
-  <h3>Submitted Successfully, Thank You!</h3>
-</div>
-</div>
-</div>
+    <div class="text-center" ng-show="formComplete">
+      <h3>Submitted Successfully, Thank You!</h3>
+    </div>
+  </div>
 </div>
