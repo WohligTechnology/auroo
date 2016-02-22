@@ -30,16 +30,12 @@
                     <p class="italic font-italic">Join for our latest update</p>
                     <form name="subForm" action="" class="form-inline">
                         <div class="nomgpd form-group">
-                            <input type="email" class="form-control nofocus noborder mail" placeholder="Your email here.." ng-model="subscribe.email" ng-pattern="/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/" required> 
-                            <div ng-messages="subForm.email.$error" ng-messages-include="error-messages">
-    <!-- <div ng-message="pattern">Please enter a valid email address!</div>
-  </div> -->
-                            <!-- <div ng-show="subForm.email.$invalid">Please Enter A Valid Email Id</div> -->
+                            <input type="email" class="form-control nofocus noborder mail" placeholder="Your email here.." ng-model="subscribe.email" ng-pattern="/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/" required>
                             <button ng-click="subscribe(subscribe.email);" class="subscribe nofocus">subscribe</button>
+                            <div ng-messages="subForm.email.$error" ng-messages-include="error-messages">
                         </div>
-                        <!-- <div ng-if="subscribeEmail==true">
-                          <h2>Please enter your email</h2>
-                        </div> -->
+                        <p>Thankyou For subscribing</p>
+                        <p>Your Email Id is already Exist</p>
                     </form>
                     </div>
                 </div>
