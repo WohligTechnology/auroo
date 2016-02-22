@@ -16,7 +16,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   NavigationService.getPopularPdts(function (data) {
     $scope.brandlist = data;
     // console.log($scope.brandlist);
-  })
+  });
 
   // $scope.subscribe = function (email) {
   //   return email;
@@ -33,18 +33,26 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         // console.log('nav service:', data);
         $scope.products = data;
       }
-    })
-  }
+    });
+  };
 
-  $scope.subscribeEmail = "";
+  // $scope.subscribeEmail = "";
+
+
+
+
   $scope.subscribe = function (email) {
+    if(!email) {
+        alert("please enter your email");
+    }
     // console.log('Email subscribe: ', email);
     NavigationService.subscribe(email, function (data) {
+    
       // console.log(data);
       // console.log(email);
-    })
+    });
     // $scope.subscribeEmail = data;
-  }
+  };
 
   // $scope.showopup = {};
   $scope.pro = function(open) {
@@ -229,9 +237,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     // console.log('Testing item2: ', id)
     // console.log("We're in the is active function!")
     if($stateParams.activeItem == id)
-      return true
-    return false
-  }
+      return true;
+    return false;
+  };
 })
 
 .controller('ContactUsCtrl', function($scope, TemplateService, NavigationService, $timeout) {

@@ -28,12 +28,15 @@
             <div class="col-md-6">
                 <div class="msg-me">
                     <p class="italic font-italic">Join for our latest update</p>
-                    <form action="" class="form-inline">
+                    <form name="subForm" action="" class="form-inline">
                         <div class="nomgpd form-group">
-                            <input type="text" class="form-control nofocus noborder mail" placeholder="Your email here.." ng-model="subscribeEmail">
+                            <input type="email" required class="form-control nofocus noborder mail" placeholder="Your email here.." ng-model="subscribeEmail">
                             <div ng-show="subForm.email.$invalid">Please Enter A Valid Email Id</div>
                             <button ng-click="subscribe(subscribeEmail)" class="subscribe nofocus">subscribe</button>
                         </div>
+                        <!-- <div ng-if="subscribeEmail==true">
+                          <h2>Please enter your email</h2>
+                        </div> -->
                     </form>
                     </div>
                 </div>

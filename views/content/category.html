@@ -33,72 +33,9 @@
             </accordion>
             </div>
             </div>
-        <!--
-                <div class="col-md-9">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in products">
-                            <div class="pro-list">
-                                <a href="">
-                                    <div class="products">
-                                        <div class="pro-img">
-                                            <img ng-src="{{pros.img}}" alt="Products" class="img-responsive">
-                                        </div>
-                                        <div class="pro-hov text-center text-uppercase">
-                                            <div class="pro-detail">
-                                                <p>{{pros.name}}</p>
-                                                <p>Rs: {{pros.price}}</p>
-                                                <div class="star">
-                                                    <a href=""><i class="fa fa-star-o"></i></a>
-                                                    <a href=""><i class="fa fa-star-o"></i></a>
-                                                    <a href=""><i class="fa fa-star-o"></i></a>
-                                                    <a href=""><i class="fa fa-star-o"></i></a>
-                                                    <a href=""><i class="fa fa-star-o"></i></a>
-                                                </div>
-                                                <a href="">enquire now</a>
-                                            </div>
-                                            <div class="view">
-                                                <a href="" ng-click="open();" class="eye"><i class="fa fa-eye"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            -->
-
         <div class="col-md-9">
 
-          <!-- <div class="prd-img">
-                    <div class="molding">
-                        <div class="products-name text-center">
-                            <p class="head">Molding</p>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in molding">
-                                <div class="pro-list">
-                                    <a href="">
-                                        <div class="products">
-                                            <div class="pro-img">
-                                                <img ng-src="{{pros.img}}" alt="Products" class="img-responsive">
-                                            </div>
-                                            <div class="pro-hov text-center text-uppercase">
-                                                <div class="pro-detail">
-                                                    <p>{{pros.name}}</p>
-                                                </div>
-                                                <div class="view">
-                                                    <a href="" ng-click="open(pros);" class="eye"><i class="fa fa-eye"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-          <div class="panel">
+                  <div class="panel">
             <!-- <div class="products-name text-center">
                         <p class="head">Panel</p>
                     </div> -->
@@ -106,7 +43,6 @@
               <div class="name pull-left">
                 <span class="category-color">{{category.name}}</span>
                 <span ng-repeat="s in series">
-
                   <a ng-click="eachSeries(category.id, s.id)" ui-sref="category.series({id:category.id, code:s.name})">{{s.name}}</a>
 
                 </span>
@@ -139,6 +75,8 @@
                   </a>
                 </div>
               </div>
+
+
               <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in seriesProducts" ng-click="open(pros);" ng-show="isSeries">
                 <div class="pro-list">
                   <a href="">
