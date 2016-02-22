@@ -90,7 +90,7 @@ var navigationservice = angular.module('navigationservice', [])
     subscribe: function (mail, callback) {
       // console.log(mail);
       $http.get(adminurl + 'getSubscribers?email='+ mail).success(callback);
-    },
+          },
 
     getPopularPdts:function (callback) {
       $http.get(adminurl+'getPopularProduct').success(callback);
@@ -109,6 +109,7 @@ var navigationservice = angular.module('navigationservice', [])
       // console.log('nsId: ', id);
       $http.get(adminurl + 'getCategoryById?id=' + id).success(callback);
     },
+
 
     getEachSeries: function (id, callback) {
       // console.log('Code: ', id);

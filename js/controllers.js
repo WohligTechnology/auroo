@@ -36,23 +36,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     });
   };
 
-  // $scope.subscribeEmail = "";
+  $scope.subscribe = {};
+  $scope.subscribe.email = "";
 
 
 
 
   $scope.subscribe = function (email) {
-    if(!email) {
-        alert("please enter your email");
-    }
+    // if(!email) {
+    //     alert("please enter your email");
+    // }
     // console.log('Email subscribe: ', email);
     NavigationService.subscribe(email, function (data) {
-    
-      // console.log(data);
-      // console.log(email);
+
+       console.log(data);
+       console.log(email);
+       $scope.subscribe.email = "";
     });
+
     // $scope.subscribeEmail = data;
   };
+
 
   // $scope.showopup = {};
   $scope.pro = function(open) {
@@ -568,6 +572,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       // var l = $scope.series.length;
       // return l;
       // $scope.products = data.data.queryresult;
+      console.log($scope.series);
       console.log('Series deep link: ', $scope.series.length);
 
       for (i = 0; i < $scope.series.length; i++) {
@@ -613,6 +618,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     return false;
   };
+  NavigationService.getAllProducts(function(data){
+    $scope.allcategory = data;
+  });
 
   NavigationService.getEachCategory($stateParams.id, function (data) {
     $scope.category = data;
@@ -661,6 +669,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 .controller('headerctrl', function($scope, TemplateService,NavigationService,$stateParams) {
   $scope.template = TemplateService;
+
+  // NavigationService.getEachCategory($stateParams.id, function (data) {
+  //   $scope.cat = data;
+  //   // console.log('Category: ', $scope.category);
+  //   // console.log('State: ', $stateParams.id);
+  // });
 
 
   $scope.getclass = "down-yes";
