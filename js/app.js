@@ -153,7 +153,7 @@ firstapp.filter('serverimage', function() {
     if (input) {
       // console.log('serverimage: ', input);
       //return input;
-      return "http://192.168.0.123/eurobackend/uploads/" + input;
+      return "http://wohlig.co.in/eurobackend/uploads/" + input;
     } else {
       return "img/logo.png";
     }
