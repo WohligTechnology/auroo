@@ -24,19 +24,19 @@ var jsArray = [
 var replacehostFrom = "http://localhost/demo/";
 var replacehostTo = "http://wohlig.co.in/demo2/";
 
-// var ftpdetails = {
-//     host: 'wohlig.co.in',
-//     user: 'enter your username',
-//     pass: 'enter your password',
-//     remotePath: "public_html/europratik"
-// };
-
 var ftpdetails = {
-    host: 'uandvcreativess.com',
+    host: 'wohlig.co.in',
     user: 'enter your username',
     pass: 'enter your password',
-    remotePath: "httpdocs/europratik"
+    remotePath: "public_html/europratik"
 };
+
+// var ftpdetails = {
+//     host: 'uandvcreativess.com',
+//     user: 'enter your username',
+//     pass: 'enter your password',
+//     remotePath: "httpdocs/europratik"
+// };
 
 //Do not change anything below
 //Do not change anything below
