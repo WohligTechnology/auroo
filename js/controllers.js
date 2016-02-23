@@ -362,7 +362,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.navigation = NavigationService.getnav();
 })
 
-.controller('SearchResultCtrl', function($scope, TemplateService, NavigationService, $timeout,$stateParams) {
+.controller('SearchResultCtrl', function($scope, TemplateService, NavigationService, $timeout,$stateParams,ngDialog) {
   $scope.template = TemplateService.changecontent("searchresult");
   $scope.menutitle = NavigationService.makeactive("SearchResult");
   TemplateService.title = $scope.menutitle;
@@ -371,9 +371,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
   console.log($stateParams.name);
   NavigationService.getsearchresult($stateParams.name,function (data) {
-    $scope.products = data;
+    //$scope.products = data;
     console.log($scope.products);
   });
+
   // $scope.name = "";
   // $scope.getsearchresult = function(name) {
   //   NavigationService.getsearchresult($stateParams.name,function (data) {
@@ -385,7 +386,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     // NavigationService.getsearchresult(function (data) {
     //   $scope.products = data;
     //  console.log($scope.products);
-    // });
+    // // });
+      NavigationService.getSearchSeriesPdts($stateParams.id,function (data) {
+        // $state.go('category.series', {code: name})
+        //$scope.isSeries = true;
+        $scope.searchProducts = data.data.queryresult;
+        // if($stateParams.isSeries)
+      });
+
+
+    $scope.open = function(data) {
+      $scope.showpop = data;
+      ngDialog.open({
+        template: 'views/content/quickview.html',
+        scope: $scope,
+        controller: 'SearchResultCtrl'
+      });
+    };
 
 })
 

@@ -131,9 +131,14 @@ var navigationservice = angular.module('navigationservice', [])
     },
 
     getEachSeriesPdts:function (id, code, callback) {
-      console.log('Id: ', id);
-      console.log('Code: ', code);
+      // console.log('Id: ', id);
+      // console.log('Code: ', code);
       $http.get(adminurl + 'getProductsByCategory?categoryid=' + id + '&subcategories=' + code).success(callback);
+    },
+    getSearchSeriesPdts:function (id, callback) {
+      // console.log('Id: ', id);
+    //  console.log('Code: ', code);
+      $http.get(adminurl + 'getProductsByCategory?categoryid=' + id).success(callback);
     }
   };
 });
