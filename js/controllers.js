@@ -371,7 +371,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
   console.log($stateParams.name);
   NavigationService.getsearchresult($stateParams.name,function (data) {
-    //$scope.products = data;
+    $scope.products = data;
     console.log($scope.products);
   });
 

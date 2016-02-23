@@ -1,5 +1,5 @@
-//var adminurl = "http://wohlig.io:81/callApi/euro/";
-var adminurl = "http://192.168.0.123/eurobackend/index.php/json/";
+var adminurl = "http://wohlig.co.in/eurobackend/index.php/json/";
+// var adminurl = "http://192.168.0.123/eurobackend/index.php/json/";
 
 var navigationservice = angular.module('navigationservice', [])
 
