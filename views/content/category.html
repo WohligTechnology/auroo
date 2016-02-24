@@ -19,14 +19,19 @@
 
             <accordion close-others="oneAtATime">
               <accordion-group ng-repeat="cat in allcategory" is-open="cat.isOpen">
-                <accordion-heading ><a href="" class="block" >{{cat.name}}
-                <!-- <i class="pull-right fa" ng-class="{'fa-minus':status.open7,'fa-plus':!status.open7}"></i> -->
-                <!-- </a></accordion-heading> -->
-                <!-- <ul ng-repeat="s in allSeries" ng-if="s.category == category.id"> -->
-                <i class="pull-right fa" ng-class="{'fa-minus':cat.isOpen,'fa-plus':!cat.isOpen}"></i>
-                </a></accordion-heading  ng-click="cat.isOpen = !cat.isOpen">
+                <accordion-heading >
+                  <a ui-sref="category({id:cat.id})" class="block">{{cat.name}}
+                    <!-- <i class="pull-right fa" ng-class="{'fa-minus':status.open7,'fa-plus':!status.open7}"></i> -->
+                    <!-- </a></accordion-heading> -->
+                    <!-- <ul ng-repeat="s in allSeries" ng-if="s.category == category.id"> -->
+                    <i class="pull-right fa" ng-class="{'fa-minus':cat.isOpen,'fa-plus':!cat.isOpen}"></i>
+                  </a>
+                </accordion-heading>
+                <!-- </accordion-heading ng-click="cat.isOpen = !cat.isOpen"> -->
                 <ul ng-repeat="s in allSeries" ng-if="s.category == cat.id">
-                  <li><a ng-click="eachSeries(cat.id, s.id)" ui-sref="category.series({id:cat.id, code:s.name})">{{s.name}}</a></li>
+                  <li>
+                    <a ng-click="eachSeries(cat.id, s.id)" ui-sref="category.series({id:cat.id, code:s.name})">{{s.name}}</a>
+                  </li>
                   <!-- <li><a href="">2</a></li>
                   <li><a href="">3</a></li>
                   <li><a href="">4</a></li>
@@ -34,11 +39,11 @@
                 </ul>
               </accordion-group>
             </accordion>
-            </div>
-            </div>
+          </div>
+        </div>
         <div class="col-md-9">
 
-                  <div class="panel">
+          <div class="panel">
             <!-- <div class="products-name text-center">
                         <p class="head">Panel</p>
                     </div> -->
@@ -47,7 +52,6 @@
                 <span class="category-color">{{category.name}}</span>
                 <span ng-repeat="s in series">
                   <a ng-click="eachSeries(category.id, s.id)" ui-sref="category.series({id:category.id, code:s.name})">{{s.name}}</a>
-
                 </span>
               </div>
               <div class="pull-right name">
@@ -65,7 +69,9 @@
                       </div>
                       <div class="pro-hov text-center text-uppercase">
                         <div class="pro-detail">
-                          <a href="" class="eye"><i class="fa fa-eye"></i></a>
+                          <a href="" class="eye">
+                            <i class="fa fa-eye"></i>
+                          </a>
                         </div>
                         <!-- <div class="view">
                                                 <a href="" ng-click="open(pros);" class="eye"><i class="fa fa-eye"></i></a>
@@ -78,7 +84,6 @@
                   </a>
                 </div>
               </div>
-
 
               <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in seriesProducts" ng-click="open(pros);" ng-show="isSeries">
                 <div class="pro-list">
@@ -89,7 +94,9 @@
                       </div>
                       <div class="pro-hov text-center text-uppercase">
                         <div class="pro-detail">
-                          <a href="" class="eye"><i class="fa fa-eye"></i></a>
+                          <a href="" class="eye">
+                            <i class="fa fa-eye"></i>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -102,30 +109,29 @@
             </div>
           </div>
 
-
-
-            <div class="row">
-              <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in seriesProducts" ng-show="thisseries" ng-click="open(pros);">
-                <div class="pro-list">
-                  <a href="">
-                    <div class="products">
-                      <div class="pro-img">
-                        <img ng-src="{{pros.image|serverimage}}" alt="Products" class="img-responsive">
+          <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in seriesProducts" ng-show="thisseries" ng-click="open(pros);">
+              <div class="pro-list">
+                <a href="">
+                  <div class="products">
+                    <div class="pro-img">
+                      <img ng-src="{{pros.image|serverimage}}" alt="Products" class="img-responsive">
+                    </div>
+                    <div class="pro-hov text-center text-uppercase">
+                      <div class="pro-detail">
+                        <a href="" class="eye">
+                          <i class="fa fa-eye"></i>
+                        </a>
                       </div>
-                      <div class="pro-hov text-center text-uppercase">
-                        <div class="pro-detail">
-                          <a href="" class="eye"><i class="fa fa-eye"></i></a>
-                        </div>
-                        <!-- <div class="view">
+                      <!-- <div class="view">
                                                 <a href="" ng-click="open(pros);" class="eye"><i class="fa fa-eye"></i></a>
                                             </div> -->
-                      </div>
                     </div>
-                    <div class="product-code">
-                      <p class="text-center">{{pros.name}}</p>
-                    </div>
-                  </a>
-                </div>
+                  </div>
+                  <div class="product-code">
+                    <p class="text-center">{{pros.name}}</p>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
@@ -133,5 +139,6 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 </div>

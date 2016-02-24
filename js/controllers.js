@@ -8,18 +8,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.navigation = NavigationService.getnav();
   $scope.products = false;
 
-  NavigationService.getHomePics(function (data) {
-      $scope.homeImage = data;
-    });
+  NavigationService.getHomePics(function(data) {
+    $scope.homeImage = data;
+  });
 
-  NavigationService.getPopularPdts(function (data) {
+  NavigationService.getPopularPdts(function(data) {
     $scope.brandlist = data;
   });
 
-  $scope.getCategory = function (brandId) {
+  $scope.getCategory = function(brandId) {
     // console.log('Brand Id:', brandId);
-    NavigationService.getCategoryImages(brandId, function (data) {
-      if(data) {
+    NavigationService.getCategoryImages(brandId, function(data) {
+      if (data) {
         // console.log('nav service:', brandId);
         // console.log('nav service:', data);
         $scope.products = data;
@@ -29,31 +29,33 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
   $scope.subscribe = {};
   $scope.subscribe.email = "";
-//
-// $scope.checkemail=function(email){
-//
-// }
+  //
+  // $scope.checkemail=function(email){
+  //
+  // }
 
   $scope.checkEmail = false;
   $scope.subscribeEmail = false;
-  $scope.subscribe = function (email) {
+  $scope.subscribe = function(email) {
     // if(!email) {
     //     alert("please enter your email");
     // }
     // console.log('Email subscribe: ', email);
-    NavigationService.subscribe(email, function (data) {
+    NavigationService.subscribe(email, function(data) {
 
-       console.log(data);
-       if(!data.value) {
-         $scope.checkEmail = true;
-         $scope.subscribeEmail = false;
-       }
-       else {
-         $scope.subscribeEmail = true;
-         $scope.checkEmail = false;
-       }
-       console.log(email);
-       $scope.subscribe.email = "";
+      console.log(data);
+      if (!data.value) {
+        if($scope.subscribe.email)
+        {
+        $scope.checkEmail = true;
+        $scope.subscribeEmail = false;
+      }
+      } else {
+        $scope.subscribeEmail = true;
+        $scope.checkEmail = false;
+      }
+      //console.log(email);
+      $scope.subscribe.email = "";
     });
 
     // $scope.subscribeEmail = data;
@@ -86,12 +88,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     });
   };
 
-  $scope.close = function () {
+  $scope.close = function() {
     $.jStorage.set('popNot', true);
     // console.log('popNot value: ', $.jStorage.get('popNot'))
   };
 
-  if(!popNot) {
+  if (!popNot) {
     $scope.popme();
   }
 
@@ -199,33 +201,30 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   // $scope.states = {};
   // $scope.states.activeItem = 'item1';
   $scope.items = [{
-      id: 'item1',
-      title: 'Home',
-      url: '#/home'
+    id: 'item1',
+    title: 'Home',
+    url: '#/home'
 
   }, {
-      id: 'item2',
-      title: 'Know Us',
-      url: '#/knowus'
+    id: 'item2',
+    title: 'Know Us',
+    url: '#/knowus'
   }, {
-      id: 'item3',
-      title: 'Products',
-      url: "#/products"
-  },
-  {
-      id: 'item4',
-      title: 'Gallery',
-      url: "#/gallery"
-  },
-  {
-      id: 'item5',
-      title: 'Download',
-      url: "#/download"
-  },
-  {
-      id: 'item6',
-      title: 'Contact Us',
-      url: "#/contactus"
+    id: 'item3',
+    title: 'Products',
+    url: "#/products"
+  }, {
+    id: 'item4',
+    title: 'Gallery',
+    url: "#/gallery"
+  }, {
+    id: 'item5',
+    title: 'Download',
+    url: "#/download"
+  }, {
+    id: 'item6',
+    title: 'Contact Us',
+    url: "#/contactus"
   }];
   // console.log('activeItem: ', $scope.states.activeItem);
   $scope.getLocation = function(id) {
@@ -238,11 +237,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     // $scope.exclusiveProduct = data;
     // console.log($scope.exclusiveProduct);
   };
-  $scope.isActive = function (id) {
+  $scope.isActive = function(id) {
     // console.log('Testing item: ', $stateParams.activeItem)
     // console.log('Testing item2: ', id)
     // console.log("We're in the is active function!")
-    if($stateParams.activeItem == id)
+    if ($stateParams.activeItem == id)
       return true;
     return false;
   };
@@ -258,16 +257,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     // console.log('form values: ', formData);
     console.log('form values: ', formValid);
     console.log('form values: ', $scope.formFeedback);
-    if(formValid.$valid)
-    {
+    if (formValid.$valid) {
       $scope.formComplete = true;
-      NavigationService.contactSubmit($scope.formFeedback, function (data) {
+      NavigationService.contactSubmit($scope.formFeedback, function(data) {
         // $scope.contact=data;
         // console.log($scope.contact);
       });
-    }
-    else
-    {
+    } else {
 
     }
   };
@@ -362,7 +358,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.navigation = NavigationService.getnav();
 })
 
-.controller('SearchResultCtrl', function($scope, TemplateService, NavigationService, $timeout,$stateParams,ngDialog) {
+.controller('SearchResultCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, ngDialog) {
   $scope.template = TemplateService.changecontent("searchresult");
   $scope.menutitle = NavigationService.makeactive("SearchResult");
   TemplateService.title = $scope.menutitle;
@@ -370,7 +366,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.name = "";
 
   console.log($stateParams.name);
-  NavigationService.getsearchresult($stateParams.name,function (data) {
+  NavigationService.getsearchresult($stateParams.name, function(data) {
     $scope.products = data;
     console.log($scope.products);
   });
@@ -383,51 +379,51 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   //  });
   // };
 
-    // NavigationService.getsearchresult(function (data) {
-    //   $scope.products = data;
-    //  console.log($scope.products);
-    // // });
-      NavigationService.getSearchSeriesPdts($stateParams.id,function (data) {
-        // $state.go('category.series', {code: name})
-        //$scope.isSeries = true;
-        $scope.searchProducts = data.data.queryresult;
-        // if($stateParams.isSeries)
-      });
+  // NavigationService.getsearchresult(function (data) {
+  //   $scope.products = data;
+  //  console.log($scope.products);
+  // // });
+  NavigationService.getSearchSeriesPdts($stateParams.id, function(data) {
+    // $state.go('category.series', {code: name})
+    //$scope.isSeries = true;
+    $scope.searchProducts = data.data.queryresult;
+    // if($stateParams.isSeries)
+  });
 
 
-    $scope.open = function(data) {
-      $scope.showpop = data;
-      ngDialog.open({
-        template: 'views/content/quickview.html',
-        scope: $scope,
-        controller: 'SearchResultCtrl'
-      });
-    };
+  $scope.open = function(data) {
+    $scope.showpop = data;
+    ngDialog.open({
+      template: 'views/content/quickview.html',
+      scope: $scope,
+      controller: 'SearchResultCtrl'
+    });
+  };
 
 })
 
-.controller('GalleryimageCtrl', function($scope, TemplateService, NavigationService, $timeout,$stateParams) {
-  $scope.template = TemplateService.changecontent("galleryimage");
-  $scope.menutitle = NavigationService.makeactive("Galleryimage");
-  TemplateService.title = $scope.menutitle;
-  $scope.navigation = NavigationService.getnav();
-  //$scope.slide = [];
-  // NavigationService.getEachProductGallery(id,function(data) {
-  //   $scope.slide = data;
-  //   // console.log($scope.gallery);
-  // });
-})
-// .controller('FeaturespopCtrl', function($scope, TemplateService, NavigationService, $timeout,$stateParams) {
-//   $scope.template = TemplateService.changecontent("featurespopup");
-//   $scope.menutitle = NavigationService.makeactive("Featurespopup");
-//   TemplateService.title = $scope.menutitle;
-//   $scope.navigation = NavigationService.getnav();
-//   //$scope.slide = [];
-//   // NavigationService.getEachProductGallery(id,function(data) {
-//   //   $scope.slide = data;
-//   //   // console.log($scope.gallery);
-//   // });
-// })
+.controller('GalleryimageCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
+    $scope.template = TemplateService.changecontent("galleryimage");
+    $scope.menutitle = NavigationService.makeactive("Galleryimage");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    //$scope.slide = [];
+    // NavigationService.getEachProductGallery(id,function(data) {
+    //   $scope.slide = data;
+    //   // console.log($scope.gallery);
+    // });
+  })
+  // .controller('FeaturespopCtrl', function($scope, TemplateService, NavigationService, $timeout,$stateParams) {
+  //   $scope.template = TemplateService.changecontent("featurespopup");
+  //   $scope.menutitle = NavigationService.makeactive("Featurespopup");
+  //   TemplateService.title = $scope.menutitle;
+  //   $scope.navigation = NavigationService.getnav();
+  //   //$scope.slide = [];
+  //   // NavigationService.getEachProductGallery(id,function(data) {
+  //   //   $scope.slide = data;
+  //   //   // console.log($scope.gallery);
+  //   // });
+  // })
 
 .controller('ProductsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
   $scope.template = TemplateService.changecontent("products");
@@ -435,7 +431,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
 
-  NavigationService.getAllProducts(function (data) {
+  NavigationService.getAllProducts(function(data) {
     $scope.brands = data;
     // console.log($scope.brands);
   });
@@ -493,7 +489,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   });
 
   $scope.open = function(id) {
-    NavigationService.getEachProductGallery(id,function(data) {
+    NavigationService.getEachProductGallery(id, function(data) {
       $scope.slide = data;
       // console.log($scope.gallery);
     });
@@ -506,55 +502,55 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 })
 
 .controller('BrandsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
-  $scope.template = TemplateService.changecontent("brands");
-  $scope.menutitle = NavigationService.makeactive("Brands");
-  TemplateService.title = $scope.menutitle;
-  $scope.navigation = NavigationService.getnav();
-  // $scope.brandlist = [{
-  //   img: 'img/brands/18.png'
+    $scope.template = TemplateService.changecontent("brands");
+    $scope.menutitle = NavigationService.makeactive("Brands");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    // $scope.brandlist = [{
+    //   img: 'img/brands/18.png'
 
-  // }, {
-  //   img: 'img/brands/1.png'
-  // }, {
-  //   img: 'img/brands/2.png'
-  // }, {
-  //   img: 'img/brands/3.png'
-  // }, {
-  //   img: 'img/brands/4.png'
-  // }, {
-  //   img: 'img/brands/5.png'
-  // }, {
-  //   img: 'img/brands/6.png'
-  // }, {
-  //   img: 'img/brands/7.png'
-  // }, {
-  //   img: 'img/brands/8.png'
-  // }, {
-  //   img: 'img/brands/9.png'
-  // }, {
-  //   img: 'img/brands/10.png'
-  // }, {
-  //   img: 'img/brands/11.png'
-  // }, {
-  //   img: 'img/brands/12.png'
-  // }, {
-  //   img: 'img/brands/13.png'
-  // }, {
-  //   img: 'img/brands/14.png'
-  // }, {
-  //   img: 'img/brands/15.png'
-  // }, {
-  //   img: 'img/brands/16.png'
-  // }, {
-  //   img: 'img/brands/17.png'
-  // }];
-})
-.controller('KnowusCtrl', function($scope, TemplateService, NavigationService, ngDialog, $timeout) {
-  $scope.template = TemplateService.changecontent("knowus");
-  $scope.menutitle = NavigationService.makeactive("Know Us");
-  TemplateService.title = $scope.menutitle;
-  $scope.navigation = NavigationService.getnav();
-})
+    // }, {
+    //   img: 'img/brands/1.png'
+    // }, {
+    //   img: 'img/brands/2.png'
+    // }, {
+    //   img: 'img/brands/3.png'
+    // }, {
+    //   img: 'img/brands/4.png'
+    // }, {
+    //   img: 'img/brands/5.png'
+    // }, {
+    //   img: 'img/brands/6.png'
+    // }, {
+    //   img: 'img/brands/7.png'
+    // }, {
+    //   img: 'img/brands/8.png'
+    // }, {
+    //   img: 'img/brands/9.png'
+    // }, {
+    //   img: 'img/brands/10.png'
+    // }, {
+    //   img: 'img/brands/11.png'
+    // }, {
+    //   img: 'img/brands/12.png'
+    // }, {
+    //   img: 'img/brands/13.png'
+    // }, {
+    //   img: 'img/brands/14.png'
+    // }, {
+    //   img: 'img/brands/15.png'
+    // }, {
+    //   img: 'img/brands/16.png'
+    // }, {
+    //   img: 'img/brands/17.png'
+    // }];
+  })
+  .controller('KnowusCtrl', function($scope, TemplateService, NavigationService, ngDialog, $timeout) {
+    $scope.template = TemplateService.changecontent("knowus");
+    $scope.menutitle = NavigationService.makeactive("Know Us");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+  })
 
 .controller('CategoryCtrl', function($location, $state, $scope, TemplateService, NavigationService, ngDialog, $timeout, $stateParams) {
   $scope.template = TemplateService.changecontent("category");
@@ -580,13 +576,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
   var url = window.location.href;
   //console.log('current url: ', url);
-  if(url.match(/series.*/)) {
+  if (url.match(/series.*/)) {
     // console.log('Testing 123')
     console.log('params: ', $stateParams);
     var page = url.substring(url.lastIndexOf('/') + 1);
     console.log('page: ', page);
 
-    NavigationService.getEachSeries($stateParams.id, function (data) {
+    NavigationService.getEachSeries($stateParams.id, function(data) {
       $scope.series = data.filter.subcategory;
       // var l = $scope.series.length;
       // return l;
@@ -595,13 +591,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       console.log('Series deep link: ', $scope.series.length);
 
       for (i = 0; i < $scope.series.length; i++) {
-        if($scope.series[i].name == page) {
+        if ($scope.series[i].name == page) {
           $scope.code = $scope.series[i].id;
         }
       }
 
       console.log('code in deep link: ', $scope.code);
-      NavigationService.getEachSeriesPdts($stateParams.id, $scope.code, function (data) {
+      NavigationService.getEachSeriesPdts($stateParams.id, $scope.code, function(data) {
         // $state.go('category.series', {code: name})
         $scope.isSeries = true;
         $scope.seriesProducts = data.data.queryresult;
@@ -635,7 +631,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   //    key.isOpen=false;
   //  })
 
-  $scope.isCategory = function (cat, category) {
+  $scope.isCategory = function(cat, category) {
     if (cat.id == category.id) {
       return true;
     }
@@ -643,15 +639,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     return false;
   };
 
-  NavigationService.getAllProducts(function(data){
+  NavigationService.getAllProducts(function(data) {
     $scope.allcategory = data;
-    _.each($scope.allcategory,function(key){
-      key.isOpen=false;
+    _.each($scope.allcategory, function(key) {
+      key.isOpen = false;
     });
     console.log($scope.allcategory);
   });
 
-  NavigationService.getEachCategory($stateParams.id, function (data) {
+  NavigationService.getEachCategory($stateParams.id, function(data) {
     $scope.category = data;
     // console.log('Category: ', $scope.category);
     // console.log('State: ', $stateParams.id);
@@ -662,16 +658,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     console.log('all series: ', $scope.allSeries);
   });
 
-  NavigationService.getEachSeries($stateParams.id, function (data) {
+  NavigationService.getEachSeries($stateParams.id, function(data) {
     $scope.series = data.filter.subcategory;
     $scope.products = data.data.queryresult;
     //console.log('Series: ', $scope.seriesProducts);
   });
 
-  $scope.eachSeries = function (id, code) {
+  $scope.eachSeries = function(id, code) {
     console.log('Id: ', id);
     console.log('Code: ', code);
-    NavigationService.getEachSeriesPdts(id, code, function (data) {
+    NavigationService.getEachSeriesPdts(id, code, function(data) {
       // $state.go('category.series', {code: name})
       $scope.isSeries = true;
       $scope.seriesProducts = data.data.queryresult;
@@ -687,21 +683,32 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       controller: 'CategoryCtrl'
     });
   };
-    $scope.feature = function(id) {
-       NavigationService.getfeature(function(data){
-        $scope.features=data;
-        console.log(data);
-       });
-    ngDialog.open({
-      template: 'views/content/featurespopup.html',
-      scope: $scope,
-      controller: 'CategoryCtrl'
+
+  NavigationService.getfeature(function(data) {
+    $scope.features = data;
+    $scope.allFeatures = _.cloneDeep($scope.features);
+    console.log($scope.features);
+    console.log(data);
+  });
+  $scope.feature = function(catid) {
+    var foundindex = _.findIndex($scope.allFeatures, {
+      "id": catid
     });
+    if (foundindex != -1) {
+      $scope.featureimage = $scope.allFeatures[foundindex].featureimage;
+      if ($scope.featureimage) {
+        ngDialog.open({
+          template: 'views/content/featurespopup.html',
+          scope: $scope,
+          // controller: 'CategoryCtrl'
+        });
+      }
+    }
   };
 
 })
 
-.controller('headerctrl', function($scope, TemplateService,NavigationService,$stateParams) {
+.controller('headerctrl', function($scope, TemplateService, NavigationService, $stateParams) {
   $scope.template = TemplateService;
 
   // NavigationService.getEachCategory($stateParams.id, function (data) {
@@ -716,9 +723,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.getsearch = function(name) {
     if ($scope.getclass === "down-yes")
 
-    $scope.getclass = "down-no";
+      $scope.getclass = "down-no";
     else
-    $scope.getclass = "down-yes";
+      $scope.getclass = "down-yes";
   };
   // $scope.name = "";
   // $scope.getsearchresult = function() {
