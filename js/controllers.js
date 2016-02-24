@@ -1,4 +1,4 @@
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngSanitize', 'ngDialog', 'angular-flexslider'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngSanitize', 'ngDialog', 'angular-flexslider','infinite-scroll'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, ngDialog, $timeout) {
   //Used to name the .html file
@@ -661,6 +661,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   NavigationService.getEachSeries($stateParams.id, function(data) {
     $scope.series = data.filter.subcategory;
     $scope.products = data.data.queryresult;
+      console.log('Length of products: ', $scope.products.length);
+      $scope.images = [1, 2, 3];
+
+      $scope.loadMore = function() {
+        var last = $scope.images[$scope.images.length - 1];
+        for(var i = 1; i <= 3; i++) {
+          if($scope.images.length <= $scope.products.length)
+          {
+          $scope.images.push($scope.products[last + i]);
+        }
+        }
+        console.log($scope.images.length);
+      };
     //console.log('Series: ', $scope.seriesProducts);
   });
 
