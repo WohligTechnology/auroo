@@ -7,7 +7,7 @@ production/
 *.zip
 css/
 img2/
-gulpfile
+gulpfile.js
 # Windows shortcuts
 *.lnk
 
