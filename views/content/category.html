@@ -51,7 +51,7 @@
               <div class="name pull-left">
                 <span class="category-color">{{category.name}}</span>
                 <span ng-repeat="s in series">
-                  <a ng-click="eachSeries(category.id, s.id)" ui-sref="category.series({id:category.id, code:s.name})">{{s.name}}</a>
+                  <a class="{{s.class}}" ng-click="eachSeries(category.id, s.id)">{{s.name}}</a>
                 </span>
               </div>
               <div class="pull-right name">
@@ -59,8 +59,8 @@
               </div>
             </div>
 
-            <div class="row" infinite-scroll='loadMore()' infinite-scroll-distance='2' >
-              <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in images track by $index" ng-click="open(pros);" ng-hide="isSeries">
+            <div class="row" infinite-scroll='loadMore()' infinite-scroll-distance='2' infinite-scroll-disabled="shouldscroll">
+              <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in products track by $index" ng-click="open(pros);">
                 <div class="pro-list">
                   <a href="">
                     <div class="products">
@@ -85,7 +85,7 @@
                 </div>
               </div>
 
-              <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in seriesProducts" ng-click="open(pros);" ng-show="isSeries">
+              <!-- <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in seriesProducts" ng-click="open(pros);" ng-show="isSeries">
                 <div class="pro-list">
                   <a href="">
                     <div class="products">
@@ -105,7 +105,7 @@
                     </div>
                   </a>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
 

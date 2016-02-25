@@ -972,6 +972,14 @@ button:focus { outline: none !important; }
     img { margin: 0 auto; }
  }
  .showerror { padding: 10% 0; }
+ .cat-active {
+   border-bottom: 1px solid #000;
+   color: #000;
+   &:focus ,
+   &:hover{
+     color:#000;
+   }
+ }
  // @import 'mobile';
  @media (max-width: 1200px) {
      .navbar-nav li {

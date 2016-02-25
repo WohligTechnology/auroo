@@ -56,13 +56,16 @@ var navigationservice = angular.module('navigationservice', [])
       // console.log(id);
       $http.get(adminurl + 'getEachProductGallery?id=' + id).success(callback);
     },
+    getProductBuCategory: function(obj, callback) {
+      $http.get(adminurl + 'getProductsByCategory?categoryid=' + obj.id + "&subcategories=" + obj.subcat + "&pageno=" + obj.pagenumber).success(callback);
+    },
     // getdownload:function(id,callback){
     //     $http.get(adminurl + 'getCategoryById?id='+id).success(callback);
     //
     // },
 
     contactSubmit: function(formData, callback) {
-      console.log('form data: ', formData);
+      // console.log('form data: ', formData);
       $http({
         url: adminurl + 'contactUs',
         method: 'POST',
@@ -120,7 +123,7 @@ var navigationservice = angular.module('navigationservice', [])
     },
 
     getAllSeries: function(callback) {
-      console.log('in all series');
+      // console.log('in all series');
       $http.get(adminurl + 'getAllSeries').success(callback);
     },
 
@@ -128,7 +131,7 @@ var navigationservice = angular.module('navigationservice', [])
       $http.get(adminurl + 'getAllCategories').success(callback);
     },
     getsearchresult: function(name, callback) {
-      console.log('Name:', name);
+      // console.log('Name:', name);
       $http.get(adminurl + 'searchByCategory?name=' + name).success(callback);
     },
 
