@@ -20,7 +20,8 @@
             <accordion close-others="oneAtATime">
               <accordion-group ng-repeat="cat in allcategory" is-open="cat.isOpen">
                 <accordion-heading >
-                  <a ui-sref="category({id:cat.id})" class="block">{{cat.name}}
+                  <a class="block"><span ui-sref="category({id:cat.id})" >{{cat.name}}</span>
+                    <!-- ui-sref="category({id:cat.id})" -->
                     <!-- <i class="pull-right fa" ng-class="{'fa-minus':status.open7,'fa-plus':!status.open7}"></i> -->
                     <!-- </a></accordion-heading> -->
                     <!-- <ul ng-repeat="s in allSeries" ng-if="s.category == category.id"> -->

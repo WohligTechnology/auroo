@@ -708,6 +708,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       ++$scope.objfilter.pagenumber;
       $scope.getProductBuCategory();
     }
+
+
   };
 
   $scope.eachSeries = function(id, code) {
@@ -715,10 +717,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.objfilter.pagenumber = 1;
     $scope.objfilter.subcat = code;
     _.each($scope.series, function(n) {
-      if (n.id == code)
-        n.class = "cat-active";
+      if(n.id==code)
+      n.class = "cat-active";
       else
-        n.class = "";
+      n.class="";
     });
     $scope.getProductBuCategory();
     // console.log('Id: ', id);
