@@ -60,7 +60,7 @@
             </div>
 
             <div class="row" infinite-scroll='loadMore()' infinite-scroll-distance='2' >
-              <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in products" ng-click="open(pros);" ng-hide="isSeries">
+              <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in images track by $index" ng-click="open(pros);" ng-hide="isSeries">
                 <div class="pro-list">
                   <a href="">
                     <div class="products">

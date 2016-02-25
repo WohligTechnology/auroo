@@ -658,24 +658,38 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     console.log('all series: ', $scope.allSeries);
   });
 
+  $scope.products = [];
   NavigationService.getEachSeries($stateParams.id, function(data) {
     $scope.series = data.filter.subcategory;
     $scope.products = data.data.queryresult;
+
+
       console.log('Length of products: ', $scope.products.length);
-      $scope.images = [1, 2, 3];
+    //console.log('Series: ', $scope.seriesProducts);
+
+console.log('products: ', $scope.products);
+  $scope.images = [];
+  $scope.images[0] = $scope.products[0];
+  $scope.images[1] = $scope.products[1];
+  $scope.images[2] = $scope.products[2];
+
+  console.log('img0',$scope.images[0]);
+    console.log('img1',$scope.images[1]);
+      console.log('img2',$scope.images[2]);
+
+    });
 
       $scope.loadMore = function() {
-        var last = $scope.images[$scope.images.length - 1];
-        for(var i = 1; i <= 3; i++) {
-          if($scope.images.length <= $scope.products.length)
+        var last = $scope.images.length;
+        for(var i = 0; i < 3; i++) {
+          if($scope.images.length < $scope.products.length)
           {
           $scope.images.push($scope.products[last + i]);
         }
         }
-        console.log($scope.images.length);
+        console.log('images length:',$scope.images.length);
+        console.log('product 21:',$scope.products[21]);
       };
-    //console.log('Series: ', $scope.seriesProducts);
-  });
 
   $scope.eachSeries = function(id, code) {
     console.log('Id: ', id);
