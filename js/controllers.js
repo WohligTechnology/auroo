@@ -680,6 +680,7 @@ console.log('products: ', $scope.products);
     });
 
       $scope.loadMore = function() {
+        // console.log('$scope.images.length:',$scope.images.length);
         var last = $scope.images.length;
         for(var i = 0; i < 3; i++) {
           if($scope.images.length < $scope.products.length)
