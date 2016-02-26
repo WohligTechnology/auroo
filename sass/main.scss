@@ -989,6 +989,18 @@ button:focus { outline: none !important; }
      color:#000;
    }
 }
+.no-cat-imgholder { margin-top: 20px; }
+.coming-soon {
+  min-height: 400px;
+  letter-spacing: 3px;
+  position: relative;
+  h3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%,-50%));
+  }
+ }
  // @import 'mobile';
  @media (max-width: 1200px) {
      .navbar-nav li {

@@ -73,6 +73,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
     templateUrl: "views/template.html",
     controller: 'CategoryCtrl'
   })
+  .state('comingsoon', {
+    url: "/comingsoon",
+    templateUrl: "views/template.html",
+    controller: 'ComingsoonCtrl'
+  })
 
   .state('category.series', {
     url: "/series/:code",

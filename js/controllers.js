@@ -554,6 +554,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
   })
+  .controller('ComingsoonCtrl', function($scope, TemplateService, NavigationService, ngDialog, $timeout) {
+    $scope.template = TemplateService.changecontent("comingsoon");
+    $scope.menutitle = NavigationService.makeactive("Coming Soon");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+  })
 
 .controller('CategoryCtrl', function($location, $state, $scope, TemplateService, NavigationService, ngDialog, $timeout, $stateParams) {
   $scope.template = TemplateService.changecontent("category");
