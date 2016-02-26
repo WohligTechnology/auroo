@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-3 col-sm-4 col-xs-6" ng-repeat="catbrand in brands">
         <a ui-sref="category({id:catbrand.id})">
-          <div class="img-holder cathold">
+          <div class=""> <!-- if need then put this class - ( img-holder cathold )-->
             <img ng-src=" {{catbrand.image|serverimage}} " alt=" " class="img-responsive">
           </div>
         </a>

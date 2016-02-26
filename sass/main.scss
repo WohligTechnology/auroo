@@ -1047,6 +1047,7 @@ button:focus { outline: none !important; }
      }
  }
  @media (max-width: 768px) {
+   header .search-box { padding: 15px 0; }
    .content { margin-top: -15px; }
      header .lh40 {
          line-height: 0;

@@ -642,6 +642,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     return false;
   };
 
+  $scope.allcategory = [];
   NavigationService.getAllProducts(function(data) {
     $scope.allcategory = data;
     _.each($scope.allcategory, function(key) {
@@ -649,6 +650,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     });
     // console.log($scope.allcategory);
   });
+
+  $scope.isFeature = function(id) {
+    for(var i=0; i<$scope.allcategory.length; i++) {
+      if($scope.allcategory[i].id == id && $scope.allcategory[i].featureimage != "") {
+        return true;
+        $scope.featureimage = $scope.allcategory[i].featureimage;
+      }
+    }
+    return false;
+  }
 
   NavigationService.getEachCategory($stateParams.id, function(data) {
     $scope.category = data;
@@ -715,9 +726,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
   };
-
+  console.log('pr before',$scope.products);
   $scope.eachSeries = function(id, code) {
     $scope.products = [];
+    console.log('pr after',$scope.products);
     $scope.objfilter.pagenumber = 1;
     $scope.objfilter.subcat = code;
     _.each($scope.series, function(n) {
@@ -749,7 +761,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   NavigationService.getfeature(function(data) {
     $scope.features = data;
     $scope.allFeatures = _.cloneDeep($scope.features);
-    // console.log($scope.features);
+     console.log('Feature:',$scope.features);
     // console.log(data);
   });
   $scope.feature = function(catid) {
