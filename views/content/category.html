@@ -48,18 +48,19 @@
             <!-- <div class="products-name text-center">
                         <p class="head">Panel</p>
                     </div> -->
-            <div class="series clearfix">
-              <div class="name pull-left">
-                <span class="category-color cat-name">{{category.name}}</span>
+            <div class="series ">
+              <div class="name ">
+                <span class="category-color text-uppercase cat-name">{{category.name}}</span>
+                <div class="pull-right name" ng-if="isFeature(category.id)" >
+                  <span class="category-color feature pointer" ng-click="feature(featureimage);">Features</span>
+                </div>
                 <div class="">
                   <span ng-repeat="s in series">
                     <a class="{{s.class}}" ng-click="eachSeries(category.id, s.id)">{{s.name}}</a>
                   </span>
                 </div>
               </div>
-              <div class="pull-right name" ng-if="isFeature(category.id)" >
-                <span class="category-color pointer" ng-click="feature(featureimage);">Features</span>
-              </div>
+
                             <!-- <div class="pull-right name" ng-if="cat.featureimage.length ==0" >
               <h3>Not found</h3>
               </div> -->

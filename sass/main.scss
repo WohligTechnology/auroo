@@ -932,14 +932,15 @@ footer {
 .series {
   margin: 50px 0 0 5px;
   .name {
-    .cat-name {
+    .cat-name,
+    .feature {
       margin: 0;
       font-size: 20px;
     }
     span {
-      margin: 0 15px;
+      margin: 8px 15px 8px 0;
       display: inline-block;
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 }
