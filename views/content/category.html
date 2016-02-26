@@ -51,9 +51,11 @@
             <div class="series clearfix">
               <div class="name pull-left">
                 <span class="category-color cat-name">{{category.name}}</span>
-                <span ng-repeat="s in series">
-                  <a class="{{s.class}}" ng-click="eachSeries(category.id, s.id)">{{s.name}}</a>
-                </span>
+                <div class="">
+                  <span ng-repeat="s in series">
+                    <a class="{{s.class}}" ng-click="eachSeries(category.id, s.id)">{{s.name}}</a>
+                  </span>
+                </div>
               </div>
               <div class="pull-right name" ng-if="isFeature(category.id)" >
                 <span class="category-color pointer" ng-click="feature(featureimage);">Features</span>
