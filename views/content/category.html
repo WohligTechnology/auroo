@@ -50,7 +50,7 @@
                     </div> -->
             <div class="series clearfix">
               <div class="name pull-left">
-                <span class="category-color">{{category.name}}</span>
+                <span class="category-color cat-name">{{category.name}}</span>
                 <span ng-repeat="s in series">
                   <a class="{{s.class}}" ng-click="eachSeries(category.id, s.id)">{{s.name}}</a>
                 </span>
@@ -62,6 +62,14 @@
               <h3>Not found</h3>
               </div> -->
             </div>
+            <!-- if category is not there then show this -->
+                <div class="no-cat-imgholder">
+                  <img src="img/egger.jpg" alt="" class="img-responsive">
+                </div>
+                <div class="no-cat-imgholder">
+                  <img src="img/solid-wood.jpg" alt="" class="img-responsive">
+                </div>
+            <!-- show this image done -->
 
             <div class="row" infinite-scroll='loadMore()' infinite-scroll-distance='2' infinite-scroll-disabled="shouldscroll">
               <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in products track by $index" ng-click="open(pros);">
