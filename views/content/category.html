@@ -51,9 +51,11 @@
             <div class="series clearfix">
               <div class="name pull-left">
                 <span class="category-color cat-name">{{category.name}}</span>
-                <span ng-repeat="s in series">
-                  <a class="{{s.class}}" ng-click="eachSeries(category.id, s.id)">{{s.name}}</a>
-                </span>
+                <div class="">
+                  <span ng-repeat="s in series">
+                    <a class="{{s.class}}" ng-click="eachSeries(category.id, s.id)">{{s.name}}</a>
+                  </span>
+                </div>
               </div>
               <div class="pull-right name" ng-if="isFeature(category.id)" >
                 <span class="category-color pointer" ng-click="feature(featureimage);">Features</span>
@@ -61,13 +63,14 @@
                             <!-- <div class="pull-right name" ng-if="cat.featureimage.length ==0" >
               <h3>Not found</h3>
               </div> -->
-            </div>
+
             <!-- if category is not there then show this -->
-                <div class="no-cat-imgholder">
+                <div class="no-cat-imgholder" ng-show="category.id==9 && category.id!=23">
                   <img src="img/egger.jpg" alt="" class="img-responsive">
                 </div>
-                <div class="no-cat-imgholder">
+                <div class="no-cat-imgholder" ng-show="category.id==23 && category.id!=9">
                   <img src="img/solid-wood.jpg" alt="" class="img-responsive">
+                </div>
                 </div>
             <!-- show this image done -->
 
@@ -76,7 +79,7 @@
                 <div class="pro-list">
                   <a href="">
                     <div class="products">
-                      <div class="pro-img">
+                      <div class="pro-img"  ng-hide="pro.id==9 && pro.id==23">
                         <img ng-src="{{pros.image|serverimage}}" alt="Products" class="img-responsive">
                       </div>
                       <div class="pro-hov text-center text-uppercase">
