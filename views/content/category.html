@@ -27,8 +27,8 @@
                     <!-- <ul ng-repeat="s in allSeries" ng-if="s.category == category.id"> -->
                     <i class="pull-right fa" ng-class="{'fa-minus':cat.isOpen,'fa-plus':!cat.isOpen}"></i>
                   </a>
-                </accordion-heading>
-                <!-- </accordion-heading ng-click="cat.isOpen = !cat.isOpen"> -->
+                <!-- </accordion-heading> -->
+                </accordion-heading ng-click="cat.isOpen = !cat.isOpen">
                 <ul ng-repeat="s in allSeries" ng-if="s.category == cat.id">
                   <li>
                     <a ng-click="eachSeries(cat.id, s.id)" ui-sref="category.series({id:cat.id, code:s.name})">{{s.name}}</a>
@@ -55,9 +55,13 @@
                   <a class="{{s.class}}" ng-click="eachSeries(category.id, s.id)">{{s.name}}</a>
                 </span>
               </div>
-              <div class="pull-right name">
+              <div class="pull-right name" ng-if="isFeature(category.id)" >
+                We are here {{category.id}}
                 <span class="category-color pointer" ng-click="feature(category.id);">Features</span>
               </div>
+              <!-- <div class="pull-right name" ng-if="cat.featureimage.length ==0" >
+              <h3>Not found</h3>
+              </div> -->
             </div>
 
             <div class="row" infinite-scroll='loadMore()' infinite-scroll-distance='2' infinite-scroll-disabled="shouldscroll">
