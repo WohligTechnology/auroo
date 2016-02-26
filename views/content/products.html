@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container pdt7">
   <div class="product-main">
     <div class="row">
       <div class="col-md-3 col-sm-4 col-xs-6" ng-repeat="catbrand in brands">
         <a ui-sref="category({id:catbrand.id})">
-          <div class=""> <!-- if need then put this class - ( img-holder cathold )-->
+          <div class="title"> <!-- if need then put this class - ( img-holder cathold )-->
             <img ng-src=" {{catbrand.image|serverimage}} " alt=" " class="img-responsive">
           </div>
         </a>
