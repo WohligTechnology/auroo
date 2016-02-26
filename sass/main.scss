@@ -518,8 +518,8 @@ button:focus { outline: none !important; }
          }
      }
      address {
-         margin: 30px 0;
-         padding: 20px 0;
+         margin: 30px 0 0;
+         padding: 20px 0 0;
          position: relative;
          &:before {
              content: " ";
@@ -530,14 +530,14 @@ button:focus { outline: none !important; }
              top: 0;
              left: 0;
          }
-         &:after {
-             content: " ";
-             width: 64px;
-             height: 2px;
-             border-bottom: 2px dotted $footer-color;
-             position: absolute;
-             bottom: 10px;
-         }
+        //  &:after {
+        //      content: " ";
+        //      width: 64px;
+        //      height: 2px;
+        //      border-bottom: 2px dotted $footer-color;
+        //      position: absolute;
+        //      bottom: 10px;
+        //  }
      }
      .foot-links {
          .aboutus {
@@ -932,14 +932,15 @@ button:focus { outline: none !important; }
  .series {
    margin: 50px 0 0 5px;
    .name {
-     .cat-name {
+     .cat-name,
+     .feature {
        margin: 0;
        font-size: 20px;
      }
      span {
-       margin: 0 15px;
+       margin: 8px 30px 8px 0;
        display: inline-block;
-       font-size: 16px;
+       font-size: 14px;
      }
    }
  }
@@ -989,6 +990,7 @@ button:focus { outline: none !important; }
      color:#000;
    }
  }
+ .no-cat-imgholder { margin-top: 20px; }
  // @import 'mobile';
  @media (max-width: 1200px) {
      .navbar-nav li {
