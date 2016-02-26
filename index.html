@@ -51,7 +51,7 @@
 
 <body>
 
-    <div class="repeated-item" ui-view></div>
+    <div class="repeated-item" ui-view autoscroll="true"></div>
 
 </body>
 <script>
@@ -75,6 +75,11 @@
         });
 
     });
+    $rootScope.$on("$routeChangeSuccess", function (event, currentRoute, previousRoute) {
+
+    window.scrollTo(0, 0);
+
+});
 
 </script>
 
