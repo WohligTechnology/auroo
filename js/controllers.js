@@ -1,3 +1,6 @@
+window.onload = function () {
+  $.jStorage.flush()
+};
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngSanitize', 'ngDialog', 'angular-flexslider', 'infinite-scroll'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, ngDialog, $timeout) {
@@ -8,6 +11,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.navigation = NavigationService.getnav();
   $scope.products = false;
 
+  // $.jStorage.flush();
   NavigationService.getHomePics(function(data) {
     $scope.homeImage = data;
   });
