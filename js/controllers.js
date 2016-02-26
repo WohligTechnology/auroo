@@ -279,7 +279,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
 
-  NavigationService.getGallery(function(data) {
+  NavigationService.getDownload(function(data) {
     $scope.download = data;
     // console.log($scope.download);
   });

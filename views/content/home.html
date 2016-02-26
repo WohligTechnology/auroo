@@ -1,8 +1,8 @@
 <div class="slider">
-    <flex-slider class="carousel" flex-slide="s in slides track by $index" animation="slide" animation-loop="true">
-        <li>
-            <img ng-src="{{s.image|serverimage}}">
-            <!--
+  <flex-slider class="carousel" flex-slide="s in slides track by $index" animation="slide" animation-loop="true">
+  <li>
+    <img ng-src="{{s.image|serverimage}}">
+    <!--
             <div class="slider-home">
                 <div class="slide-tagline text-uppercase text-center">
                     <span class="text-capitalize">{{s.tag_head}}</span>
@@ -13,60 +13,61 @@
                 </div>
             </div>
         -->
-        </li>
+  </li>
 
-    </flex-slider>
+</flex-slider>
 </div>
 <div class="message">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="pro">
-                    <img src="img/adhesive-banner.jpg" alt="Products" class="img-responsive">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="msg-me">
-                    <p class="italic font-italic">Join for our latest update</p>
-                    <form name="subForm" action="" class="form-inline">
-                        <div class="nomgpd form-group">
-                            <input type="email" class="form-control nofocus noborder mail" placeholder="Your email here.." ng-model="subscribe.email" ng-pattern="/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/" required>
-                            <button ng-click="subscribe(subscribe.email);" class="subscribe nofocus">subscribe</button>
-                            <div ng-messages="subForm.email.$error" ng-messages-include="error-messages">
-                        </div>
-                        <h4 class="category-color" ng-if="subscribeEmail">Thankyou For Subscribing</h4>
-                        <h4 class="category-color" ng-if="checkEmail">This email already exists</h4>
-                    </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="pro">
+        <img src="img/adhesive-banner.jpg" alt="Products" class="img-responsive">
+      </div>
     </div>
+    <div class="col-md-6">
+      <div class="msg-me">
+        <p class="italic font-italic">Join for our latest update</p>
+        <form name="subForm" action="" class="form-inline">
+          <div class="nomgpd form-group">
+            <input type="email" class="form-control nofocus noborder mail" placeholder="Your email here.." ng-model="subscribe.email" ng-pattern="/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/" required>
+            <button ng-click="subscribe(subscribe.email);" class="subscribe nofocus">subscribe</button>
+            <div ng-messages="subForm.email.$error" ng-messages-include="error-messages"></div>
+            <h4 class="category-color" ng-if="subscribeEmail">Thankyou For Subscribing</h4>
+            <h4 class="category-color" ng-if="checkEmail">This email already exists</h4>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 <div class="demand">
-    <div class="container-fluid ">
-        <div class="row">
-            <div class="col-md-6 col-sm-6">
-                <div class="pro">
-                    <img src="img/1.jpg" alt="Products" class="img-responsive">
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-                <div class="pro">
-                    <img src="img/2.jpg" alt="Products" class="img-responsive">
-                </div>
-            </div>
-        </div>
+<div class="container-fluid ">
+  <div class="row">
+    <div class="col-md-6 col-sm-6">
+      <div class="pro">
+        <img src="img/1.jpg" alt="Products" class="img-responsive">
+      </div>
     </div>
+    <div class="col-md-6 col-sm-6">
+      <div class="pro">
+        <img src="img/2.jpg" alt="Products" class="img-responsive">
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 <div class="exculsive">
-    <div class="pra-excul products-name text-center">
-        <p class="head text-uppercase">euro pratik <span class="main-color">exculsive products</span></p>
-    </div>
-    <div class="container-fluid">
-        <div class="excul-slide">
-            <div class="row">
-                <!--
+<div class="pra-excul products-name text-center">
+  <p class="head text-uppercase">euro pratik
+    <span class="main-color">exculsive products</span>
+  </p>
+</div>
+<div class="container-fluid">
+  <div class="excul-slide">
+    <div class="row" >
+      <!--
                 <div class="col-md-3 col-sm-4 col-xs-6" ng-repeat="pros in products">
                     <a href="">
                         <div class="products">
@@ -94,23 +95,25 @@
                     </a>
                 </div>
             -->
-                <div class="col-md-6 col-sm-6">
-                    <div class="pro">
-                        <img src="img/mikano-banner.jpg" alt="Products" class="img-responsive">
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                    <div class="pro">
-                        <img src="img/decoart-banner.jpg" alt="Products" class="img-responsive">
-                    </div>
-                </div>
-            </div>
+      <div class="col-md-6 col-sm-6" ng-repeat="exclusive in exclusiveProduct">
+        <div class="pro"><a ng-href="{{exclusive.link}}">
+          <img ng-src="{{exclusive.image1|serverimage}}" alt="Products" class="img-responsive"></a>
         </div>
+      </div>
+      <!-- <div class="col-md-6 col-sm-6">
+        <div class="pro">
+          <img src="img/decoart-banner.jpg" alt="Products" class="img-responsive">
+        </div>
+      </div> -->
     </div>
+  </div>
+</div>
 </div>
 
 <div class="pop-pro products-name text-center">
-    <p class="head text-uppercase">euro pratik <span class="main-color">popular products</span></p>
+<p class="head text-uppercase">euro pratik
+  <span class="main-color">popular products</span>
+</p>
 </div>
 <!--
 <div class="brand-list" ng-repeat="brand in brandlist" ng-click="proclick(true)">
@@ -160,48 +163,49 @@
 -->
 
 <div ng-repeat="brand in brandlist">
-    <div class="brand-list" ng-click="proclick($index)">
-        <div class="list-brand">
-            <div class="brand-img">
-                <img ng-src="{{brand.frontImage|serverimage}}" alt="Brand" class="img-responsive">
-            </div>
-        </div>
-        <div class="back-img">
-            <img ng-src="{{brand.backImage|serverimage}}" alt="Brand" class="img-responsive">
-        </div>
+<div class="brand-list" ng-click="proclick($index)">
+  <div class="list-brand">
+    <div class="brand-img"><a ng-href="{{brand.link}}">
+      <img ng-src="{{brand.frontImage|serverimage}}" alt="Brand" class="img-responsive"></a>
     </div>
-    <div class="click-pro" ng-show="brand.show">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-3" ng-repeat="proho in products" ng-click="open(proho)">
-                    <a href="">
-                        <div class="products">
-                            <div class="pro-img">
-                                <img ng-src="{{proho.img}}" alt="Products" class="img-responsive">
-                            </div>
-                            <div class="pro-hov text-center text-uppercase">
-                                <div class="pro-detail">
-                                  <a href="" class="eye"><i class="fa fa-eye"></i></a>
-                                    <!-- <p>{{proho.code}}</p> -->
-                                    <!-- <p>{{proho.name}}</p> -->
-                                    <!-- <p>{{proho.size}}</p> -->
-                                    <!--
+  </div>
+  <div class="back-img"><a ng-href="{{brand.link}}">
+    <img ng-src="{{brand.backImage|serverimage}}" alt="Brand" class="img-responsive"></a>
+  </div>
+</div>
+<!-- <div class="click-pro" ng-show="brand.show">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3" ng-repeat="proho in products" ng-click="open(proho)">
+        <a href="">
+          <div class="products">
+            <div class="pro-img">
+              <img ng-src="{{proho.img}}" alt="Products" class="img-responsive">
+            </div>
+            <div class="pro-hov text-center text-uppercase">
+              <div class="pro-detail">
+                <a href="" class="eye">
+                  <i class="fa fa-eye"></i>
+                </a>
+                <p>{{proho.code}}</p>
+                <!<p>{{proho.name}}</p> -->
+                <!-- <p>{{proho.size}}</p> -->
+                <!--
                                     <p>Rs: {{proho.price}}</p>
                                 -->
-                                </div>
-                                <!-- <div class="view">
+              <!-- </div> -->
+              <!-- <div class="view">
                                     <a href="" ng-click="open(proho);" class="eye"><i class="fa fa-eye"></i></a>
                                 </div> -->
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            <!-- </div>
+            </div>
+          </div>
+      </div>
+      <!-- </div>
             <div class="range">
                 <a href="#/category/{{brand.id}}/series/{{brand.series[0]}}" class="">full range</a>
             </div> -->
-        </div>
     </div>
-</div>
+  </div>
+</div> -->
 
 </div>

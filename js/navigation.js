@@ -46,6 +46,9 @@ var navigationservice = angular.module('navigationservice', [])
     getGallery: function(callback) {
       $http.get(adminurl + 'getAllCategories').success(callback);
     },
+    getDownload: function(callback) {
+      $http.get(adminurl + 'getDownload').success(callback);
+    },
     getSlide: function(callback) {
       $http.get(adminurl + 'getGalleryImages').success(callback);
     },

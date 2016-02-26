@@ -979,7 +979,7 @@ button:focus { outline: none !important; }
    &:hover{
      color:#000;
    }
- }
+}
  // @import 'mobile';
  @media (max-width: 1200px) {
      .navbar-nav li {
@@ -1047,7 +1047,6 @@ button:focus { outline: none !important; }
      }
  }
  @media (max-width: 768px) {
-   header .search-box { padding: 15px 0; }
    .content { margin-top: -15px; }
      header .lh40 {
          line-height: 0;
@@ -1106,7 +1105,9 @@ button:focus { outline: none !important; }
        @include size(170px,100);
        margin: 20px auto;
      }
-     .pdt7 { padding-top: 7%; }
+     .pdt10 {
+         padding-top: 10%;
+     }
      .pro-list {
          .products {
              height: 250px;
