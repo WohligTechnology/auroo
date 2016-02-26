@@ -649,13 +649,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
   $scope.isFeature = function(id) {
     for(var i=0; i<$scope.allcategory.length; i++) {
-      if($scope.allcategory[i].id == id && $scope.allcategory[i].featureimage != "") {
-        return true;
+      if($scope.allcategory[i].id == id && $scope.allcategory[i].featureimage !== "") {
         $scope.featureimage = $scope.allcategory[i].featureimage;
+        return true;
       }
     }
     return false;
-  }
+  };
 
   NavigationService.getEachCategory($stateParams.id, function(data) {
     $scope.category = data;
@@ -760,20 +760,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
      console.log('Feature:',$scope.features);
     // console.log(data);
   });
-  $scope.feature = function(catid) {
-    var foundindex = _.findIndex($scope.allFeatures, {
-      "id": catid
+  $scope.feature = function(feature) {
+    // var foundindex = _.findIndex($scope.allFeatures, {
+    //   "id": catid
+    // });
+    // if (foundindex != -1) {
+    //   $scope.featureimage = $scope.allFeatures[foundindex].featureimage;
+    //   if ($scope.featureimage) {
+    //
+    //   }
+    // }
+    $scope.feature = feature;
+    ngDialog.open({
+      template: 'views/content/featurespopup.html',
+      scope: $scope,
+      // controller: 'CategoryCtrl'
     });
-    if (foundindex != -1) {
-      $scope.featureimage = $scope.allFeatures[foundindex].featureimage;
-      if ($scope.featureimage) {
-        ngDialog.open({
-          template: 'views/content/featurespopup.html',
-          scope: $scope,
-          // controller: 'CategoryCtrl'
-        });
-      }
-    }
   };
 
 })
