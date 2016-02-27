@@ -54,33 +54,6 @@
     <div class="repeated-item" ui-view autoscroll="true"></div>
 
 </body>
-<script>
-    $(document).ready(function() {
 
-        //Check to see if the window is top if not then display button
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 250) {
-                $('.scrollToTop').fadeIn();
-            } else {
-                $('.scrollToTop').fadeOut();
-            }
-        });
-
-        //Click event to scroll to top
-        $('.scrollToTop').click(function() {
-            $('html, body').animate({
-                scrollTop: 0
-            }, 800);
-            return false;
-        });
-
-    });
-    $rootScope.$on("$routeChangeSuccess", function (event, currentRoute, previousRoute) {
-
-    window.scrollTo(0, 0);
-
-});
-
-</script>
 
 </html>

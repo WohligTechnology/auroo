@@ -128,7 +128,21 @@ button:focus { outline: none !important; }
          width: 240px;
      }
  }
- .banner-holder img { margin: 0 auto; }
+ .banner-holder {
+   position: relative;
+   img {
+     margin: 0 auto;
+   }
+   h3 {
+     margin: 0;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     @include transform(translate(-50%,-50%));
+     color: #fff;
+     font-size: 60px;
+   }
+ }
  .slider {
      .slider-home {
          position: relative;
@@ -607,6 +621,7 @@ button:focus { outline: none !important; }
          position: fixed;
          right: 20px;
          bottom: 50px;
+         z-index: 10;
          .scrollToTop {
              width: 50px;
              height: 50px;
@@ -863,6 +878,7 @@ button:focus { outline: none !important; }
      display: none;
  }
  .title {
+   height: 140px;
      margin: 15px 0;
      img:focus {
          border: none;
@@ -1041,6 +1057,7 @@ button:focus { outline: none !important; }
      }
      .product-main { margin: 0; }
      .quickview .pop .quick-img { width: 360px; }
+     .title { height: 114px; }
  }
  @media (max-width: 992px) {
      .navbar-nav li {
@@ -1074,6 +1091,7 @@ button:focus { outline: none !important; }
      }
      .gallerypop { width: 90%; }
    }
+   .banner-holder h3 { font-size: 45px; }
 
      .msg-me {
          margin: 25px 0 0;
@@ -1083,6 +1101,7 @@ button:focus { outline: none !important; }
              display: inline-block;
          }
      }
+     .title { height: 118px; }
  }
  @media (max-width: 767px) {
    header .search-box { padding: 15px 0; }
@@ -1176,6 +1195,7 @@ button:focus { outline: none !important; }
      }
      .title {
          margin: 20px 0;
+         height: auto;
      }
      .footer-menu {
        text-align: center;
@@ -1202,6 +1222,7 @@ button:focus { outline: none !important; }
        }
      }
      .galimg { width: 90%; }
+     .banner-holder h3 { font-size: 28px; }
  }
  @media (max-width: 420px) {
      //     .italic {
@@ -1346,4 +1367,5 @@ button:focus { outline: none !important; }
          .mgl {
              margin-left: 5%;
          }
+         .banner-holder h3 { font-size: 20px; }
      }
