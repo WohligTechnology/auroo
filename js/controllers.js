@@ -1,5 +1,5 @@
 window.onload = function() {
-  $.jStorage.flush()
+  $.jStorage.flush();
 };
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngSanitize', 'ngDialog', 'angular-flexslider', 'infinite-scroll'])
 
@@ -389,7 +389,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     // console.log($scope.products);
   });
 //};
-// 
+//
 // $scope.loadsearchimg=function(){
 //   if(lastpage>$scope.pagenumber)
 //   ++$scope.pagenumber;
