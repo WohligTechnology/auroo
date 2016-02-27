@@ -1,4 +1,4 @@
-var adminbase = "http://wohlig.co.in/eurobackend";
+var adminbase = "http://europratik.com";
 var adminurl = adminbase + "/index.php/json/";
 var imgpath = adminbase + "/uploads/";
 // var adminurl = "http://192.168.0.123/eurobackend/index.php/json/";
