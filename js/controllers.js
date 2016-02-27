@@ -1,5 +1,5 @@
 window.onload = function() {
-  $.jStorage.flush();
+  $.jStorage.flush()
 };
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngSanitize', 'ngDialog', 'angular-flexslider', 'infinite-scroll'])
 
@@ -367,52 +367,45 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
   $scope.name = "";
-// $scope.products = [];
-//   $scope.pagenumber = 1;
-//   var lastpage = 1;
-  // $scope.objfilter = {};
-  // $scope.objfilter.id = $stateParams.id;
-  // $scope.objfilter.pagenumber = 1;
+  $scope.products = [];
+  //$scope.images = [];
+  $scope.categoryid = $stateParams.id;
+  $scope.pagenumber = 1;
+  var lastpage = 1;
+  $scope.objfilter = {};
+  $scope.objfilter.name = $stateParams.name;
+  $scope.objfilter.pageno = 1;
 
-
-
-
-  // console.log($stateParams.name);
-//  $scope.getSearchByCat=function(){
-  NavigationService.getsearchresult($stateParams.name, function(data) {
-    $scope.products = data;
-// console.log(data);
-//     lastpage = data.lastpage;
-//     _.each(data.queryresult, function(n) {
-//       $scope.products.push(n);
-//     });
-    // console.log($scope.products);
+  NavigationService.getsearchresult($scope.objfilter, function(data) {
+    $scope.products = data.queryresult;
+    console.log('productData: ', data);
+    lastpage = data.lastpage;
+    _.each(data.queryresult, function(n) {
+      $scope.products.push(n);
+    });
   });
-//};
-//
-// $scope.loadsearchimg=function(){
-//   if(lastpage>$scope.pagenumber)
-//   ++$scope.pagenumber;
-//     $scope.getSearchByCat();
-// };
-  // $scope.name = "";
-  // $scope.getsearchresult = function(name) {
-  //   NavigationService.getsearchresult($stateParams.name,function (data) {
-  //     $scope.products = data;
-  //    console.log($scope.products);
-  //  });
-  // };
 
-  // NavigationService.getsearchresult(function (data) {
-  //   $scope.products = data;
-  //  console.log($scope.products);
-  // // });
-  NavigationService.getSearchSeriesPdts($stateParams.id, function(data) {
-    // $state.go('category.series', {code: name})
-    //$scope.isSeries = true;
-    $scope.searchProducts = data.data.queryresult;
-    // if($stateParams.isSeries)
-  });
+  $scope.getSearchByCat = function () {
+    NavigationService.getsearchresult($scope.objfilter, function(data) {
+      $scope.products = data.queryresult;
+      console.log('productData: ', data);
+      lastpage = data.lastpage;
+      _.each(data.queryresult, function(n) {
+        $scope.products.push(n);
+      });
+    });
+  };
+    // NavigationService.getSearchSeriesPdts($scope.objfilter, function(data) {
+  //
+  // });
+console.log('lastpage: ', lastpage);
+$scope.loadMore = function() {
+if (lastpage > $scope.objfilter.pageno) {
+  console.log('lastpageeee: ', lastpage)
+  ++$scope.objfilter.pageno;
+  $scope.getSearchByCat();
+}
+};
 
 
   $scope.open = function(data) {
@@ -819,7 +812,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     //
     //   }
     // }
-    $scope.feature = feature;
+    // $scope.feature = feature;
     ngDialog.open({
       template: 'views/content/featurespopup.html',
       scope: $scope,
@@ -829,7 +822,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('headerctrl', function($scope, TemplateService, NavigationService, $stateParams) {
+.controller('headerctrl', function($scope, TemplateService, NavigationService, $stateParams, $rootScope) {
   $scope.template = TemplateService;
 
   // NavigationService.getEachCategory($stateParams.id, function (data) {
@@ -864,5 +857,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       scrollTop: 0
     }, 1000);
   };
+
+  $rootScope.$on('$stateChangeStart',
+    function(event, toState, toParams, fromState, fromParams) {
+      // window.scrollTop = 0;
+      setTimeout(function() {
+        $(window).scrollTop(0);
+      },100);
+
+
+    });
 
 });

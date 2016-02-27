@@ -133,21 +133,31 @@ var navigationservice = angular.module('navigationservice', [])
     getfeature: function(callback) {
       $http.get(adminurl + 'getAllCategories').success(callback);
     },
-    getsearchresult: function(name, callback) {
+    getsearchresult: function(obj, callback) {
       // console.log('Name:', name);
-      $http.get(adminurl + 'searchByCategory?name=' + name).success(callback);
+      $http.get(adminurl + 'searchByCategory?name=' + obj.name + '&pageno='+obj.pageno).success(callback);
     },
+    // getsearchresult: function(obj, callback) {
+    //   // console.log('Name:', name);
+    //   $http.get(adminurl + 'searchByCategory?name=' + obj.name + "&pageno=" + obj.pageno).success(callback);
+    // },
 
     getEachSeriesPdts: function(id, code, callback) {
       // console.log('Id: ', id);
       // console.log('Code: ', code);
       $http.get(adminurl + 'getProductsByCategory?categoryid=' + id + '&subcategories=' + code).success(callback);
     },
-    getSearchSeriesPdts: function(id, callback) {
-      // console.log('Id: ', id);
-      //  console.log('Code: ', code);
-      $http.get(adminurl + 'getProductsByCategory?categoryid=' + id).success(callback);
-    },
+    // getSearchSeriesPdts: function(id, callback) {
+    //   // console.log('Id: ', id);
+    //   //  console.log('Code: ', code);
+    //   $http.get(adminurl + 'getProductsByCategory?categoryid=' + id).success(callback);
+    // },
+    // getSearchSeriesPdts: function(obj, callback) {
+    //   // console.log('Id: ', id);
+    //   //  console.log('Code: ', code);
+    //   $http.get(adminurl + 'getProductsByCategory?categoryid=' + obj.id + "&pageno=" + obj.pageno).success(callback);
+    // },
+
     getSeriesByCategory: function(catid, callback) {
       // console.log('Id: ', id);
       //  console.log('Code: ', code);

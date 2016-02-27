@@ -1,8 +1,8 @@
 <div class="searchresult">
   <div class="container" ng-if="products.length!=0">
     <h3 class="category-color">Your search results are: </h3>
-    <div class="row">
-      <div class="col-md-3 col-sm-4 col-xs-6" ng-repeat="pr in products" ng-click="open(pr);">
+    <div class="row" infinite-scroll='loadMore()' infinite-scroll-distance='2' infinite-scroll-listen-for-event="shouldscroll">
+      <div class="col-md-3 col-sm-4 col-xs-6" ng-repeat="pr in products track by $index" ng-click="open(pr);">
         <div class="pro-list">
           <a href="">
             <div class="products">
