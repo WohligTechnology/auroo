@@ -2,7 +2,13 @@
   <div class="product-main">
     <div class="row">
       <div class="col-md-3 col-sm-4 col-xs-6" ng-repeat="catbrand in brands">
-        <a ui-sref="category({id:catbrand.id})">
+        <a ng-if="catbrand.id != 2" ui-sref="category({id:catbrand.id,subid:0})">
+          <div class="title"> <!-- if need then put this class - ( img-holder cathold )-->
+            <img ng-src=" {{catbrand.image|serverimage}} " alt=" " class="img-responsive">
+          </div>
+        </a>
+
+        <a ng-if="catbrand.id == 2" ui-sref="comingsoon">
           <div class="title"> <!-- if need then put this class - ( img-holder cathold )-->
             <img ng-src=" {{catbrand.image|serverimage}} " alt=" " class="img-responsive">
           </div>

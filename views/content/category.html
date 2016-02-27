@@ -20,7 +20,18 @@
             <accordion close-others="oneAtATime">
               <accordion-group ng-repeat="cat in allcategory" is-open="cat.isOpen">
                 <accordion-heading >
-                  <a class="block"><span ui-sref="category({id:cat.id})" >{{cat.name}}</span>
+                  <a ng-if="cat.id != 2" class="block"><span ui-sref="category({id:cat.id,subid:0})" >{{cat.name}}</span>
+                    <!-- ui-sref="category({id:cat.id})" -->
+                    <!-- <i class="pull-right fa" ng-class="{'fa-minus':status.open7,'fa-plus':!status.open7}"></i> -->
+                    <!-- </a></accordion-heading> -->
+                    <!-- <ul ng-repeat="s in allSeries" ng-if="s.category == category.id"> -->
+                    <i class="pull-right fa" ng-class="{'fa-minus':cat.isOpen,'fa-plus':!cat.isOpen}"></i>
+                  </a>
+
+
+
+
+                  <a ng-if="cat.id == 2" class="block"><span ui-sref="comingsoon" >{{cat.name}}</span>
                     <!-- ui-sref="category({id:cat.id})" -->
                     <!-- <i class="pull-right fa" ng-class="{'fa-minus':status.open7,'fa-plus':!status.open7}"></i> -->
                     <!-- </a></accordion-heading> -->
@@ -31,7 +42,7 @@
                 </accordion-heading ng-click="cat.isOpen = !cat.isOpen">
                 <ul ng-repeat="s in allSeries" ng-if="s.category == cat.id">
                   <li>
-                    <a ng-click="eachSeries(cat.id, s.id)" ui-sref="category.series({id:cat.id, code:s.name})">{{s.name}}</a>
+                    <a ng-click="eachSeries(cat.id, s.id)" ui-sref="category({id:cat.id, subid:s.id})">{{s.name}}</a>
                   </li>
                   <!-- <li><a href="">2</a></li>
                   <li><a href="">3</a></li>

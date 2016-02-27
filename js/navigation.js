@@ -147,6 +147,11 @@ var navigationservice = angular.module('navigationservice', [])
       // console.log('Id: ', id);
       //  console.log('Code: ', code);
       $http.get(adminurl + 'getProductsByCategory?categoryid=' + id).success(callback);
+    },
+    getSeriesByCategory: function(catid, callback) {
+      // console.log('Id: ', id);
+      //  console.log('Code: ', code);
+      $http.get(adminurl + 'series?id=' + catid).success(callback);
     }
   };
 });

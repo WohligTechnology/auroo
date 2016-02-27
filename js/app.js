@@ -69,7 +69,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
   })
 
   .state('category', {
-    url: "/category/:id",
+    url: "/category/:id/:subid",
     templateUrl: "views/template.html",
     controller: 'CategoryCtrl'
   })
