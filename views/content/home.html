@@ -22,7 +22,7 @@
   <div class="row">
     <div class="col-md-6">
       <div class="pro">
-        <img src="img/adhesive-banner.jpg" alt="Products" class="img-responsive">
+        <a ng-href="{{homeImage.link1}}"><img ng-src="{{homeImage.image1|serverimage}}" alt="Products" class="img-responsive"></a>
       </div>
     </div>
     <div class="col-md-6">
@@ -47,12 +47,12 @@
   <div class="row">
     <div class="col-md-6 col-sm-6">
       <div class="pro">
-        <a href="#/category/3/0"><img src="img/1.jpg" alt="Products" class="img-responsive pointer"></a>
+        <a ng-href="{{homeImage.link2}}"><img ng-src="{{homeImage.image2|serverimage}}" alt="Products" class="img-responsive pointer"></a>
       </div>
     </div>
     <div class="col-md-6 col-sm-6">
-      <div class="pro"> 
-        <a ng-href="#/category/4/0"><img src="img/decolote-banner.jpg" alt="Products" class="img-responsive"></a>
+      <div class="pro">
+        <a ng-href="{{homeImage.link3}}"><img ng-src="{{homeImage.image3|serverimage}}" alt="Products" class="img-responsive"></a>
       </div>
     </div>
   </div>

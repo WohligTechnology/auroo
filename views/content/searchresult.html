@@ -1,32 +1,35 @@
 <div class="searchresult">
   <div class="container" ng-if="products.length!=0">
     <h3 class="category-color">Your search results are: </h3>
-    <div class="row" infinite-scroll='loadMore()' infinite-scroll-distance='2' infinite-scroll-listen-for-event="shouldscroll">
+    <div infinite-scroll='loadMore()' infinite-scroll-disabled="shouldscroll">
+    <div class="row">
       <div class="col-md-3 col-sm-4 col-xs-6" ng-repeat="pr in products track by $index" ng-click="open(pr);">
         <div class="pro-list">
-          <a href="">
             <div class="products">
               <div class="pro-img">
                 <img ng-src="{{pr.image|serverimage}}" alt="Products" class="img-responsive">
               </div>
               <div class="pro-hov text-center text-uppercase">
                 <div class="pro-detail">
-                  <a href="" class="eye"><i class="fa fa-eye"></i></a>
+                  <a href="#" class="eye"><i class="fa fa-eye"></i></a>
                 </div>
                 <!-- <div class="view">
                                         <a href="" ng-click="open(pros);" class="eye"><i class="fa fa-eye"></i></a>
                                     </div> -->
               </div>
             </div>
-            <div class="product-code">
-              <p class="text-center">{{pros.name}}</p>
-            </div>
-          </a>
+            <!-- <div class="product-code">
+              <p class="text-center">{{pr.name}}</p>
+            </div> -->
         </div>
       </div>
     </div>
   </div>
-  <div ng-if="products.length==0" class="showerror">
-    <h3 class="text-center">No Product Found</center>
+  </div>
+  <div ng-if="products.length==0 && !noProducts" class="showerror">
+    <h3 class="text-center">Loading....</h3>
+  </div>
+  <div ng-if="noProducts" class="showerror">
+    <h3 class="text-center">No Product Found!</h3>
   </div>
 </div>

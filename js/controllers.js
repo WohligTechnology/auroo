@@ -13,7 +13,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
   // $.jStorage.flush();
   NavigationService.getHomePics(function(data) {
-    $scope.homeImage = data;
+    $scope.homeImage = data[0];
+    console.log($scope.homeImage);
   });
 
   NavigationService.getPopularPdts(function(data) {
@@ -375,34 +376,45 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.objfilter = {};
   $scope.objfilter.name = $stateParams.name;
   $scope.objfilter.pageno = 1;
+  $scope.pages = [1]
+  $scope.noProducts = false;
 
   NavigationService.getsearchresult($scope.objfilter, function(data) {
     $scope.products = data.queryresult;
-    console.log('productData: ', data);
+    console.log('productData: ', $scope.products);
+    console.log('total: ', data.totalvalues);
+    if(data.totalvalues == 0) {
+      $scope.noProducts = true;
+    }
     lastpage = data.lastpage;
-    _.each(data.queryresult, function(n) {
-      $scope.products.push(n);
-    });
+    // _.each(data.queryresult, function(n) {
+    //   $scope.products.push(n);
+    // });
   });
 
   $scope.getSearchByCat = function () {
     NavigationService.getsearchresult($scope.objfilter, function(data) {
-      $scope.products = data.queryresult;
-      console.log('productData: ', data);
-      lastpage = data.lastpage;
+      // $scope.products = data.queryresult;
+      console.log('productData: ', $scope.products);
+      console.log('pages:', $scope.pages);
+      // lastpage = data.lastpage;
       _.each(data.queryresult, function(n) {
         $scope.products.push(n);
       });
     });
   };
+
+  // $scope.getSearchByCat();
     // NavigationService.getSearchSeriesPdts($scope.objfilter, function(data) {
   //
   // });
 console.log('lastpage: ', lastpage);
 $scope.loadMore = function() {
 if (lastpage > $scope.objfilter.pageno) {
-  console.log('lastpageeee: ', lastpage)
+  // console.log('lastpageeee: ', lastpage)
   ++$scope.objfilter.pageno;
+  $scope.pages.push($scope.objfilter.pageno);
+  console.log('pages:', $scope.pages);
   $scope.getSearchByCat();
 }
 };
