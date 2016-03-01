@@ -3,7 +3,7 @@
     <h3 class="category-color">Your search results are: </h3>
     <div infinite-scroll='loadMore()' infinite-scroll-disabled="shouldscroll">
     <div class="row">
-      <div class="col-md-3 col-sm-4 col-xs-6" ng-repeat="pr in products track by $index" ng-click="open(pr);">
+      <div class="col-md-3 col-sm-4 col-xs-6" ng-repeat="pr in products" ng-click="open(pr);">
         <div class="pro-list">
             <div class="products">
               <div class="pro-img">
@@ -11,7 +11,7 @@
               </div>
               <div class="pro-hov text-center text-uppercase">
                 <div class="pro-detail">
-                  <a href="#" class="eye"><i class="fa fa-eye"></i></a>
+                  <div class="eye"><i class="fa fa-eye"></i></div>
                 </div>
                 <!-- <div class="view">
                                         <a href="" ng-click="open(pros);" class="eye"><i class="fa fa-eye"></i></a>
