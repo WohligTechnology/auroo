@@ -456,6 +456,10 @@ button:focus { outline: none !important; }
          }
      }
  }
+ .product-code {
+   margin: 5px 0;
+   min-height: 50px;
+ }
  .range {
      margin: 0 20px 20px;
      color: $footer-color;
@@ -742,7 +746,7 @@ button:focus { outline: none !important; }
    margin: 10px 0;
      .products {
          height: 300px;
-         border: 3px solid transparent;
+         border: 3px solid #767676;
          margin: 0;
          &:hover {
              border: 3px solid lighten($footer-color, 27%);
