@@ -699,10 +699,6 @@ if (lastpage > $scope.objfilter.pageno) {
     // console.log('State: ', $stateParams.id);
   });
 
-  NavigationService.getAllSeries(function(data) {
-    $scope.allSeries = data;
-    // console.log('all series: ', $scope.allSeries);
-  });
 
   $scope.products = [];
   //$scope.images = [];
@@ -714,6 +710,9 @@ if (lastpage > $scope.objfilter.pageno) {
   $scope.objfilter.pagenumber = 1;
   $scope.objfilter.subcat = '';
 
+  NavigationService.getAllSeries(function(data) {
+    $scope.allSeries = data;
+  });
 
   $scope.getProductBuCategory = function() {
     NavigationService.getProductBuCategory($scope.objfilter, function(data) {
@@ -755,7 +754,7 @@ if (lastpage > $scope.objfilter.pageno) {
     });
   };
 
-  
+
   $scope.loadMore = function() {
     // console.log('$scope.images.length:',$scope.images.length);
     // var last = $scope.images.length;
@@ -797,8 +796,11 @@ if (lastpage > $scope.objfilter.pageno) {
   };
 
   if ($stateParams.subid == 0) {
-    $scope.objfilter.subcat = '';
-    $scope.getProductBuCategory();
+    NavigationService.getSeriesByCategory($stateParams.id, function(data) {
+      console.log(data);
+      $scope.objfilter.subcat = data[0].id;
+      $scope.getProductBuCategory();
+    });
   } else {
     $scope.eachSeries(0, $stateParams.subid);
   }
