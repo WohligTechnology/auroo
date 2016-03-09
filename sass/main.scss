@@ -30,6 +30,15 @@ button:focus { outline: none !important; }
    @include button-variant(white, $category-color, $category-color);
    &:focus { outline: none; }
  }
+ .btn-primary-inverse {
+   @include button-variant($category-color, white, $category-color);
+   &:focus { outline: none; }
+   &:hover {
+     opacity: 1;
+     background-color: $category-color;
+     color: #fff;
+   }
+ }
  body {
      padding-top: 100px;
      font-family: $font-whole;
@@ -973,6 +982,13 @@ button:focus { outline: none !important; }
      }
    }
  }
+  .series-name {
+    font-size: 16px;
+    &:active,
+    &:focus {
+      background-color: transparent;
+    }
+  }
 .website-pop {
   .load-pop {
     width: 455px;
@@ -1026,11 +1042,15 @@ button:focus { outline: none !important; }
  }
  .showerror { padding: 10% 0; }
  .cat-active {
-   border-bottom: 1px solid #000;
-   color: #000;
+   background-color: $category-color;
+   color: #fff;
+   @include transition(all 300ms linear);
    &:focus ,
+   &:active,
    &:hover{
-     color:#000;
+     background-color: $category-color;
+     color: #fff;
+     @include transition(all 300ms linear);
    }
  }
  .no-cat-imgholder { margin-top: 20px; }
@@ -1115,6 +1135,7 @@ button:focus { outline: none !important; }
          }
      }
      .title { height: 118px; }
+     .series-name { font-size: 14px; }
  }
  @media (max-width: 767px) {
    header .search-box { padding: 15px 0; }
@@ -1236,6 +1257,7 @@ button:focus { outline: none !important; }
      }
      .galimg { width: 90%; }
      .banner-holder h3 { font-size: 28px; }
+     .series-name { font-size: 13px; }
  }
  @media (max-width: 420px) {
      //     .italic {
@@ -1381,4 +1403,5 @@ button:focus { outline: none !important; }
              margin-left: 5%;
          }
          .banner-holder h3 { font-size: 20px; }
+         .series-name { font-size: 12px; }
      }

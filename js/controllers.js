@@ -718,6 +718,7 @@ if (lastpage > $scope.objfilter.pageno) {
   $scope.getProductBuCategory = function() {
     NavigationService.getProductBuCategory($scope.objfilter, function(data) {
       NavigationService.getSeriesByCategory($stateParams.id, function(data) {
+        console.log("dsfasdfasdf");
         $scope.series = data;
         if ($stateParams.subid != 0) {
           _.each($scope.series, function(n) {
@@ -727,6 +728,7 @@ if (lastpage > $scope.objfilter.pageno) {
               n.class = "";
           });
         }
+        $scope.series[0].class="cat-active";
       });
       // if (data.filter.subcategory.Length >= $scope.series.length) {
       //   $scope.series = data.filter.subcategory;

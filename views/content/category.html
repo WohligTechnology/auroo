@@ -61,13 +61,13 @@
                     </div> -->
             <div class="series ">
               <div class="name ">
-                <span class="category-color text-uppercase cat-name">{{category.name}}</span>
+                <!-- <span class="category-color text-uppercase cat-name">{{category.name}}</span> -->
                 <div class="pull-right name" ng-if="isFeature(category.id)" >
                   <span class="category-color feature pointer" ng-click="feature(featureimage);">Features</span>
                 </div>
                 <div class="">
                   <span ng-repeat="s in series">
-                    <a class="{{s.class}}" ng-click="eachSeries(category.id, s.id)">{{s.name}}</a>
+                    <a class="{{s.class}} series-name btn btn-primary-inverse" ng-click="eachSeries(category.id, s.id)">{{s.name}}</a>
                   </span>
                 </div>
               </div>
