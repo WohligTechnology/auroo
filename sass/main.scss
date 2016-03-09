@@ -31,12 +31,12 @@ button:focus { outline: none !important; }
    @include button-variant(white, $category-color, $category-color);
    &:focus { outline: none; }
  }
- .btn-primary-inverse {
-   @include button-variant($category-color, white, $category-color);
+ .btn-category-inverse {
+   @include button-variant($main-color, white, $main-color);
    &:focus { outline: none; }
    &:hover {
      opacity: 1;
-     background-color: $category-color;
+     background-color: $main-color;
      color: #fff;
    }
  }
@@ -756,7 +756,7 @@ button:focus { outline: none !important; }
    margin: 10px 0;
      .products {
          height: 300px;
-         border: 3px solid #767676;
+         border: 3px solid #D2D2D2;
          margin: 0;
          &:hover {
              border: 3px solid lighten($footer-color, 27%);
@@ -1043,13 +1043,13 @@ button:focus { outline: none !important; }
  }
  .showerror { padding: 10% 0; }
  .cat-active {
-   background-color: $category-color;
+   background-color: $main-color;
    color: #fff;
    @include transition(all 300ms linear);
    &:focus ,
    &:active,
    &:hover{
-     background-color: $category-color;
+     background-color: $main-color;
      color: #fff;
      @include transition(all 300ms linear);
    }
