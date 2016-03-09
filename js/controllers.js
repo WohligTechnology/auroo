@@ -720,6 +720,7 @@ if (lastpage > $scope.objfilter.pageno) {
       NavigationService.getSeriesByCategory($stateParams.id, function(data) {
         console.log("dsfasdfasdf");
         $scope.series = data;
+        $scope.series[0].class="cat-active";
         if ($stateParams.subid != 0) {
           _.each($scope.series, function(n) {
             if (n.id == $stateParams.subid)
@@ -728,8 +729,9 @@ if (lastpage > $scope.objfilter.pageno) {
               n.class = "";
           });
         }
-        $scope.series[0].class="cat-active";
+         //$scope.series[0].class="cat-active";
       });
+        //$scope.series[0].class="cat-active";
       // if (data.filter.subcategory.Length >= $scope.series.length) {
       //   $scope.series = data.filter.subcategory;
       // }
@@ -753,6 +755,7 @@ if (lastpage > $scope.objfilter.pageno) {
     });
   };
 
+  
   $scope.loadMore = function() {
     // console.log('$scope.images.length:',$scope.images.length);
     // var last = $scope.images.length;
