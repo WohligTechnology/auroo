@@ -17,6 +17,7 @@
  $category-color: #F37351;
  $menu-color: #222;
  .pointer { cursor: pointer; }
+.space { letter-spacing: 2px; }
 
  html.ngdialog-open,
  body.ngdialog-open { padding-right: 0 !important; }
