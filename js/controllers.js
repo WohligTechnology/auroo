@@ -251,12 +251,21 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   };
 })
 
-.controller('ContactUsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+.controller('ContactUsCtrl', function($scope, TemplateService, NavigationService, $timeout,ngDialog) {
   $scope.template = TemplateService.changecontent("contactus");
   $scope.menutitle = NavigationService.makeactive("Contact-Us");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
   $scope.formFeedback = {};
+
+  $scope.mapopen = function() {
+    ngDialog.open({
+      template: "views/content/networkpop.html",
+      scope: $scope,
+      controller: "ContactUsCtrl"
+    });
+  }
+
   $scope.submitForm = function(formValid) {
     // console.log('form values: ', formData);
     // console.log('form values: ', formValid);
@@ -755,7 +764,7 @@ if (lastpage > $scope.objfilter.pageno) {
     });
   };
 
-  
+
   $scope.loadMore = function() {
     // console.log('$scope.images.length:',$scope.images.length);
     // var last = $scope.images.length;
