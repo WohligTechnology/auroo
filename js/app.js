@@ -78,6 +78,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
     templateUrl: "views/template.html",
     controller: 'ComingsoonCtrl'
   })
+  .state('network', {
+    url: "/network",
+    templateUrl: "views/template.html",
+    controller: 'NetworkCtrl'
+  })
 
   .state('category.series', {
     url: "/series/:code",

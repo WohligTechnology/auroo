@@ -595,6 +595,12 @@ if (lastpage > $scope.objfilter.pageno) {
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
   })
+  .controller('NetworkCtrl', function($scope, TemplateService, NavigationService, ngDialog, $timeout) {
+    $scope.template = TemplateService.changecontent("network");
+    $scope.menutitle = NavigationService.makeactive("Network");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+  })
 
 .controller('CategoryCtrl', function($location, $state, $scope, TemplateService, NavigationService, ngDialog, $timeout, $stateParams) {
   $scope.template = TemplateService.changecontent("category");
