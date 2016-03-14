@@ -59,14 +59,14 @@
             <!-- <div class="products-name text-center">
                         <p class="head">Panel</p>
                     </div> -->
-            <div class="series ">
+            <div class="series clearfix">
               <div class="name ">
                 <!-- <span class="category-color text-uppercase cat-name">{{category.name}}</span> -->
                 <div class="pull-right name" ng-if="isFeature(category.id)" >
                   <span class="category-color feature pointer" ng-click="feature(featureimage);">Features</span>
                 </div>
                 <div class="">
-                  <span ng-repeat="s in series">
+                  <span ng-repeat="s in series" ng-if="s.name>1">
                     <a class="{{s.class}} series-name btn btn-category-inverse" ng-click="eachSeries(category.id, s.id)">{{s.name}}</a>
                   </span>
                 </div>
