@@ -3,15 +3,15 @@
     <div class="row">
       <div class="col-md-6 col-sm-6">
         <div class="product-imgholder">
-          <img elevate-zoom image="selectedImage" ng-if="selectedImage.image" />
+          <img elevate-zoom image="{{productdata}}" ng-if="productdata.image" />
         </div>
       </div>
       <div class="col-md-6 col-sm-6">
         <div class="product-descp">
-          <h2 class="category-name">Decolite</h2>
-          <h4 class="">New Launch</h4>
-          <p>Code : <span>451</span></p>
-          <p>Size : 1220mm x 2440mm x 3.5mm</p>
+          <h2 class="category-name">{{productdata.categoryname}}</h2>
+          <h4 class="">{{productdata.seriesname}}</h4>
+          <p>Code : <span>{{productdata.name}}</span></p>
+          <p>Size : <span>{{productdata.size}}</span></p>
         </div>
       </div>
     </div>

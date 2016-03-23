@@ -62,6 +62,9 @@ var navigationservice = angular.module('navigationservice', [])
     getProductBuCategory: function(obj, callback) {
       $http.get(adminurl + 'getProductsByCategory?categoryid=' + obj.id + "&subcategories=" + obj.subcat + "&pageno=" + obj.pagenumber).success(callback);
     },
+    getProductDetail: function(id,callback) {
+      $http.get(adminurl + 'getProductDetail?id='+id ).success(callback);
+    },
     // getdownload:function(id,callback){
     //     $http.get(adminurl + 'getCategoryById?id='+id).success(callback);
     //

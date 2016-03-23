@@ -459,8 +459,10 @@ if (lastpage > $scope.objfilter.pageno) {
     $scope.navigation = NavigationService.getnav();
     $scope.selectedImage = {};
     $scope.selectedImage.image = "807.jpg";
-    //  $('#zoom_01').elevateZoom();
-
+    NavigationService.getProductDetail($stateParams.id,function(data) {
+      $scope.productdata = data;
+      console.log($scope.productdata);
+    });
 
   })
   // .controller('FeaturespopCtrl', function($scope, TemplateService, NavigationService, $timeout,$stateParams) {
