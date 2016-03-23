@@ -1,6 +1,7 @@
 var jsArray = [
     './bower_components/jquery/dist/jquery.min.js',
     './bower_components/angular/angular.js',
+    './bower_components/elevatezoom/jquery.elevatezoom.js',
     './bower_components/angular-flexslider/angular-flexslider.js',
     './bower_components/flexslider/jquery.flexslider-min.js',
     './bower_components/bootstrap/dist/js/bootstrap.min.js',

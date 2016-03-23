@@ -107,6 +107,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
     templateUrl: "views/template.html",
     controller: 'FeaturespopCtrl'
   })
+  .state('productdetail', {
+    url: "/productdetail",
+    templateUrl: "views/template.html",
+    controller: 'ProductDetailCtrl'
+  })
 
 
   .state('galleryimage', {
@@ -123,6 +128,75 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
   // use the HTML5 History API
   // $locationProvider.html5Mode(true);
   $urlRouterProvider.otherwise("/home");
+
+});
+
+firstapp.filter('resizeimage', function() {
+  return function(input) {
+    if (input) {
+      return  adminbase+'/index.php/image/index?name=' + input+'&width=';
+    } else {
+      // return "img/logo.png";
+      return "";
+    }
+  };
+});
+
+firstapp.filter('largeImage', function() {
+  return function(input) {
+    if (input) {
+      return  adminbase+'/index.php/image/index?name=' + input+'&width=700';
+    } else {
+      // return "img/logo.png";
+      return "";
+    }
+  };
+});
+
+
+firstapp.directive('elevateZoom', function($document, $filter) {
+    return {
+        restrict: 'EA',
+        link: function($scope, element, attr) {
+            $scope.$watch(attr.image, function() {
+                $scope.changeImage = function() {
+                  console.log(attr.image);
+                  var $element = $(element);
+                    var image = $scope[attr.image].image;
+                    console.log(image);
+                    // image = image.productdetail.image[0];
+                    var smallimg = attr.smallImage;
+                    var bigimg = attr.bigImage;
+                    // $element.attr('data-zoom-image', image);
+                    // $element.attr('src', image);
+                    var ez = $element.data("elevateZoom");
+                                        if (!ez) {
+                    $element.attr('data-zoom-image', $filter('serverimage')(image));
+                    $element.attr('src', $filter('resizeimage')(image));
+                    $element.elevateZoom();
+                  } else {
+                      var newImage = $filter('serverimage')(image);
+                      var smallImage =$filter('resizeimage')(image);
+                      ez.swaptheimage( smallImage,newImage);
+                  }
+                }
+                $scope.$on('changeImage', function(event, data) {
+                    $scope.changeImage();
+                });
+                $scope.changeImage();
+            })
+        }
+    }
+});
+firstapp.directive('zoomContainer', function() {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs) {
+            scope.$on('$stateChangeSuccess', function() {
+                var target = element.children('div.zoomContainer').remove();
+            })
+        }
+    }
 
 });
 
