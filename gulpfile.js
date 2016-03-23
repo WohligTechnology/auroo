@@ -1,7 +1,6 @@
 var jsArray = [
     './bower_components/jquery/dist/jquery.min.js',
     './bower_components/angular/angular.js',
-    './bower_components/elevatezoom/jquery.elevatezoom.js',
     './bower_components/angular-flexslider/angular-flexslider.js',
     './bower_components/flexslider/jquery.flexslider-min.js',
     './bower_components/bootstrap/dist/js/bootstrap.min.js',
@@ -13,6 +12,7 @@ var jsArray = [
     './bower_components/ui-router/release/angular-ui-router.min.js',
     './bower_components/angular-bootstrap/ui-bootstrap.min.js',
     './bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
+    './bower_components/elevatezoom/jquery.elevatezoom.js',
     './lib/js/ui-bootstrap-tpls.js',
     './lib/js/jstorage.js',
     './js/app.js',

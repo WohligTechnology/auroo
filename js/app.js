@@ -160,16 +160,9 @@ firstapp.directive('elevateZoom', function($document, $filter) {
         link: function($scope, element, attr) {
             $scope.$watch(attr.image, function() {
                 $scope.changeImage = function() {
-                    console.log(JSON.parse(attr.image));
                     var json = JSON.parse(attr.image);
                     var $element = $(element);
                     var image = json.image;
-                    console.log(image);
-                    // image = image.productdetail.image[0];
-                    var smallimg = attr.smallImage;
-                    var bigimg = attr.bigImage;
-                    // $element.attr('data-zoom-image', image);
-                    // $element.attr('src', image);
                     var ez = $element.data("elevateZoom");
                     if (!ez) {
                         $element.attr('data-zoom-image', $filter('serverimage')(image));
@@ -177,8 +170,7 @@ firstapp.directive('elevateZoom', function($document, $filter) {
                         $element.elevateZoom();
                     } else {
                         var newImage = $filter('serverimage')(image);
-                        var smallImage = $filter('serverimage')(image);
-                        ez.swaptheimage(smallImage, newImage);
+                        ez.swaptheimage(newImage, newImage);
                     }
                 }
                 $scope.$on('changeImage', function(event, data) {
