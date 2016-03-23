@@ -1070,6 +1070,7 @@ button:focus { outline: none !important; }
    margin: 50px 0 0;
    .product-imgholder {
      @include square(300px);
+     border: 2px solid #d2d2d2;
      position: relative;
      overflow: hidden;
      img {
