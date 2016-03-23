@@ -3,8 +3,8 @@
     <h3 class="category-color">Your search results are: </h3>
     <div infinite-scroll='loadMore()' infinite-scroll-disabled="shouldscroll">
     <div class="row">
-      <div class="col-md-3 col-sm-4 col-xs-6" ng-repeat="pr in products" ui-sref="">
-        <div class="pro-list">
+      <div class="col-md-3 col-sm-4 col-xs-6" ng-repeat="pr in products" >
+        <div class="pro-list" ui-sref="productdetail({id:pr.id})">
             <div class="products">
               <div class="pro-img">
                 <img ng-src="{{pr.image|serverimage}}" alt="Products" class="img-responsive">
