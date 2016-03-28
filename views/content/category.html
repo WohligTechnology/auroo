@@ -87,7 +87,7 @@
             <!-- show this image done -->
 
             <div class="row" infinite-scroll='loadMore()' infinite-scroll-distance='2' infinite-scroll-disabled="shouldscroll">
-              <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in products track by $index" ng-click="open(pros);">
+              <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in products track by $index" ui-sref="productdetail({id:pros.id})">
                 <div class="pro-list">
                   <a href="">
                     <div class="products">

@@ -12,6 +12,7 @@ var jsArray = [
     './bower_components/ui-router/release/angular-ui-router.min.js',
     './bower_components/angular-bootstrap/ui-bootstrap.min.js',
     './bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
+    './bower_components/elevatezoom/jquery.elevatezoom.js',
     './lib/js/ui-bootstrap-tpls.js',
     './lib/js/jstorage.js',
     './js/app.js',

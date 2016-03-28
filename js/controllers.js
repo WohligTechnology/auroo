@@ -451,6 +451,20 @@ if (lastpage > $scope.objfilter.pageno) {
     //   // console.log($scope.gallery);
     // });
   })
+
+.controller('ProductDetailCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
+    $scope.template = TemplateService.changecontent("productdetail");
+    $scope.menutitle = NavigationService.makeactive("Product Detail");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.selectedImage = {};
+    $scope.selectedImage.image = "807.jpg";
+    NavigationService.getProductDetail($stateParams.id,function(data) {
+      $scope.productdata = data;
+      console.log($scope.productdata);
+    });
+
+  })
   // .controller('FeaturespopCtrl', function($scope, TemplateService, NavigationService, $timeout,$stateParams) {
   //   $scope.template = TemplateService.changecontent("featurespopup");
   //   $scope.menutitle = NavigationService.makeactive("Featurespopup");
