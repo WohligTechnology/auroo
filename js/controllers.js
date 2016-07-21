@@ -21,7 +21,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.brandlist = data;
   });
   NavigationService.getArrival(function(data) {
-      $scope.arrivallist = data.image1;
+      $scope.arrivallist = data;
       console.log("arrival", $scope.arrivallist);
   });
 
