@@ -20,6 +20,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   NavigationService.getPopularPdts(function(data) {
     $scope.brandlist = data;
   });
+  NavigationService.getArrival(function(data) {
+      $scope.arrivallist = data.image1;
+      console.log("arrival", $scope.arrivallist);
+  });
 
   $scope.getCategory = function(brandId) {
     // console.log('Brand Id:', brandId);
