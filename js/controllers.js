@@ -211,7 +211,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.items = [{
     id: 'item1',
     title: 'Home',
-    url: '#/home'
+    url: '#/'
 
   }, {
     id: 'item2',

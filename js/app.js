@@ -14,7 +14,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
     $stateProvider
 
         .state('home', {
-        url: "/home",
+        url: "/",
         templateUrl: "views/template.html",
         controller: 'HomeCtrl',
         params: {
@@ -127,7 +127,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
 
     // use the HTML5 History API
     // $locationProvider.html5Mode(true);
-    $urlRouterProvider.otherwise("/home");
+    $urlRouterProvider.otherwise("/");
 
 });
 
