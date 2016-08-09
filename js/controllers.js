@@ -1,5 +1,5 @@
 window.onload = function() {
-  $.jStorage.flush()
+  $.jStorage.flush();
 };
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngSanitize', 'ngDialog', 'angular-flexslider', 'infinite-scroll'])
 
@@ -257,7 +257,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 .controller('ContactUsCtrl', function($scope, TemplateService, NavigationService, $timeout,ngDialog) {
   $scope.template = TemplateService.changecontent("contactus");
-  $scope.menutitle = NavigationService.makeactive("Contact-Us");
+  $scope.menutitle = NavigationService.makeactive("Contact Us");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
   $scope.formFeedback = {};
@@ -289,7 +289,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 .controller('DownloadCtrl', function($scope, TemplateService, NavigationService, $timeout) {
   $scope.template = TemplateService.changecontent("download");
-  $scope.menutitle = NavigationService.makeactive("Download");
+  $scope.menutitle = NavigationService.makeactive("Downloads");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
 
@@ -370,14 +370,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 .controller('QuickviewCtrl', function($scope, TemplateService, NavigationService, $timeout) {
   $scope.template = TemplateService.changecontent("quickview");
-  $scope.menutitle = NavigationService.makeactive("QuickView");
+  $scope.menutitle = NavigationService.makeactive("Quick View");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
 })
 
 .controller('SearchResultCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, ngDialog) {
   $scope.template = TemplateService.changecontent("searchresult");
-  $scope.menutitle = NavigationService.makeactive("SearchResult");
+  $scope.menutitle = NavigationService.makeactive("Search Results");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
   $scope.name = "";
@@ -446,7 +446,7 @@ if (lastpage > $scope.objfilter.pageno) {
 
 .controller('GalleryimageCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
     $scope.template = TemplateService.changecontent("galleryimage");
-    $scope.menutitle = NavigationService.makeactive("Galleryimage");
+    $scope.menutitle = NavigationService.makeactive("Gallery Image");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     //$scope.slide = [];
