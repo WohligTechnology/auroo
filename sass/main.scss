@@ -1067,18 +1067,21 @@ footer {
   }
 }
 .product-detail {
-  margin: 50px 0 0;
+  margin: 30px 0;
   .product-imgholder {
-    @include square(300px);
-    border: 2px solid #d2d2d2;
+    height: 450px;
+    width: 100%;
     position: relative;
     overflow: hidden;
+    text-align: center;
+    background-color: #fbfbfb;
+    padding: 10px;
+    @include display(flex);
+    @include align-items(center);
     img {
-      width: 100%;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      @include transform(translate(-50%,-50%));
+      max-width: 100%;
+      max-height: 100%;
+      margin: 0 auto;
     }
   }
   .product-descp {
