@@ -938,6 +938,9 @@ footer {
     @include display(flex);
     @include align-items(center);
   }
+  .container {
+    width: 100%;
+  }
     .pop {
         background-color: transparent;
         .rel {
