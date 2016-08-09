@@ -834,10 +834,10 @@ footer {
 }
 .quickview {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    @include transform(translate(-50%,
-    -50%));
+    top: 0%;
+    left: 0%;
+    bottom: 0;
+    right: 0;
     .pop {
         width: 44%;
         margin: 0 auto;
@@ -934,19 +934,26 @@ footer {
     }
 }
 .galimg {
+  &.quickview {
+    @include display(flex);
+    @include align-items(center);
+  }
     .pop {
         background-color: transparent;
         .rel {
-            .flexslider .slides > li {
-                min-height: 350px;
-                position: relative;
-                img {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    @include transform(translate(-50%,
-                    -50%));
-                }
+            .flexslider {
+              background-color: transparent;
+
+              .slides > li {
+                  height: 450px;
+                  position: relative;
+                  img {
+                      max-width: 100%;
+                      max-height: 100%;
+                      margin: 0 auto;
+                      width: auto;
+                  }
+              }
             }
             .flex-direction-nav a {
                 width: 45px;
