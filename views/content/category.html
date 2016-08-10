@@ -20,7 +20,7 @@
             <accordion close-others="oneAtATime">
               <accordion-group ng-repeat="cat in allcategory" is-open="cat.isOpen">
                 <accordion-heading >
-                  <a class="block"><span ui-sref="category({id:cat.id,subid:0})" >{{cat.name}}</span>
+                  <a  class="block"><span ui-sref="category({id:cat.id,subid:0})" >{{cat.name}}</span>
                     <!-- ui-sref="category({id:cat.id})" -->
                     <!-- <i class="pull-right fa" ng-class="{'fa-minus':status.open7,'fa-plus':!status.open7}"></i> -->
                     <!-- </a></accordion-heading> -->
@@ -31,12 +31,7 @@
 
 
 
-                  <!-- <a ng-if="cat.id == 2" class="block"><span ui-sref="comingsoon" >{{cat.name}}</span> -->
-                    <!-- ui-sref="category({id:cat.id})" -->
-                    <!-- <i class="pull-right fa" ng-class="{'fa-minus':status.open7,'fa-plus':!status.open7}"></i> -->
-                    <!-- </a></accordion-heading> -->
-                    <!-- <ul ng-repeat="s in allSeries" ng-if="s.category == category.id"> -->
-                    <!-- <i class="pull-right fa" ng-class="{'fa-minus':cat.isOpen,'fa-plus':!cat.isOpen}"></i>
+                  <!-- <a ng-if="cat.id == 2" class="block"><span ui-sref="comingsoon" >{{cat.name}}</span>                                   <i class="pull-right fa" ng-class="{'fa-minus':cat.isOpen,'fa-plus':!cat.isOpen}"></i>
                   </a> -->
                 <!-- </accordion-heading> -->
                 </accordion-heading ng-click="cat.isOpen = !cat.isOpen">
@@ -83,11 +78,14 @@
                 <div class="no-cat-imgholder" ng-show="category.id==23 && category.id!=9">
                   <img src="img/solid-wood.jpg" alt="" class="img-responsive">
                 </div>
+                <div class="no-cat-imgholder" ng-show="category.id==24 && category.id!=9">
+                  <img src="img/glue.jpg" alt="" class="img-responsive">
+                </div>
                 </div>
             <!-- show this image done -->
 
             <div class="row" infinite-scroll='loadMore()' infinite-scroll-distance='2' infinite-scroll-disabled="shouldscroll">
-              <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in products track by $index" ui-sref="productdetail({id:pros.id})">
+              <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in products track by $index" ng-click="open(pros);">
                 <div class="pro-list">
                   <a href="">
                     <div class="products">

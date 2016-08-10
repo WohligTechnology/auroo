@@ -885,7 +885,6 @@ if (lastpage > $scope.objfilter.pageno) {
   //   // console.log('State: ', $stateParams.id);
   // });
 
-
   $scope.getclass = "down-yes";
 
   $scope.getsearch = function(name) {
