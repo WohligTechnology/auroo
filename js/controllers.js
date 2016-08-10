@@ -876,7 +876,9 @@ if (lastpage > $scope.objfilter.pageno) {
 
 .controller('headerctrl', function($scope, TemplateService, NavigationService, $stateParams, $rootScope) {
   $scope.template = TemplateService;
-
+  $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+    $(window).scrollTop(0);
+  });
   // NavigationService.getEachCategory($stateParams.id, function (data) {
   //   $scope.cat = data;
   //   // console.log('Category: ', $scope.category);
