@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-4 col-sm-6">
         <div class="product-imgholder">
-          <img elevate-zoom image="{{productdata}}" ng-if="productdata.image" />
+          <img ng-src="{{productdata.image|serverimage}}" />
         </div>
       </div>
       <div class="col-md-8 col-sm-6">
