@@ -749,6 +749,7 @@ if (lastpage > $scope.objfilter.pageno) {
 
   $scope.getProductBuCategory = function() {
     NavigationService.getProductBuCategory($scope.objfilter, function(data) {
+      console.log(data);
       NavigationService.getSeriesByCategory($stateParams.id, function(data) {
         console.log("dsfasdfasdf");
         $scope.series = data;

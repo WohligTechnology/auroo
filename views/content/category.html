@@ -54,7 +54,7 @@
             <!-- <div class="products-name text-center">
                         <p class="head">Panel</p>
                     </div> -->
-            <div class="series clearfix">
+      <div class="series clearfix">
               <div class="name ">
                 <!-- <span class="category-color text-uppercase cat-name">{{category.name}}</span> -->
                 <div class="pull-right name" ng-if="isFeature(category.id)" >
@@ -72,10 +72,10 @@
               </div> -->
 
             <!-- if category is not there then show this -->
-                <div class="no-cat-imgholder" ng-show="category.id==9 && category.id!=23">
-                  <img src="img/egger.jpg" alt="" class="img-responsive">
+                <div class="no-cat-imgholder" ng-if="products===[]">{{products}}adfghiafdgi
+                  <img src="{{allcategory.default.image | serverimage}}" alt="" class="img-responsive">
                 </div>
-                <div class="no-cat-imgholder" ng-show="category.id==23 && category.id!=9">
+                <!-- <div class="no-cat-imgholder" ng-show="category.id==23 && category.id!=9">
                   <img src="img/solid-wood.jpg" alt="" class="img-responsive">
                 </div>
                 <div class="no-cat-imgholder" ng-show="category.id==24 && category.id!=9">
@@ -86,11 +86,11 @@
                 </div>
                 <div class="no-cat-imgholder" ng-show="category.id==27 && category.id!=9">
                   <img src="img/EP-plywood.jpg" alt="" class="img-responsive">
-                </div>
-                </div>
+                </div> -->
+        </div>
             <!-- show this image done -->
 
-            <div class="row" infinite-scroll='loadMore()' infinite-scroll-distance='2' infinite-scroll-disabled="shouldscroll">
+            <div class="row" infinite-scroll='loadMore()' infinite-scroll-distance='2' infinite-scroll-disabled="shouldscroll" ng-if="products !=[]">
               <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in products track by $index" ng-click="open(pros);">
                 <div class="pro-list">
                   <a href="">
