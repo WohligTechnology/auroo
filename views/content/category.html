@@ -65,8 +65,8 @@
               </div> -->
 
                             <!-- if category is not there then show this -->
-                            <div class="no-cat-imgholder" ng-if="products===[]">{{products}}adfghiafdgi
-                                <img src="{{allcategory.default.image | serverimage}}" alt="" class="img-responsive">
+                            <div class="no-cat-imgholder" ng-if="products.length==0">
+                                <img src="{{category.defaultimage | serverimage}}" alt="" class="img-responsive">
                             </div>
                             <!-- <div class="no-cat-imgholder" ng-show="category.id==23 && category.id!=9">
                   <img src="img/solid-wood.jpg" alt="" class="img-responsive">

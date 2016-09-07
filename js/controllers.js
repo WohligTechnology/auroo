@@ -620,7 +620,7 @@ if (lastpage > $scope.objfilter.pageno) {
     $scope.navigation = NavigationService.getnav();
   })
 
-.controller('CategoryCtrl', function($location, $state, $scope, TemplateService, NavigationService, ngDialog, $timeout, $stateParams) {
+.controller('CategoryCtrl', function($location, $state, $scope, TemplateService, NavigationService, ngDialog, $timeout, $stateParams,$timeout) {
   $scope.template = TemplateService.changecontent("category");
   $scope.menutitle = NavigationService.makeactive("Category");
   TemplateService.title = $scope.menutitle;
@@ -726,11 +726,7 @@ if (lastpage > $scope.objfilter.pageno) {
     return false;
   };
 
-  NavigationService.getEachCategory($stateParams.id, function(data) {
-    $scope.category = data;
-    // console.log('Category: ', $scope.category);
-    // console.log('State: ', $stateParams.id);
-  });
+
 
 
   $scope.products = [];
@@ -772,6 +768,7 @@ if (lastpage > $scope.objfilter.pageno) {
       console.log(data);
       lastpage = data.data.lastpage;
       _.each(data.data.queryresult, function(n) {
+        console.log("%%%%%%%%%%");
         $scope.products.push(n);
       });
 
@@ -872,6 +869,16 @@ if (lastpage > $scope.objfilter.pageno) {
       // controller: 'CategoryCtrl'
     });
   };
+
+  $timeout(function () {
+    NavigationService.getEachCategory($stateParams.id, function(data) {
+      console.log("$$$$$$$$$");
+      $scope.category = data;
+      // console.log('Category: ', $scope.category);
+      // console.log('State: ', $stateParams.id);
+    });
+  }, 3000);
+
 
 })
 
