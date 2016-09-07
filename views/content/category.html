@@ -1,81 +1,74 @@
 <div class="category">
-  <!--
-    <div class="back-contact cat">
-        <div class="cont-head text-uppercase">
-            <h2>Categories</h2>
-        </div>
+    <div class="banner-holder">
+
+        <img src="{{category.banner|serverimage}}" alt="" class="img-responsive">
+
     </div>
--->
-  <div class="banner-holder">
+    <div class="categ-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="cat-list">
 
-    <img src="{{category.banner|serverimage}}" alt="" class="img-responsive">
-
-  </div>
-  <div class="categ-page">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="cat-list">
-
-            <accordion close-others="oneAtATime">
-              <accordion-group ng-repeat="cat in allcategory" is-open="cat.isOpen">
-                <accordion-heading >
-                  <a  class="block"><span ui-sref="category({id:cat.id,subid:0})" >{{cat.name}}</span>
+                        <accordion close-others="oneAtATime">
+                            <accordion-group ng-repeat="cat in allcategory" is-open="cat.isOpen">
+                                <accordion-heading>
+                                    <a class="block"><span ui-sref="category({id:cat.id,subid:0})" >{{cat.name}}</span>
                     <!-- ui-sref="category({id:cat.id})" -->
                     <!-- <i class="pull-right fa" ng-class="{'fa-minus':status.open7,'fa-plus':!status.open7}"></i> -->
                     <!-- </a></accordion-heading> -->
-                    <!-- <ul ng-repeat="s in allSeries" ng-if="s.category == category.id"> -->
-                    <i class="pull-right fa" ng-class="{'fa-minus':cat.isOpen,'fa-plus':!cat.isOpen}"></i>
-                  </a>
+                                <!-- <ul ng-repeat="s in allSeries" ng-if="s.category == category.id"> -->
+                                <i class="pull-right fa" ng-class="{'fa-minus':cat.isOpen,'fa-plus':!cat.isOpen}"></i>
+                                </a>
 
 
 
 
-                  <!-- <a ng-if="cat.id == 2" class="block"><span ui-sref="comingsoon" >{{cat.name}}</span>                                   <i class="pull-right fa" ng-class="{'fa-minus':cat.isOpen,'fa-plus':!cat.isOpen}"></i>
+                                <!-- <a ng-if="cat.id == 2" class="block"><span ui-sref="comingsoon" >{{cat.name}}</span>                                   <i class="pull-right fa" ng-class="{'fa-minus':cat.isOpen,'fa-plus':!cat.isOpen}"></i>
                   </a> -->
-                <!-- </accordion-heading> -->
-                </accordion-heading ng-click="cat.isOpen = !cat.isOpen">
-                <ul ng-repeat="s in allSeries" ng-if="s.category == cat.id">
-                  <li>
-                    <a ng-click="eachSeries(cat.id, s.id)" ui-sref="category({id:cat.id, subid:s.id})">{{s.name}}</a>
-                  </li>
-                  <!-- <li><a href="">2</a></li>
+                                <!-- </accordion-heading> -->
+                                </accordion-heading ng-click="cat.isOpen = !cat.isOpen">
+                                <ul ng-repeat="s in allSeries" ng-if="s.category == cat.id">
+                                    <li>
+                                        <a ng-click="eachSeries(cat.id, s.id)" ui-sref="category({id:cat.id, subid:s.id})">{{s.name}}</a>
+                                    </li>
+                                    <!-- <li><a href="">2</a></li>
                   <li><a href="">3</a></li>
                   <li><a href="">4</a></li>
                   <li><a href="">5</a></li> -->
-                </ul>
-              </accordion-group>
-            </accordion>
-          </div>
-        </div>
-        <div class="col-md-9">
+                                </ul>
+                            </accordion-group>
+                        </accordion>
+                    </div>
+                </div>
+                <div class="col-md-9">
 
-          <div class="panel">
-            <!-- <div class="products-name text-center">
+                    <div class="panel">
+                        <!-- <div class="products-name text-center">
                         <p class="head">Panel</p>
                     </div> -->
-      <div class="series clearfix">
-              <div class="name ">
-                <!-- <span class="category-color text-uppercase cat-name">{{category.name}}</span> -->
-                <div class="pull-right name" ng-if="isFeature(category.id)" >
-                  <span class="category-color feature pointer" ng-click="feature(featureimage);">Features</span>
-                </div>
-                <div class="">
-                  <span ng-repeat="s in series" ng-if="series.length!=1">
+                        <div class="series clearfix">
+                            <div class="name ">
+                                <!-- <span class="category-color text-uppercase cat-name">{{category.name}}</span> -->
+                                <div class="pull-right name" ng-if="isFeature(category.id)">
+                                    <span class="category-color feature pointer" ng-click="feature(featureimage);">Features</span>
+                                </div>
+                                <div class="">
+                                    <span ng-repeat="s in series" ng-if="series.length!=1">
                     <a class="{{s.class}} series-name btn btn-category-inverse" ng-click="eachSeries(category.id, s.id)">{{s.name}}</a>
                   </span>
-                </div>
-              </div>
+                                </div>
+                            </div>
 
                             <!-- <div class="pull-right name" ng-if="cat.featureimage.length ==0" >
               <h3>Not found</h3>
               </div> -->
 
-            <!-- if category is not there then show this -->
-                <div class="no-cat-imgholder" ng-if="products===[]">{{products}}adfghiafdgi
-                  <img src="{{allcategory.default.image | serverimage}}" alt="" class="img-responsive">
-                </div>
-                <!-- <div class="no-cat-imgholder" ng-show="category.id==23 && category.id!=9">
+                            <!-- if category is not there then show this -->
+                            <div class="no-cat-imgholder" ng-if="products===[]">{{products}}adfghiafdgi
+                                <img src="{{allcategory.default.image | serverimage}}" alt="" class="img-responsive">
+                            </div>
+                            <!-- <div class="no-cat-imgholder" ng-show="category.id==23 && category.id!=9">
                   <img src="img/solid-wood.jpg" alt="" class="img-responsive">
                 </div>
                 <div class="no-cat-imgholder" ng-show="category.id==24 && category.id!=9">
@@ -87,36 +80,36 @@
                 <div class="no-cat-imgholder" ng-show="category.id==27 && category.id!=9">
                   <img src="img/EP-plywood.jpg" alt="" class="img-responsive">
                 </div> -->
-        </div>
-            <!-- show this image done -->
-
-            <div class="row" infinite-scroll='loadMore()' infinite-scroll-distance='2' infinite-scroll-disabled="shouldscroll" ng-if="products !=[]">
-              <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in products track by $index" ng-click="open(pros);">
-                <div class="pro-list">
-                  <a href="">
-                    <div class="products">
-                      <div class="pro-img"  ng-hide="pro.id==9 && pro.id==23">
-                        <img ng-src="{{pros.image|serverimage}}" alt="Products" class="img-responsive">
-                      </div>
-                      <div class="pro-hov text-center text-uppercase">
-                        <div class="pro-detail">
-                          <div class="eye">
-                            <i class="fa fa-eye"></i>
-                          </div>
                         </div>
-                        <!-- <div class="view">
+                        <!-- show this image done -->
+
+                        <div class="row" infinite-scroll='loadMore()' infinite-scroll-distance='2' infinite-scroll-disabled="shouldscroll" ng-if="products !=[]">
+                            <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in products track by $index" ng-click="open(pros);">
+                                <div class="pro-list">
+                                    <a href="">
+                                        <div class="products">
+                                            <div class="pro-img" ng-hide="pro.id==9 && pro.id==23">
+                                                <img ng-src="{{pros.image|serverimage}}" alt="Products" class="img-responsive">
+                                            </div>
+                                            <div class="pro-hov text-center text-uppercase">
+                                                <div class="pro-detail">
+                                                    <div class="eye">
+                                                        <i class="fa fa-eye"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="view">
                                                 <a href="" ng-click="open(pros);" class="eye"><i class="fa fa-eye"></i></a>
                                             </div> -->
-                      </div>
-                    </div>
-                    <div class="product-code">
-                      <p class="text-center">{{pros.name}}</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-code">
+                                            <p class="text-center">{{pros.name}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
 
-              <!-- <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in seriesProducts" ng-click="open(pros);" ng-show="isSeries">
+                            <!-- <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in seriesProducts" ng-click="open(pros);" ng-show="isSeries">
                 <div class="pro-list">
                   <a href="">
                     <div class="products">
@@ -137,39 +130,38 @@
                   </a>
                 </div>
               </div> -->
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in seriesProducts" ng-show="thisseries" ng-click="open(pros);">
-              <div class="pro-list">
-                <a href="">
-                  <div class="products">
-                    <div class="pro-img">
-                      <img ng-src="{{pros.image|serverimage}}" alt="Products" class="img-responsive">
+                        </div>
                     </div>
-                    <div class="pro-hov text-center text-uppercase">
-                      <div class="pro-detail">
-                        <a href="" class="eye">
-                          <i class="fa fa-eye"></i>
-                        </a>
-                      </div>
-                      <!-- <div class="view">
+
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="pros in seriesProducts" ng-show="thisseries" ng-click="open(pros);">
+                            <div class="pro-list">
+                                <a href="">
+                                    <div class="products">
+                                        <div class="pro-img">
+                                            <img ng-src="{{pros.image|serverimage}}" alt="Products" class="img-responsive">
+                                        </div>
+                                        <div class="pro-hov text-center text-uppercase">
+                                            <div class="pro-detail">
+                                                <a href="" class="eye">
+                                                    <i class="fa fa-eye"></i>
+                                                </a>
+                                            </div>
+                                            <!-- <div class="view">
                                                 <a href="" ng-click="open(pros);" class="eye"><i class="fa fa-eye"></i></a>
                                             </div> -->
+                                        </div>
+                                    </div>
+                                    <div class="product-code">
+                                        <p class="text-center">{{pros.name}}</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <div class="product-code">
-                    <p class="text-center">{{pros.name}}</p>
-                  </div>
-                </a>
-              </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-</div>
 </div>
 </div>
