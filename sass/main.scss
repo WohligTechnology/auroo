@@ -840,15 +840,13 @@ footer {
 .pro-list {
     margin: 10px 0;
     .products {
-        height: 388px;
-        border: 3px solid #D2D2D2;
+        height: 300px;
         margin: 0;
         &:hover {
-            border: 3px solid lighten($footer-color, 27%);
             @include transition(all 1s ease-in-out);
         }
         .pro-hov {
-            height: 300px;
+            height: 100%;
             .pro-detail {
                 a {
                     font-size: 13px;
