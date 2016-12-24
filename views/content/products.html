@@ -1,6 +1,25 @@
 <div class="container pdt7">
   <div class="product-main">
     <div class="row">
+      <div class="col-md-3 col-sm-4 col-xs-6" >
+        <a href="http://www.woodcellarfloor.com/" target="_new">
+          <div class="title"> <!-- if need then put this class - ( img-holder cathold )-->
+            <img ng-src="img/Logo-woodcellar.jpg " alt=" " class="img-responsive">
+          </div>
+        </a>
+
+        <!-- <a ng-if="catbrand.id == 2" ui-sref="comingsoon">
+          <div class="title">
+            <img ng-src=" {{catbrand.image|serverimage}} " alt=" " class="img-responsive">
+          </div>
+        </a> -->
+        <!-- <a href="" ng-if="catbrand.img!='img/gallery/acrylyte.jpg'">
+					<div class="img-holder cathold">
+						<img ng-src=" {{catbrand.img}} " alt=" " class="img-responsive">
+					</div>
+				</a> -->
+      </div>
+
       <div class="col-md-3 col-sm-4 col-xs-6" ng-repeat="catbrand in brands">
         <a ui-sref="category({id:catbrand.id,subid:0})">
           <div class="title"> <!-- if need then put this class - ( img-holder cathold )-->
