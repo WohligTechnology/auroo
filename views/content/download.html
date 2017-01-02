@@ -3,8 +3,8 @@
       <div class="row">
           <div class="col-md-3 col-sm-4 col-xs-6" ng-repeat="getpdf in download">
               <div class="title">
-                  <a ng-href="{{getpdf.pdf|serverimage}}" target="_blank"><img ng-src="{{getpdf.image|serverimage}}" alt="" class="img-responsive" ></a>
-                  <!-- <a ng-if="getpdf.id==2" target="_blank"><img ng-src="{{getpdf.image|serverimage}}" alt="" class="img-responsive" ui-sref="comingsoon"></a> -->
+                  <a ng-if="getpdf.id!=31" ng-href="{{getpdf.pdf|serverimage}}" target="_blank"><img ng-src="{{getpdf.image|serverimage}}" alt="" class="img-responsive" ></a>
+                  <a ng-if="getpdf.id==31" href="http://europratik.com/admin/uploads/SPECTER-catalogue.pdf" target="_blank"><img ng-src="{{getpdf.image|serverimage}}" alt="" class="img-responsive"></a>
               </div>
               <div >
 
