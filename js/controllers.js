@@ -727,7 +727,7 @@ if (lastpage > $scope.objfilter.pageno) {
   };
 
 
-
+$scope.isFeature($stateParams.id);
 
   $scope.products = [];
   //$scope.images = [];
