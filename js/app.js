@@ -31,6 +31,15 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
         }
     })
 
+      .state('privacyPolicy', {
+        url: "/privacy-policy",
+        templateUrl: "views/template.html",
+        controller: 'PrivacyPolicyCtrl',
+        params: {
+            activeItem: 'item2'
+        }
+    })
+
     .state('products', {
         url: "/products",
         templateUrl: "views/template.html",

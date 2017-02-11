@@ -1234,7 +1234,17 @@ footer {
         }
     }
 }
-
+.content-view{
+    .padd{
+        padding-left: 16px;
+        li{
+            list-style: disc;
+        }
+    }
+    h4{
+        color: #fc483f;
+    }
+}
 // @import 'mobile';
 @media (max-width: 1200px) {
     .navbar-nav li {

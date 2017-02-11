@@ -204,7 +204,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }
   };
 })
-
+.controller('PrivacyPolicyCtrl',function($scope,TemplateService,NavigationService, ngDialog, $timeout){
+    $scope.template = TemplateService.changecontent("privacy-policy");
+  $scope.menutitle = NavigationService.makeactive("Privacy Policy");
+  TemplateService.title = $scope.menutitle;
+  $scope.navigation = NavigationService.getnav();
+})
 .controller('NavBarCtrl', function($scope, $stateParams) {
   // $scope.states = {};
   // $scope.states.activeItem = 'item1';
