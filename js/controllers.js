@@ -209,6 +209,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.menutitle = NavigationService.makeactive("Privacy Policy");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
+  console.log('inside privacy');
 })
 .controller('NavBarCtrl', function($scope, $stateParams) {
   // $scope.states = {};
