@@ -1,7 +1,7 @@
 window.onload = function() {
   $.jStorage.flush();
 };
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngSanitize', 'ngDialog', 'angular-flexslider'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngSanitize', 'ngDialog', 'angular-flexslider', 'infinite-scroll'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, ngDialog, $timeout) {
   //Used to name the .html file
