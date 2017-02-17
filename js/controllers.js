@@ -85,7 +85,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     });
 
   };
-
+ NavigationService.getPopupOnLoad(function(data) {
+    $scope.popupImage = data.image;
+  });
   // $.jStorage.set('popNot', true);
   // console.log('popNot value: ', $.jStorage.get('popNot'));
   popNot = $.jStorage.get('popNot');

@@ -37,6 +37,10 @@ var navigationservice = angular.module('navigationservice', [])
       }
       return menuname;
     },
+    
+     getPopupOnLoad: function(callback) {
+      $http.get(adminurl + 'getSiteBanner').success(callback);
+    },
     getSlider: function(callback) {
       $http.get(adminurl + 'getSlider').success(callback);
     },
