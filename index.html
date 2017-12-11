@@ -54,7 +54,12 @@
 <body zoom-container>
 
     <div class="repeated-item" ui-view autoscroll="true"></div>
-
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-109848279-1');
+</script>
 </body>
 
 </html>
